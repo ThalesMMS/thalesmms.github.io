@@ -86,5 +86,10 @@
       "label": "Source on GitHub",
       "url": "https://github.com/ThalesMMS/RadRef"
     }
-  ]
+  ],
+  "icon": {
+    "src": "/assets/apps/radref.png",
+    "width": 1024,
+    "height": 1024
+  }
 }

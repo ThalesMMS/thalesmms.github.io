@@ -11,7 +11,7 @@ Validated September 5, 2026 for the directory expansion.
 
 ## Automated checks
 
-`python3 tools/check_site.py` passed for all 50 pages and 660 links. It checks:
+`python3 tools/check_site.py` passed for all 50 pages and 704 links. It checks:
 
 - Required routes, balanced tags, unique IDs, one title, h1 and main landmark per page.
 - English language, viewport metadata, labelled navigation, heading order, image attributes, and skip-link targets.
@@ -43,3 +43,9 @@ Regenerating the site produced identical HTML hashes. All three AutoComp main co
 These checks verify static pages and source-derived descriptions. They are not clinical validation, an exhaustive security audit, screen-reader certification, or runtime validation of every application and external service. Third-party retention is not controlled by this site.
 
 No GitHub Pages settings or App Store Connect settings were changed. Local /404.html can be checked directly; custom handling of an unknown path is provided by GitHub Pages when deployed.
+
+## Product icon correction
+
+Eleven original product icons were added to the directory, presentation, support, privacy, and favicon rendering. Source PNGs were copied unchanged and visually inspected. Together with AutoComp, 12 project sections now use product artwork. DICOM-Swift, MTK, the DICOM agent suite, and dicom-go retain initials because no own product icon was found in their current checkouts. The dicom-go example app contains the standard Fyne framework icon.
+
+The icon correction passed static validation for 50 pages and 704 links. All 11 added source PNGs match byte for byte; their declared dimensions match the files. All 49 catalog/project pages were loaded at 320 CSS pixels with no missing images or horizontal overflow.

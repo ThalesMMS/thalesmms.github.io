@@ -102,5 +102,10 @@
         "A chosen AI endpoint and model-download service can receive connection information and the requests you send to it. Their operators control their own logging, retention and deletion; no uniform retention period is promised here."
       ]
     }
-  ]
+  ],
+  "icon": {
+    "src": "/assets/apps/video-subtitler.png",
+    "width": 1024,
+    "height": 1024
+  }
 }

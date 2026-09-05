@@ -92,5 +92,10 @@
         "PowerPoint, browser and cloud-storage handling is separate from the viewer. No dedicated analytics or crash-report upload integration was identified in the inspected first-party viewer and importer paths."
       ]
     }
-  ]
+  ],
+  "icon": {
+    "src": "/assets/apps/dicom-slides.png",
+    "width": 80,
+    "height": 80
+  }
 }

@@ -81,5 +81,10 @@
       ]
     }
   ],
-  "repositories": []
+  "repositories": [],
+  "icon": {
+    "src": "/assets/apps/codeatlas.png",
+    "width": 1163,
+    "height": 1163
+  }
 }

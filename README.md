@@ -24,7 +24,7 @@ git diff --check
 
 These commands use only the Python standard library. Generated HTML is committed, so GitHub Pages needs no build command. AutoComp's existing page bodies are kept in their HTML files; the generator updates only their shared navigation and footer.
 
-Shared styles are in `assets/site.css`. The AutoComp icon is the existing Safari extension asset. Other project markers are typographic initials, not product logos. No application screenshots or DICOM samples are published here.
+Shared styles are in `assets/site.css`. The AutoComp icon is the existing Safari extension asset. Eleven additional projects use their existing product icons from the source checkouts. Initials remain only where no product icon was found: DICOM-Swift, MTK, the DICOM agent suite, and dicom-go. The dicom-go example bundle uses the standard Fyne logo, which is not used as a project logo here. No application screenshots or DICOM samples are published here.
 
 ## Routes
 

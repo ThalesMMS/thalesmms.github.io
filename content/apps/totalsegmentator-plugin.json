@@ -99,5 +99,10 @@
         "The plugin includes temporary-export cleanup and staging cleanup, but completed outputs and host records have separate lifecycles. Review remaining output directories, logs, backups and viewer records when removing a case; no universal automatic deletion period is specified."
       ]
     }
-  ]
+  ],
+  "icon": {
+    "src": "/assets/apps/totalsegmentator-plugin.png",
+    "width": 1024,
+    "height": 1024
+  }
 }

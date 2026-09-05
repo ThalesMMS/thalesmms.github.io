@@ -47,6 +47,11 @@ def document(path, title, description, body, project=None, prose=False):
         nav = [('/', 'Home'), ('/#projects', 'Projects'), ('/#about', 'About'), ('/#contact', 'Contact')]
         footer_links = link('/#projects', 'All projects') + '<br>\n' + link('mailto:'+EMAIL, 'Contact')
     navigation = '\n'.join(link(u, n, u == path) for u, n in nav)
+    icon = project.get('icon') if project else None
+    if project and project['slug'] == 'autocomp':
+        icon = {'src': '/assets/autocomp-icon.png'}
+    favicon = icon['src'] if icon else '/assets/site-icon.svg'
+    favicon_type = 'image/png' if icon else 'image/svg+xml'
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -55,7 +60,7 @@ def document(path, title, description, body, project=None, prose=False):
   <meta name="description" content="{e(description)}">
   <title>{e(title)}</title>
   <link rel="stylesheet" href="/assets/site.css">
-  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+  <link rel="icon" type="{favicon_type}" href="{e(favicon)}">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -109,6 +114,9 @@ def source_links(project):
 def artwork(project):
     if project['slug'] == 'autocomp':
         return '<img class="project-icon" src="/assets/autocomp-icon.png" width="512" height="512" alt="">'
+    if project.get('icon'):
+        icon = project['icon']
+        return f'<img class="project-icon" src="{e(icon["src"])}" width="{icon["width"]}" height="{icon["height"]}" alt="">'
     return f'<span class="project-mark" aria-hidden="true">{e(MARKS[project["slug"]])}</span>'
 
 
@@ -138,7 +146,8 @@ def support_page(project):
     sections = '\n'.join(section_html(s, i) for i, s in enumerate(project['support'], 1))
     sources = source_links(project)
     source_section = f'<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links">{sources}</div></section>' if sources else ''
-    body = f'''<p class="eyebrow">{e(project['name'])} / Support</p>
+    body = f'''{artwork(project) if project.get('icon') else ''}
+<p class="eyebrow">{e(project['name'])} / Support</p>
 <h1>{e(project['name'])} support</h1>
 <p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
 {sections}
@@ -150,7 +159,8 @@ def support_page(project):
 def privacy_page(project):
     route = base(project)
     sections = '\n'.join(section_html(s, i) for i, s in enumerate(project['privacy'], 1))
-    body = f'''<p class="eyebrow">{e(project['name'])} / Privacy</p>
+    body = f'''{artwork(project) if project.get('icon') else ''}
+<p class="eyebrow">{e(project['name'])} / Privacy</p>
 <h1>{e(project['name'])} privacy policy</h1>
 <p class="label">Effective {DATE}</p>
 <p class="lead">How {e(project['name'])} handles data, including the services and integrations you choose to use.</p>

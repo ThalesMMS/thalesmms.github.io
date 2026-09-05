@@ -95,5 +95,10 @@
         "Android disables operating-system app backup in its manifest. Apple provides catalog backup workflows that exclude Keychain secrets; device backup settings and separately exported files have their own lifecycles. Local deletion does not delete those copies."
       ]
     }
-  ]
+  ],
+  "icon": {
+    "src": "/assets/apps/isis-dicom-viewer.png",
+    "width": 1024,
+    "height": 1024
+  }
 }

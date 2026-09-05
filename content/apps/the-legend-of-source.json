@@ -99,5 +99,10 @@
       ]
     }
   ],
-  "repositories": []
+  "repositories": [],
+  "icon": {
+    "src": "/assets/apps/the-legend-of-source.png",
+    "width": 512,
+    "height": 512
+  }
 }

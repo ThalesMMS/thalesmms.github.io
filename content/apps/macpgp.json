@@ -92,5 +92,10 @@
       "label": "Source on GitHub",
       "url": "https://github.com/ThalesMMS/MacPGP-app"
     }
-  ]
+  ],
+  "icon": {
+    "src": "/assets/apps/macpgp.png",
+    "width": 512,
+    "height": 512
+  }
 }

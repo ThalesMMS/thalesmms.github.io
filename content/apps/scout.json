@@ -102,5 +102,10 @@
         "Removing local files, indexes or credentials cannot delete information already sent to an AI or speech provider. Provider retention and deletion depend on the selected service, and exported files or system backups must be managed separately."
       ]
     }
-  ]
+  ],
+  "icon": {
+    "src": "/assets/apps/scout.png",
+    "width": 512,
+    "height": 512
+  }
 }

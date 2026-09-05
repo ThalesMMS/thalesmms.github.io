@@ -64,7 +64,9 @@ html { scroll-padding-top:2rem; }
 .card-heading { display:flex; align-items:center; gap:1rem; margin-bottom:1.25rem; }
 .card-heading p { margin:0; }
 .project-mark { display:inline-flex; flex:none; width:56px; height:56px; align-items:center; justify-content:center; border-radius:14px; background:#eaf1fb; color:var(--blue); font-size:1.2rem; font-weight:700; letter-spacing:-.04em; }
-.project-icon { width:56px; height:56px; border-radius:14px; }
+.project-icon { display:block; flex:none; width:56px; height:56px; object-fit:contain; }
+.project-heading > .project-icon { width:88px; height:88px; margin-bottom:1.5rem; }
+.prose > .project-icon { width:64px; height:64px; margin-bottom:1.5rem; }
 .catalog-card h3 { font-size:1.4rem; line-height:1.25; }
 .catalog-card h3 a { color:var(--ink); text-decoration:none; }
 .catalog-card h3 a:hover { text-decoration:underline; }
