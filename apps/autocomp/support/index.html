@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Set up AutoComp for Safari, troubleshoot connections and suggestions, and contact Thales Matheus M Santos.">
+  <title>AutoComp support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/png" href="/assets/autocomp-icon.png">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap header-row"><a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/apps/autocomp/">AutoComp</a><a href="/apps/autocomp/support/" aria-current="page">Support</a><a href="/apps/autocomp/privacy/">Privacy</a></nav></div></header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">AutoComp / Support</p><h1>Get AutoComp ready to write.</h1><p class="lead">Setup guidance for Safari on Mac, plus help when suggestions do not appear.</p>
+<section><h2>Set up your connection</h2><ol><li>After installing AutoComp, enable it in <strong>Safari &gt; Settings &gt; Extensions</strong>. Allow access to <strong>docs.google.com</strong>.</li><li>Click AutoComp in the Safari toolbar to open its options.</li><li>Enter your <strong>Base URL</strong>, <strong>Model</strong>, and <strong>API key</strong>. Use the HTTPS API base, such as <code>https://your-provider.example/v1</code>, without appending <code>/chat/completions</code>.</li><li>Choose <strong>Save and test connection</strong> and allow access to your endpoint's domain when Safari asks.</li><li>Reload an editable Google Docs document and start typing. Try a document containing only non-sensitive test text first.</li></ol><p>You supply the endpoint and any required provider account or credit. The extension does not import settings from Chrome.</p></section>
+<section><h2>Use a suggestion</h2><ul><li><kbd>Tab</kbd> accepts the next word.</li><li><kbd>Shift</kbd> + <kbd>Tab</kbd> or the backtick key accepts the full suggestion.</li><li><kbd>Esc</kbd> dismisses the suggestion.</li></ul></section>
+<section><h2>No suggestions appear</h2><p>Confirm that the document is editable and AutoComp is enabled in the Safari profile you are using. Check permissions for Google Docs and your endpoint, then reload the document. Disable any duplicate AutoComp installation and test the connection again.</p><p>A successful connection test checks the model-list endpoint. Your server must also support chat completions. Changes to Google Docs can affect how suggestions appear or are inserted.</p></section>
+<section><h2>The connection test fails</h2><p>Check the HTTPS base URL, valid TLS certificate, model identifier, API key, and Safari permission for the endpoint. AutoComp uses <code>/models</code> to test the connection and <code>/chat/completions</code> for suggestions. Plain HTTP endpoints are not supported.</p></section>
+<section><h2>Settings are missing</h2><p>Check the Safari profile and installation you are using. Different installations do not share settings. Removing extension data or changing the installation identity can require setup again. Settings are not synced through iCloud.</p></section>
+<section class="note"><h2>Contact support</h2><p>Thales Matheus M Santos<br><a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a></p><p>Include your macOS, Safari, and AutoComp versions, the steps to reproduce the problem, and the error message. Remove API keys, document text, patient information, and other sensitive details from messages and screenshots.</p></section>
+</main>
+<footer><div class="wrap"><p>Thales Matheus M Santos<br>Independent apps for everyday work.</p><div><a href="/apps/autocomp/support/">Contact &amp; support</a><br><a href="/apps/autocomp/privacy/">AutoComp privacy</a></div></div></footer>
+</body>
+</html>

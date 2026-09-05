@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How AutoComp for Safari stores settings and sends text context to your chosen HTTPS endpoint.">
+  <title>AutoComp privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/png" href="/assets/autocomp-icon.png">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap header-row"><a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/apps/autocomp/">AutoComp</a><a href="/apps/autocomp/support/">Support</a><a href="/apps/autocomp/privacy/" aria-current="page">Privacy</a></nav></div></header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">AutoComp / Privacy</p><h1>Privacy policy</h1><p class="label">Effective September 5, 2026</p><p class="lead">This policy describes AutoComp for Safari and the endpoint you choose to connect to it.</p>
+<section><h2>What AutoComp processes</h2><p>AutoComp reads text context before your cursor in Google Docs to request inline suggestions. The current context window is bounded to 2,500 characters and 150 words. It sends that context, completion instructions, and your selected model to your configured OpenAI-compatible HTTPS endpoint.</p><p>The configured API key accompanies requests to that endpoint for authentication. The connection test also contacts the endpoint to request its model list. Like any network service you contact, the endpoint can receive your IP address and request metadata.</p></section>
+<section><h2>Settings stored on your Mac</h2><p>The API base URL, model, API key, and appearance preferences are stored locally in the extension's IndexedDB storage. AutoComp does not sync these settings through iCloud. Its content scripts do not receive the saved API key, and the containing Mac app does not receive it.</p><p>This storage is not Apple's Keychain and AutoComp adds no encryption of its own to it. It should not be treated as a vault against access to your local browser profile.</p></section>
+<section><h2>Your chosen endpoint</h2><p>AutoComp does not route suggestions through a developer-hosted server. Text context and authentication requests go to the endpoint you configure. The endpoint provider's own policies govern its logging, retention, use for model training, and deletion practices. The AutoComp developer does not control those practices.</p><p>Review the provider's terms before using it with sensitive documents. Only send information you are authorized to share with that provider.</p></section>
+<section><h2>Developer services and support</h2><p>AutoComp has no developer-hosted account service or analytics service. It does not send document content or API keys to the developer as part of generating suggestions.</p><p>If you email support, the developer receives your email address and the information you choose to include so they can respond. Do not send API keys or sensitive document content.</p></section>
+<section><h2>Your choices</h2><p>You can change the endpoint and credentials in AutoComp's options. Disable the extension or revoke its site permissions in Safari to stop it operating on documents. Use Safari's extension and data-management controls to remove the extension or its stored data. Revoke an API key with its provider if you need to invalidate it.</p><p>Removing local data does not delete requests already received by your endpoint. Contact that provider about its retained data.</p></section>
+<section><h2>This website</h2><p>This static site has no analytics scripts, forms, or third-party tracking scripts. It is hosted on GitHub Pages; the hosting provider handles web requests under its own privacy practices.</p></section>
+<section><h2>Questions and changes</h2><p>This policy may be updated when AutoComp's behavior changes. The effective date above identifies this version.</p><p>Contact Thales Matheus M Santos at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a> with privacy questions.</p></section>
+</main>
+<footer><div class="wrap"><p>Thales Matheus M Santos<br>Independent apps for everyday work.</p><div><a href="/apps/autocomp/support/">Contact &amp; support</a><br><a href="/apps/autocomp/privacy/">AutoComp privacy</a></div></div></footer>
+</body>
+</html>
