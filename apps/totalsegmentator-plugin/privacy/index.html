@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for TotalSegmentator OsiriX/Horos Plugin.">
+  <title>TotalSegmentator OsiriX/Horos Plugin privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/totalsegmentator-plugin/">TotalSegmentator OsiriX/Horos Plugin</a>
+<a href="/apps/totalsegmentator-plugin/support/">Support</a>
+<a href="/apps/totalsegmentator-plugin/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">TotalSegmentator OsiriX/Horos Plugin / Privacy</p>
+<h1>TotalSegmentator OsiriX/Horos Plugin privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How TotalSegmentator OsiriX/Horos Plugin handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Local series processing</h2>
+<p>The plugin exports source image data for a local Python segmentation process and imports supported outputs into the host viewer. Source data, derived masks and run artifacts can contain sensitive information.</p>
+</section>
+<section id="section-2">
+<h2>Dependencies and models</h2>
+<p>Environment preparation uses package downloads and may retrieve dcm2niix from GitHub. TotalSegmentator downloads missing model weights; some tasks require a license and contact its backend.</p>
+</section>
+<section id="section-3">
+<h2>TotalSegmentator telemetry</h2>
+<p>The bundled Python library creates configuration with send_usage_stats enabled by default. Its usage request contains an installation identifier, run counter, task/options, platform and Python/GPU information, and a license number when present. The inspected request does not include image pixels or patient tags and uses an HTTP backend endpoint.</p>
+<p>In the inspected library, setting send_usage_stats to false in its config.json disables these usage-report requests. Check the configuration directory used by your installed runtime; this setting does not disable model downloads or license-related requests.</p>
+</section>
+<section id="section-4">
+<h2>Installed runtime matters</h2>
+<p>The plugin can use an installed Python environment or prepare one with pinned packages. Network and telemetry behavior must be checked in that actual TotalSegmentator version and its configuration; the native plugin does not establish a blanket offline or no-collection guarantee.</p>
+</section>
+<section id="section-5">
+<h2>Stored settings and outputs</h2>
+<p>Plugin preferences, including an optional license key, are stored in macOS user defaults in the inspected code. Output directories retain segmentation and provenance artifacts, and progress logs can contain local paths. The host viewer manages its own database and ROI persistence.</p>
+</section>
+<section id="section-6">
+<h2>Cleanup and deletion</h2>
+<p>The plugin includes temporary-export cleanup and staging cleanup, but completed outputs and host records have separate lifecycles. Review remaining output directories, logs, backups and viewer records when removing a case; no universal automatic deletion period is specified.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about TotalSegmentator OsiriX/Horos Plugin at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/totalsegmentator-plugin/support/">TotalSegmentator OsiriX/Horos Plugin support</a><br>
+<a href="/apps/totalsegmentator-plugin/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

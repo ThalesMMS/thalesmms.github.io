@@ -1,0 +1,106 @@
+{
+  "slug": "scout",
+  "name": "Scout",
+  "category": "imaging",
+  "platform": "Desktop",
+  "summary": "Write and organize reports with local phrase completion, structured controls and optional AI assistance.",
+  "intro": "Scout combines a text workspace with shortcuts, corpus-based suggestions and configurable structured reports. Dictation and AI tools can extend the workflow, while provider and indexing status show which services are ready.",
+  "features": [
+    {
+      "title": "Local writing tools",
+      "body": "Use shortcuts and prefix suggestions built from your own corpus without requiring a language-model call for each keystroke."
+    },
+    {
+      "title": "Structured reports",
+      "body": "Create and edit report types, sections and controls manually, or review proposals produced by the optional AI workflow."
+    },
+    {
+      "title": "Dictation choices",
+      "body": "Use a local Whisper installation or a configured remote speech service, with optional language-model refinement of the transcript."
+    },
+    {
+      "title": "Separate AI services",
+      "body": "Configure a language-model provider and an embeddings service independently for completion, chat and contextual retrieval."
+    }
+  ],
+  "repositories": [],
+  "support": [
+    {
+      "title": "Prepare your workspace",
+      "paragraphs": [
+        "Select a report workspace for saved documents and configure corpus sources separately. The workspace, phrase index and structured-report definitions serve different purposes.",
+        "Save a new report to a file or configure its workspace before relying on autosave. Watch the save status for errors."
+      ]
+    },
+    {
+      "title": "Set up completion",
+      "paragraphs": [
+        "Import your shortcuts and corpus, then build the local phrase index. Configure embeddings separately when you want semantic retrieval.",
+        "AI completion can run after an idle pause following a word boundary when enabled and no local suggestion is active. Disable its toggle if you only want local suggestions."
+      ]
+    },
+    {
+      "title": "Choose an AI provider",
+      "paragraphs": [
+        "Use a configured OpenAI-compatible service or the Codex account flow. Check readiness and tool support before using an agent workflow.",
+        "The language-model provider does not replace the embeddings endpoint. Missing or failing embeddings need separate attention."
+      ]
+    },
+    {
+      "title": "Troubleshoot dictation",
+      "paragraphs": [
+        "For local dictation, configure a valid Whisper streaming executable and model and grant microphone access. The installer downloads required software and model files.",
+        "For remote dictation, check the speech endpoint and microphone permission. Refinement uses the selected language model even when speech recognition itself is local; turn refinement off if you want to avoid that text transfer."
+      ]
+    },
+    {
+      "title": "Review generated text",
+      "paragraphs": [
+        "Review every AI completion, dictated passage and structured-report proposal before using it. Scout is a clinical prototype and does not validate clinical findings or establish diagnostic correctness."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Documents and local indexes",
+      "paragraphs": [
+        "Saved reports remain in the selected file workspace. Corpus chunks and embeddings are persisted in a local SQLite index, while structured-report definitions and settings are stored separately. Indexing can create another local copy of source text.",
+        "Deleting an original corpus file or a saved report does not automatically prove that its indexed content, exports or backups have been removed. Manage each stored copy separately."
+      ]
+    },
+    {
+      "title": "Optional language-model traffic",
+      "paragraphs": [
+        "The default language-model and embedding endpoints are empty. Once configured, AI completion, chat, structured-report assistance and dictation refinement can transmit document passages, instructions, conversation context and retrieved corpus excerpts to the selected provider.",
+        "Enabled automatic completion can make a request after a typing pause. Refinement is enabled by default in settings, but requires a usable language-model provider. Review these controls before entering sensitive text."
+      ]
+    },
+    {
+      "title": "Embeddings and retrieval",
+      "paragraphs": [
+        "A configured embeddings service receives text chunks during indexing and query text during semantic search. It may run locally or on another computer. Calling a service local does not establish how that service stores requests or whether it contacts other providers."
+      ]
+    },
+    {
+      "title": "Microphone and downloads",
+      "paragraphs": [
+        "Local Whisper processes microphone audio through the configured local executable. Its installer contacts GitHub and Hugging Face to obtain software and model files.",
+        "Remote dictation streams microphone audio to the configured WebSocket service and includes the configured API key in its session request. Use a trusted encrypted endpoint. Optional refinement sends transcript text to the language-model provider separately."
+      ]
+    },
+    {
+      "title": "Credentials and account access",
+      "paragraphs": [
+        "API keys are currently saved as plaintext in the local settings file. Protect that file and any backups and do not include it in support attachments.",
+        "The optional Codex flow opens an OpenAI sign-in page and stores or uses an authentication JSON file. It contacts OpenAI for authentication and model requests. Signing out removes Codex authentication fields from the selected file and can affect another application sharing that file."
+      ]
+    },
+    {
+      "title": "Diagnostics and deletion boundaries",
+      "paragraphs": [
+        "The audited application code does not configure a third-party advertising, analytics or crash-reporting service. Local errors and status information can still be present in application output.",
+        "Removing local files, indexes or credentials cannot delete information already sent to an AI or speech provider. Provider retention and deletion depend on the selected service, and exported files or system backups must be managed separately."
+      ]
+    }
+  ]
+}

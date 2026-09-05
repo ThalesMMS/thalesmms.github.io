@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for DICOM-Swift.">
+  <title>DICOM-Swift privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/dicom-swift/">DICOM-Swift</a>
+<a href="/apps/dicom-swift/support/">Support</a>
+<a href="/apps/dicom-swift/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">DICOM-Swift / Privacy</p>
+<h1>DICOM-Swift privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How DICOM-Swift handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Scope and local processing</h2>
+<p>This policy describes the DICOM-Swift package and bundled CLI. An application that embeds the package has its own storage, sharing, and service policies.</p>
+<p>The parser reads the DICOM metadata and pixel data supplied by the caller. Those inputs may contain patient identifiers, clinical information, private tags, or identifying text burned into pixels. Local file decoding does not require an upload to the package developer.</p>
+</section>
+<section id="section-2">
+<h2>Network features</h2>
+<p>When the host invokes networking features, DICOMweb and DIMSE requests can send query criteria, datasets, images, and authentication information to the configured server. JPIP retrieval uses a caller-provided transport.</p>
+<p>Server operators determine their own logging and retention. The library does not make every network connection encrypted automatically; deployment code must configure the appropriate transport, endpoint permissions, and credentials.</p>
+</section>
+<section id="section-3">
+<h2>Files and exports</h2>
+<p>Image exports, DICOM rewrites, received instances, and extracted archives may create files in locations selected by the caller or temporary storage. CLI inspection can print metadata to the terminal.</p>
+<p>Image export defaults to no metadata sidecar, but images and annotations may still identify a person. De-identification helpers do not by themselves establish that every output is safe to share, including burned-in text. Review files before sending them elsewhere.</p>
+</section>
+<section id="section-4">
+<h2>Diagnostics and credentials</h2>
+<p>The package supports local diagnostic logging and caller-supplied audit or codec reporting callbacks. These are integration hooks rather than a developer-hosted analytics account. Error messages can contain file paths, request URLs, or response previews.</p>
+<p>Connection credentials are supplied by the host; the package does not provide an end-user credential vault. The host controls any storage or forwarding of logs and secrets.</p>
+</section>
+<section id="section-5">
+<h2>Retention and removal</h2>
+<p>The caller controls input files, output files, archives, caches, and any application database. Remove those items through the host application or filesystem as appropriate. Stopping local use does not delete copies already sent to a DICOM server, exported elsewhere, or kept in backups.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about DICOM-Swift at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/dicom-swift/support/">DICOM-Swift support</a><br>
+<a href="/apps/dicom-swift/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for dicom-go.">
+  <title>dicom-go privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/dicom-go/">dicom-go</a>
+<a href="/apps/dicom-go/support/">Support</a>
+<a href="/apps/dicom-go/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">dicom-go / Privacy</p>
+<h1>dicom-go privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How dicom-go handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Library and tool scope</h2>
+<p>This policy covers dicom-go and its bundled tools. Applications and servers built with it decide which datasets to accept, where to store them, who can access them, and which services to contact.</p>
+<p>The library processes the DICOM metadata, images, files, and query parameters supplied to it. Local parsing does not need to send a dataset to the package developer.</p>
+</section>
+<section id="section-2">
+<h2>Network requests and receivers</h2>
+<p>Calling DIMSE, DICOMweb, or JPIP features can send identifiers, queries, images, and authentication data to the configured destination, or receive datasets from a remote system. JPIP retrieval uses explicit host and scheme rules with origin-bound credentials.</p>
+<p>Transport encryption is a deployment choice, not a guarantee for every command. The remote server can retain requests and transferred data under its own policies.</p>
+</section>
+<section id="section-3">
+<h2>Persistent output and caches</h2>
+<p>File writers, exports, and storage receivers create local files. CLI dumps and DICOM JSON can disclose patient names, identifiers, or other metadata. JPIP retrieval also uses an in-memory response cache.</p>
+<p>The operator controls storage locations and retention. Remove saved outputs and logs separately from the original data, and consider any filesystem backups or synchronization.</p>
+</section>
+<section id="section-4">
+<h2>Audit and diagnostic integrations</h2>
+<p>The networking packages expose audit and telemetry callbacks for a host to consume. The structured telemetry event format excludes dataset values and raw packet payloads; endpoint details are omitted by default but can be enabled by caller policy. Separate audit records may include AE titles and addresses.</p>
+<p>These callbacks do not constitute a built-in developer analytics upload. A host can write or forward records using its own sinks, and explicitly enabled raw traffic capture needs separate handling because packets can contain clinical data.</p>
+</section>
+<section id="section-5">
+<h2>Credentials and de-identification</h2>
+<p>Applications supply and manage credentials and token sources. The library is not an end-user secret vault.</p>
+<p>De-identification is an explicit operation with supported profiles and options. It is not automatic for ordinary reads, sends, or exports. Review identifying metadata, private tags, and burned-in pixel content before sharing; a rewrite alone is not a guarantee of anonymity.</p>
+</section>
+<section id="section-6">
+<h2>Your controls</h2>
+<p>Stop listeners and network tasks to stop future transfers. Remove retained input copies, received files, exports, and operator-managed logs when no longer needed. Removal on your machine does not remove copies at a remote server or in a recipient&#x27;s files.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about dicom-go at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/dicom-go/support/">dicom-go support</a><br>
+<a href="/apps/dicom-go/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

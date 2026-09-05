@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for DICOM tools for AI agents.">
+  <title>DICOM tools for AI agents privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/dicom-agent-tools/">DICOM tools for AI agents</a>
+<a href="/apps/dicom-agent-tools/support/">Support</a>
+<a href="/apps/dicom-agent-tools/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">DICOM tools for AI agents / Privacy</p>
+<h1>DICOM tools for AI agents privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How DICOM tools for AI agents handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>PACS and network operations</h2>
+<p>Query, retrieve and send commands communicate with configured DICOM systems. Integrated DICOMweb support uses configured HTTP endpoints and credentials. Installation may download Python or Node dependencies; optional Orthanc use may download a container image.</p>
+</section>
+<section id="section-2">
+<h2>Agent and chat host access</h2>
+<p>Local execution does not make an agent workflow private from its host. Tool output, prompts, file paths and rendered images may be handled by the configured agent or chat service.</p>
+</section>
+<section id="section-3">
+<h2>Rendering paths differ</h2>
+<p>The integrated interactive workflow routes sensitive widget data through MCP result metadata and uses opaque selection tokens. This does not remove the chat host from the rendering path. The separate prototype embeds rendered PNG images and image information in an HTML resource delivered to its MCP host.</p>
+</section>
+<section id="section-4">
+<h2>Files and retention</h2>
+<p>Retrieved DICOM, prepared copies, manifests, HTML viewers, PNGs, videos and encapsulated PDFs are local artifacts that can remain after a session. Stopping a temporary Orthanc container does not by itself purge its data directory; review explicit purge options and delete outputs according to your own policy.</p>
+</section>
+<section id="section-5">
+<h2>Anonymization limits</h2>
+<p>Metadata anonymization does not remove burned-in pixel annotations. PDF encapsulation preserves the supplied document bytes, and previews can expose visible patient information. Review outputs even when a summary mode reduces identifiers in command output.</p>
+</section>
+<section id="section-6">
+<h2>Configuration and exposure</h2>
+<p>Protect configuration files and credentials. Use the separate viewer’s stdio transport for local host integration: its HTTP mode binds all interfaces and enables CORS, without an application authentication flow in the inspected entry point. The integrated viewer uses a loopback HTTP bind.</p>
+</section>
+<section id="section-7">
+<h2>Providers and telemetry</h2>
+<p>No dedicated first-party analytics service was identified in the inspected tools. AI provider processing, chat history, connector logging and retention depend on the agent host and configured services; they are outside these libraries’ controls.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about DICOM tools for AI agents at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/dicom-agent-tools/support/">DICOM tools for AI agents support</a><br>
+<a href="/apps/dicom-agent-tools/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

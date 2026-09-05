@@ -1,0 +1,112 @@
+{
+  "slug": "dicom-agent-tools",
+  "name": "DICOM tools for AI agents",
+  "category": "imaging",
+  "platform": "Agent hosts, MCP Apps and command line",
+  "summary": "DICOM query, transfer, conversion and viewing tools for agent-assisted workflows.",
+  "intro": "The set brings together dicom-plugin, dicom-skill, and dicom-viewer-mcp-app. Connect authorized PACS workflows with local processing and interactive or file-based previews in compatible agent hosts.",
+  "features": [
+    {
+      "title": "Query and transfer",
+      "body": "Use configured DICOM nodes to verify connections, query studies and retrieve or send instances."
+    },
+    {
+      "title": "Local processing",
+      "body": "Anonymize metadata, transcode JPEG 2000, encapsulate PDFs and export PNG or MP4 previews."
+    },
+    {
+      "title": "Host-aware viewing",
+      "body": "The integrated viewer supports MCP Apps and a local HTML fallback; the separate viewer repository provides a simpler prototype."
+    },
+    {
+      "title": "Configurable destinations",
+      "body": "Configure PACS endpoints and supported authentication or transport options for your deployment."
+    }
+  ],
+  "repositories": [
+    {
+      "label": "dicom-skill on GitHub",
+      "url": "https://github.com/ThalesMMS/dicom-skill"
+    },
+    {
+      "label": "dicom-viewer-mcp-app on GitHub",
+      "url": "https://github.com/ThalesMMS/dicom-viewer-mcp-app"
+    }
+  ],
+  "support": [
+    {
+      "title": "Choose the component",
+      "paragraphs": [
+        "Use dicom-skill for shell workflows, dicom-plugin for its integrated tools, or dicom-viewer-mcp-app for the standalone viewer. The separate MCP viewer requires Node.js, a build, and a compatible MCP host; follow its public repository instructions. Component capabilities differ."
+      ]
+    },
+    {
+      "title": "Configure a PACS",
+      "paragraphs": [
+        "Supply authorized endpoint, AE title and port information. In the integrated plugin, DICOM_MCP_CONFIG selects the shared node configuration. Verify connectivity before retrieving or sending data."
+      ]
+    },
+    {
+      "title": "Open images",
+      "paragraphs": [
+        "The separate viewer reads a local dicom folder and supports uncompressed images. The integrated plugin additionally supports preparation workflows and local HTML output for hosts without inline MCP Apps."
+      ]
+    },
+    {
+      "title": "Troubleshoot transfers",
+      "paragraphs": [
+        "Check endpoint reachability, AE permissions, transfer syntax and destination receiver configuration. Temporary Orthanc workflows require Docker and create local storage."
+      ]
+    },
+    {
+      "title": "Review outputs",
+      "paragraphs": [
+        "Check anonymized files and rendered previews before sending or sharing. These tools do not establish diagnostic suitability or certify de-identification."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "PACS and network operations",
+      "paragraphs": [
+        "Query, retrieve and send commands communicate with configured DICOM systems. Integrated DICOMweb support uses configured HTTP endpoints and credentials. Installation may download Python or Node dependencies; optional Orthanc use may download a container image."
+      ]
+    },
+    {
+      "title": "Agent and chat host access",
+      "paragraphs": [
+        "Local execution does not make an agent workflow private from its host. Tool output, prompts, file paths and rendered images may be handled by the configured agent or chat service."
+      ]
+    },
+    {
+      "title": "Rendering paths differ",
+      "paragraphs": [
+        "The integrated interactive workflow routes sensitive widget data through MCP result metadata and uses opaque selection tokens. This does not remove the chat host from the rendering path. The separate prototype embeds rendered PNG images and image information in an HTML resource delivered to its MCP host."
+      ]
+    },
+    {
+      "title": "Files and retention",
+      "paragraphs": [
+        "Retrieved DICOM, prepared copies, manifests, HTML viewers, PNGs, videos and encapsulated PDFs are local artifacts that can remain after a session. Stopping a temporary Orthanc container does not by itself purge its data directory; review explicit purge options and delete outputs according to your own policy."
+      ]
+    },
+    {
+      "title": "Anonymization limits",
+      "paragraphs": [
+        "Metadata anonymization does not remove burned-in pixel annotations. PDF encapsulation preserves the supplied document bytes, and previews can expose visible patient information. Review outputs even when a summary mode reduces identifiers in command output."
+      ]
+    },
+    {
+      "title": "Configuration and exposure",
+      "paragraphs": [
+        "Protect configuration files and credentials. Use the separate viewer’s stdio transport for local host integration: its HTTP mode binds all interfaces and enables CORS, without an application authentication flow in the inspected entry point. The integrated viewer uses a loopback HTTP bind."
+      ]
+    },
+    {
+      "title": "Providers and telemetry",
+      "paragraphs": [
+        "No dedicated first-party analytics service was identified in the inspected tools. AI provider processing, chat history, connector logging and retention depend on the agent host and configured services; they are outside these libraries’ controls."
+      ]
+    }
+  ]
+}

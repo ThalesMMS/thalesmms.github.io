@@ -1,0 +1,91 @@
+{
+  "slug": "dicom-swift",
+  "name": "DICOM-Swift",
+  "category": "development",
+  "platform": "Swift package · Apple platforms",
+  "summary": "Parse DICOM metadata and pixels, prepare images, and build imaging workflows in Swift.",
+  "intro": "DICOM-Swift supplies a DICOM processing library and the dicomtool command-line utility. Use it to inspect files, assemble image series, and connect imaging applications to DICOM services.",
+  "features": [
+    {
+      "title": "Read and decode",
+      "body": "Inspect metadata, decode supported pixel formats, and assemble series from files, folders, or ZIP archives."
+    },
+    {
+      "title": "Prepare and export",
+      "body": "Apply window and level settings and export images, with explicit choices for annotations and metadata."
+    },
+    {
+      "title": "Integrate DICOM services",
+      "body": "Use DICOMweb and DIMSE helpers for supported query, retrieval, storage, and related workflows. The host application owns the user interface and connection policy."
+    }
+  ],
+  "support": [
+    {
+      "title": "Add the package",
+      "paragraphs": [
+        "Add the public DICOM-Swift repository as a Swift Package dependency and select DicomCore. The audited package requires Swift 6.2 and declares iOS, macOS, and visionOS 26.0 minimums; check the manifest for the release you use.",
+        "The package is a library and CLI, not a standalone viewer. Start with the repository getting-started guide and synthetic or de-identified test files."
+      ]
+    },
+    {
+      "title": "Inspect and export",
+      "paragraphs": [
+        "Build the dicomtool product and open its help to select the inspection or export command. Confirm the input path, output directory, and transfer syntax before processing a large series."
+      ]
+    },
+    {
+      "title": "A file does not decode",
+      "paragraphs": [
+        "Report the transfer syntax UID, pixel format, selected codec, package version, and the error. Codec support varies by syntax and platform; some paths delegate to optional native backends. Metadata may remain readable when pixel decoding is unavailable."
+      ]
+    },
+    {
+      "title": "A network request fails",
+      "paragraphs": [
+        "Verify the configured server URL or AE title, host, port, authentication, transport security, and supported operation. The calling application must supply the appropriate connection and authorization policy. Remove patient identifiers, server response bodies, and credentials before sharing diagnostics."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Scope and local processing",
+      "paragraphs": [
+        "This policy describes the DICOM-Swift package and bundled CLI. An application that embeds the package has its own storage, sharing, and service policies.",
+        "The parser reads the DICOM metadata and pixel data supplied by the caller. Those inputs may contain patient identifiers, clinical information, private tags, or identifying text burned into pixels. Local file decoding does not require an upload to the package developer."
+      ]
+    },
+    {
+      "title": "Network features",
+      "paragraphs": [
+        "When the host invokes networking features, DICOMweb and DIMSE requests can send query criteria, datasets, images, and authentication information to the configured server. JPIP retrieval uses a caller-provided transport.",
+        "Server operators determine their own logging and retention. The library does not make every network connection encrypted automatically; deployment code must configure the appropriate transport, endpoint permissions, and credentials."
+      ]
+    },
+    {
+      "title": "Files and exports",
+      "paragraphs": [
+        "Image exports, DICOM rewrites, received instances, and extracted archives may create files in locations selected by the caller or temporary storage. CLI inspection can print metadata to the terminal.",
+        "Image export defaults to no metadata sidecar, but images and annotations may still identify a person. De-identification helpers do not by themselves establish that every output is safe to share, including burned-in text. Review files before sending them elsewhere."
+      ]
+    },
+    {
+      "title": "Diagnostics and credentials",
+      "paragraphs": [
+        "The package supports local diagnostic logging and caller-supplied audit or codec reporting callbacks. These are integration hooks rather than a developer-hosted analytics account. Error messages can contain file paths, request URLs, or response previews.",
+        "Connection credentials are supplied by the host; the package does not provide an end-user credential vault. The host controls any storage or forwarding of logs and secrets."
+      ]
+    },
+    {
+      "title": "Retention and removal",
+      "paragraphs": [
+        "The caller controls input files, output files, archives, caches, and any application database. Remove those items through the host application or filesystem as appropriate. Stopping local use does not delete copies already sent to a DICOM server, exported elsewhere, or kept in backups."
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "label": "Source on GitHub",
+      "url": "https://github.com/ThalesMMS/DICOM-Swift"
+    }
+  ]
+}

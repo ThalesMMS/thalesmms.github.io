@@ -1,0 +1,90 @@
+{
+  "slug": "turing-lab",
+  "name": "Turing Lab",
+  "category": "learning",
+  "platform": "Mobile, desktop and web",
+  "summary": "Build and simulate formal languages and automata in an interactive learning workspace.",
+  "intro": "Explore automata, grammars, regular expressions and Turing machines through editable models and step-by-step traces. Bundled examples provide a starting point for classroom exercises and independent study.",
+  "features": [
+    {
+      "title": "Visual models",
+      "body": "Create and edit automata on a responsive canvas."
+    },
+    {
+      "title": "Simulation and traces",
+      "body": "Follow bounded simulations for finite automata, pushdown automata and Turing machines."
+    },
+    {
+      "title": "Conversions and exercises",
+      "body": "Explore grammar transformations, regular expressions, transducers, L-systems and Pumping Lemma exercises."
+    },
+    {
+      "title": "Import and export",
+      "body": "Exchange supported document formats with compatibility and loss diagnostics."
+    }
+  ],
+  "support": [
+    {
+      "title": "Start with an example",
+      "paragraphs": [
+        "Choose a workspace and open a bundled example before building your own model."
+      ]
+    },
+    {
+      "title": "When a simulation stops",
+      "paragraphs": [
+        "Check the input, transition definitions and execution limits. A bounded run ending does not always prove rejection."
+      ]
+    },
+    {
+      "title": "Opening and saving files",
+      "paragraphs": [
+        "Choose the format supported by your workspace and read compatibility warnings before export. On the web, exported files use browser downloads."
+      ]
+    },
+    {
+      "title": "Platform availability",
+      "paragraphs": [
+        "The project targets Android, iOS, web, Windows, macOS and Linux. Source feature availability does not establish store availability or validation on every device."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Local learning data",
+      "paragraphs": [
+        "Models and simulations are processed by the application. Preferences, active sessions, teaching sessions and simulation history can be saved in local application or browser storage."
+      ]
+    },
+    {
+      "title": "Files you choose",
+      "paragraphs": [
+        "Import reads selected documents. Export writes or downloads the selected content; exported copies remain wherever you save them."
+      ]
+    },
+    {
+      "title": "Network and external links",
+      "paragraphs": [
+        "Bundled examples do not require a network connection. Help, support and project links open external websites when selected; the web version also needs its host to deliver the application."
+      ]
+    },
+    {
+      "title": "Analytics and AI",
+      "paragraphs": [
+        "The inspected application code does not include a cloud AI provider or an integrated analytics or crash-reporting service."
+      ]
+    },
+    {
+      "title": "Removing local data",
+      "paragraphs": [
+        "Clear the relevant local application or browser site data to remove stored sessions and preferences. Manage exported files separately; clearing browser storage can remove unsaved local work."
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "label": "Source on GitHub",
+      "url": "https://github.com/ThalesMMS/Turing-Lab"
+    }
+  ]
+}

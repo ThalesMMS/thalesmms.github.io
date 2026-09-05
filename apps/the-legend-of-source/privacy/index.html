@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for The Legend of Source - Branches of Time.">
+  <title>The Legend of Source - Branches of Time privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/the-legend-of-source/">The Legend of Source - Branches of Time</a>
+<a href="/apps/the-legend-of-source/support/">Support</a>
+<a href="/apps/the-legend-of-source/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">The Legend of Source - Branches of Time / Privacy</p>
+<h1>The Legend of Source - Branches of Time privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How The Legend of Source - Branches of Time handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Repository access</h2>
+<p>Analysis reads Git history and optional text patches or blobs according to the selected profile. Derived application data is written to the per-user application-data directory rather than the analyzed repository.</p>
+</section>
+<section id="section-2">
+<h2>Local records</h2>
+<p>The application stores repository identities and paths, commit metadata, indexed text, embeddings, stories and conversations in SQLite. Author identities and source content can be part of that data.</p>
+</section>
+<section id="section-3">
+<h2>AI endpoints</h2>
+<p>Story generation and chat send selected repository evidence and questions to the configured chat service. Indexing sends document text to the configured embedding service. Default endpoints are loopback addresses, but settings and environment values can select remote services.</p>
+</section>
+<section id="section-4">
+<h2>Hosting integrations</h2>
+<p>When enabled, hosted activity retrieval contacts GitHub or GitLab. A configured token is used where available; GitHub can fall back to the locally authenticated gh CLI or anonymous public access.</p>
+</section>
+<section id="section-5">
+<h2>Credentials</h2>
+<p>Saved settings, including AI credentials and hosting tokens, are serialized into the local SQLite database. This is not an encrypted credential vault; protect application data and its backups accordingly.</p>
+</section>
+<section id="section-6">
+<h2>Removal and export</h2>
+<p>Removing a repository from the library removes its derived database records without deleting the Git working tree. Exported Markdown, application backups and data already sent to external services require separate handling.</p>
+</section>
+<section id="section-7">
+<h2>Diagnostics</h2>
+<p>The inspected source does not integrate an analytics or crash-reporting service. Connection errors and local diagnostics can still contain operational details, so review support material before sharing it.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about The Legend of Source - Branches of Time at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/the-legend-of-source/support/">The Legend of Source - Branches of Time support</a><br>
+<a href="/apps/the-legend-of-source/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

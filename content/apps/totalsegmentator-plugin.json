@@ -1,0 +1,103 @@
+{
+  "slug": "totalsegmentator-plugin",
+  "name": "TotalSegmentator OsiriX/Horos Plugin",
+  "category": "imaging",
+  "platform": "macOS · OsiriX and Horos",
+  "summary": "Run TotalSegmentator segmentation from an OsiriX or Horos imaging workflow.",
+  "intro": "Export an image series to a local segmentation workflow and import supported results back into the viewer. Configure the task, device and output location using the plugin's native controls.",
+  "features": [
+    {
+      "title": "Native workflow",
+      "body": "Launch segmentation from OsiriX or Horos and inspect supported ROI results."
+    },
+    {
+      "title": "Task controls",
+      "body": "Choose available tasks, device settings, fast mode and supported region subsets."
+    },
+    {
+      "title": "Environment setup",
+      "body": "Check a Python runtime and conversion tools or prepare a managed environment."
+    },
+    {
+      "title": "Run artifacts",
+      "body": "Keep segmentation outputs and provenance records for review."
+    }
+  ],
+  "repositories": [
+    {
+      "label": "TotalSegmentator-OsiriX-Horos-Plugin on GitHub",
+      "url": "https://github.com/ThalesMMS/TotalSegmentator-OsiriX-Horos-Plugin"
+    }
+  ],
+  "support": [
+    {
+      "title": "Prepare the host",
+      "paragraphs": [
+        "Install the plugin for a supported OsiriX or Horos environment and follow the repository’s build and installation instructions. Host compatibility and ROI behavior require validation in the actual viewer."
+      ]
+    },
+    {
+      "title": "Check dependencies",
+      "paragraphs": [
+        "Use environment checks to verify Python, TotalSegmentator and dcm2niix. Managed setup installs pinned Python dependencies and may download a conversion binary."
+      ]
+    },
+    {
+      "title": "Run a segmentation",
+      "paragraphs": [
+        "Select an appropriate series, choose a supported task and output directory, and review device and license requirements. Model weights may need downloading before the first run."
+      ]
+    },
+    {
+      "title": "Review results and failures",
+      "paragraphs": [
+        "Inspect the progress log and output/provenance records when a run fails. Verify imported segmentation alignment and completeness against the source images; successful processing is not clinical validation."
+      ]
+    },
+    {
+      "title": "Review usage reporting",
+      "paragraphs": [
+        "For the inspected Python library, usage reporting is controlled by send_usage_stats in config.json, normally in the .totalsegmentator directory under the user home. Set it to false to disable usage-report requests, and verify the directory and behavior for the runtime selected by the plugin. No native telemetry toggle was identified."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Local series processing",
+      "paragraphs": [
+        "The plugin exports source image data for a local Python segmentation process and imports supported outputs into the host viewer. Source data, derived masks and run artifacts can contain sensitive information."
+      ]
+    },
+    {
+      "title": "Dependencies and models",
+      "paragraphs": [
+        "Environment preparation uses package downloads and may retrieve dcm2niix from GitHub. TotalSegmentator downloads missing model weights; some tasks require a license and contact its backend."
+      ]
+    },
+    {
+      "title": "TotalSegmentator telemetry",
+      "paragraphs": [
+        "The bundled Python library creates configuration with send_usage_stats enabled by default. Its usage request contains an installation identifier, run counter, task/options, platform and Python/GPU information, and a license number when present. The inspected request does not include image pixels or patient tags and uses an HTTP backend endpoint.",
+        "In the inspected library, setting send_usage_stats to false in its config.json disables these usage-report requests. Check the configuration directory used by your installed runtime; this setting does not disable model downloads or license-related requests."
+      ]
+    },
+    {
+      "title": "Installed runtime matters",
+      "paragraphs": [
+        "The plugin can use an installed Python environment or prepare one with pinned packages. Network and telemetry behavior must be checked in that actual TotalSegmentator version and its configuration; the native plugin does not establish a blanket offline or no-collection guarantee."
+      ]
+    },
+    {
+      "title": "Stored settings and outputs",
+      "paragraphs": [
+        "Plugin preferences, including an optional license key, are stored in macOS user defaults in the inspected code. Output directories retain segmentation and provenance artifacts, and progress logs can contain local paths. The host viewer manages its own database and ROI persistence."
+      ]
+    },
+    {
+      "title": "Cleanup and deletion",
+      "paragraphs": [
+        "The plugin includes temporary-export cleanup and staging cleanup, but completed outputs and host records have separate lifecycles. Review remaining output directories, logs, backups and viewer records when removing a case; no universal automatic deletion period is specified."
+      ]
+    }
+  ]
+}

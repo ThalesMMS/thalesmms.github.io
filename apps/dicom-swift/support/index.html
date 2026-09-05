@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup guidance and troubleshooting for DICOM-Swift.">
+  <title>DICOM-Swift support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/dicom-swift/">DICOM-Swift</a>
+<a href="/apps/dicom-swift/support/" aria-current="page">Support</a>
+<a href="/apps/dicom-swift/privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">DICOM-Swift / Support</p>
+<h1>DICOM-Swift support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Add the package</h2>
+<p>Add the public DICOM-Swift repository as a Swift Package dependency and select DicomCore. The audited package requires Swift 6.2 and declares iOS, macOS, and visionOS 26.0 minimums; check the manifest for the release you use.</p>
+<p>The package is a library and CLI, not a standalone viewer. Start with the repository getting-started guide and synthetic or de-identified test files.</p>
+</section>
+<section id="section-2">
+<h2>Inspect and export</h2>
+<p>Build the dicomtool product and open its help to select the inspection or export command. Confirm the input path, output directory, and transfer syntax before processing a large series.</p>
+</section>
+<section id="section-3">
+<h2>A file does not decode</h2>
+<p>Report the transfer syntax UID, pixel format, selected codec, package version, and the error. Codec support varies by syntax and platform; some paths delegate to optional native backends. Metadata may remain readable when pixel decoding is unavailable.</p>
+</section>
+<section id="section-4">
+<h2>A network request fails</h2>
+<p>Verify the configured server URL or AE title, host, port, authentication, transport security, and supported operation. The calling application must supply the appropriate connection and authorization policy. Remove patient identifiers, server response bodies, and credentials before sharing diagnostics.</p>
+</section>
+<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/DICOM-Swift">Source on GitHub</a></div></section>
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about DICOM-Swift at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/dicom-swift/support/">DICOM-Swift support</a><br>
+<a href="/apps/dicom-swift/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

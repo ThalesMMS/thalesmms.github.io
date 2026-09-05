@@ -1,0 +1,96 @@
+{
+  "slug": "dicom-slides",
+  "name": "dicom-slides",
+  "category": "imaging",
+  "platform": "Web and PowerPoint",
+  "summary": "Interactive DICOM studies for browser presentations and PowerPoint slides.",
+  "intro": "Explore image stacks, triplanar reconstructions and 3D volumes within a presentation. Import local DICOM files or prepare static study packages for educational and research material.",
+  "features": [
+    {
+      "title": "Three viewing modes",
+      "body": "Navigate a 2D stack, synchronized MPR planes and WebGL2 volume rendering."
+    },
+    {
+      "title": "PowerPoint content add-in",
+      "body": "Import files, folders or ZIP archives and embed the converted study in the presentation."
+    },
+    {
+      "title": "Reusable browser viewer",
+      "body": "Embed the viewer as a web component or use the local demonstration."
+    },
+    {
+      "title": "Local conversion tools",
+      "body": "Prepare static study packages with geometry and display settings."
+    }
+  ],
+  "repositories": [
+    {
+      "label": "dicom-slides on GitHub",
+      "url": "https://github.com/ThalesMMS/dicom-slides"
+    }
+  ],
+  "support": [
+    {
+      "title": "Install in PowerPoint",
+      "paragraphs": [
+        "Download the manifest from the repository and use Upload My Add-in in a supported PowerPoint client. Organization policy may block custom add-ins; the repository includes desktop installation instructions."
+      ]
+    },
+    {
+      "title": "Import a study",
+      "paragraphs": [
+        "Choose Files, Folder or ZIP in the add-in settings. Supported formats vary by importer; the browser importer includes JPEG 2000 and JPEG-LS decoders."
+      ]
+    },
+    {
+      "title": "Run the browser version",
+      "paragraphs": [
+        "Open index.html locally. If local script restrictions prevent loading, use the included Python server."
+      ]
+    },
+    {
+      "title": "Display and sharing limits",
+      "paragraphs": [
+        "3D requires WebGL2 and sufficient memory. Check a saved presentation in the recipient’s supported PowerPoint client before presenting. This viewer is for demonstration, education and research, not diagnosis."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Local image processing",
+      "paragraphs": [
+        "The browser importer reads selected files and converts pixels locally. The inspected import path does not upload pixel data to a codec service."
+      ]
+    },
+    {
+      "title": "Presentation and browser storage",
+      "paragraphs": [
+        "Converted studies are embedded in PowerPoint custom XML and cached in IndexedDB. Sharing or cloud-saving the presentation can therefore transmit the study through Microsoft or another storage service."
+      ]
+    },
+    {
+      "title": "Network resources",
+      "paragraphs": [
+        "The hosted add-in loads its web assets and Microsoft Office.js. A configured remote study loads data from its specified address. Optional setup and example-data import tools download dependencies or datasets."
+      ]
+    },
+    {
+      "title": "Patient information",
+      "paragraphs": [
+        "The browser package omits selected direct identifiers such as patient name and ID, but retains other descriptive and imaging information. It does not remove burned-in text or certify anonymization; inspect metadata and pixels before sharing."
+      ]
+    },
+    {
+      "title": "Removal",
+      "paragraphs": [
+        "Remove study clears the slide’s saved study reference and schedules package/cache cleanup. Original DICOM files, exported static packages and other presentation copies remain under your control."
+      ]
+    },
+    {
+      "title": "Host boundaries",
+      "paragraphs": [
+        "PowerPoint, browser and cloud-storage handling is separate from the viewer. No dedicated analytics or crash-report upload integration was identified in the inspected first-party viewer and importer paths."
+      ]
+    }
+  ]
+}

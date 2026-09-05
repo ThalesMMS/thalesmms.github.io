@@ -1,0 +1,96 @@
+{
+  "slug": "macpgp",
+  "name": "MacPGP",
+  "category": "everyday",
+  "platform": "Apple Silicon Mac; macOS 26.2+",
+  "summary": "Manage OpenPGP keys and encrypt, decrypt, sign or verify files and messages.",
+  "intro": "MacPGP brings OpenPGP workflows to a native Mac interface. Finder and sharing extensions provide entry points for working with supported encrypted files.",
+  "features": [
+    {
+      "title": "Keys and recipients",
+      "body": "Generate, import, export and delete OpenPGP keys."
+    },
+    {
+      "title": "Files and messages",
+      "body": "Encrypt for recipients, decrypt supported content and work with signatures."
+    },
+    {
+      "title": "Finder integration",
+      "body": "Use context actions, encrypted-file thumbnails and metadata-only Quick Look previews."
+    },
+    {
+      "title": "Keyserver tools",
+      "body": "Search for, retrieve and publish public keys through configured keyservers."
+    }
+  ],
+  "support": [
+    {
+      "title": "Check compatibility",
+      "paragraphs": [
+        "Use an Apple Silicon Mac running macOS 26.2 or later. Intel Macs are not supported by the current bridge."
+      ]
+    },
+    {
+      "title": "Encryption and decryption",
+      "paragraphs": [
+        "Import the intended recipient public key and verify its fingerprint. Decryption requires the matching private key and any required passphrase."
+      ]
+    },
+    {
+      "title": "Enable extensions",
+      "paragraphs": [
+        "Enable the relevant Finder, Quick Look, thumbnail or sharing extension in macOS settings. Relaunch Finder if changes are not reflected."
+      ]
+    },
+    {
+      "title": "Keyserver failures",
+      "paragraphs": [
+        "Check the selected server and network connection. Insecure search or retrieval requires explicit opt-in; uploads require secure transport."
+      ]
+    },
+    {
+      "title": "Key deletion warnings",
+      "paragraphs": [
+        "If deletion reports cleanup failures, retry the indicated cleanup. Keep any required private-key backup before deleting a key."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Local keys and files",
+      "paragraphs": [
+        "Keyrings and preferences are stored locally. Encryption, decryption and signature operations process the selected content on the Mac; exported and decrypted files remain in their chosen locations."
+      ]
+    },
+    {
+      "title": "Passphrases",
+      "paragraphs": [
+        "Supported workflows can save passphrases in macOS Keychain. Temporary session clearing does not delete persisted Keychain items or secret keys."
+      ]
+    },
+    {
+      "title": "Keyservers",
+      "paragraphs": [
+        "Search and retrieval send queries or key identifiers to the chosen server. Publishing sends public-key material, which can include identity names and email addresses; deleting a local key does not retract published copies."
+      ]
+    },
+    {
+      "title": "Extensions",
+      "paragraphs": [
+        "A local shared container supplies public-key information to extensions. Quick Look displays metadata rather than decrypting file contents in the preview."
+      ]
+    },
+    {
+      "title": "Deletion and diagnostics",
+      "paragraphs": [
+        "Key deletion removes the key and attempts related metadata and passphrase cleanup, reporting failures. Files, backups and published key copies need separate handling. No integrated analytics or crash-reporting service was found in the inspected source."
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "label": "Source on GitHub",
+      "url": "https://github.com/ThalesMMS/MacPGP-app"
+    }
+  ]
+}

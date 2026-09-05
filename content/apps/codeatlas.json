@@ -1,0 +1,85 @@
+{
+  "slug": "codeatlas",
+  "name": "CodeAtlas",
+  "category": "development",
+  "platform": "macOS and Windows; local browser mode",
+  "summary": "Explore source code through repository indexing, explanations and architecture maps.",
+  "intro": "CodeAtlas combines a local code index with an embedded editor and optional AI explanations. Trace symbols, inspect evidence and build repository documentation from the selected workspace.",
+  "features": [
+    {
+      "title": "Repository index",
+      "body": "Scan source code and track changes with symbol and relationship indexing."
+    },
+    {
+      "title": "Explain and navigate",
+      "body": "Inspect symbol explanations, callers, callees and supporting evidence."
+    },
+    {
+      "title": "Maps and documentation",
+      "body": "Create query-driven code maps and repository documentation."
+    },
+    {
+      "title": "Workspace editor",
+      "body": "Read and edit files with document overlays and save controls."
+    }
+  ],
+  "support": [
+    {
+      "title": "Choose a workspace",
+      "paragraphs": [
+        "Open Settings, select the repository folder and apply it. Follow the restart prompt when changing the active workspace."
+      ]
+    },
+    {
+      "title": "Configure explanations",
+      "paragraphs": [
+        "Set an OpenAI-compatible endpoint and model in Settings. Generated explanations require a working provider; check connection errors and credentials if configuration is incomplete."
+      ]
+    },
+    {
+      "title": "Semantic tools",
+      "paragraphs": [
+        "Optional language servers improve semantic evidence. Missing servers reduce precision but do not replace the local parser index."
+      ]
+    },
+    {
+      "title": "Review generated output",
+      "paragraphs": [
+        "Follow citations to source and check inferred behavior before relying on explanations or proposed changes."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Local repository data",
+      "paragraphs": [
+        "CodeAtlas reads the selected workspace and stores a derived SQLite index, normally in a .codeatlas directory within that workspace. Saved editor changes modify the selected source files."
+      ]
+    },
+    {
+      "title": "AI requests",
+      "paragraphs": [
+        "Generated explanations and documentation send prompts and relevant source evidence to the configured chat endpoint. A remote provider receives that content; provider connection tests also make requests."
+      ]
+    },
+    {
+      "title": "Settings and credentials",
+      "paragraphs": [
+        "Settings are stored for the current operating-system user. Credentials entered through Settings use the system credential vault; credentials supplied through environment files remain governed by how those files are stored."
+      ]
+    },
+    {
+      "title": "Local interface",
+      "paragraphs": [
+        "The default server listens on the loopback interface and the desktop app uses an embedded web view. Changing the listen address changes who may be able to reach the service."
+      ]
+    },
+    {
+      "title": "Removal and diagnostics",
+      "paragraphs": [
+        "Quit the app before removing a derived index or local settings. Remove saved credentials through the configured credential controls and manage source files and exports separately. No integrated analytics or crash-reporting service was found in the inspected source."
+      ]
+    }
+  ],
+  "repositories": []
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for MTK — Metal Toolkit.">
+  <title>MTK — Metal Toolkit privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/mtk/">MTK — Metal Toolkit</a>
+<a href="/apps/mtk/support/">Support</a>
+<a href="/apps/mtk/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">MTK — Metal Toolkit / Privacy</p>
+<h1>MTK — Metal Toolkit privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How MTK — Metal Toolkit handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Scope of the toolkit</h2>
+<p>MTK is a library embedded in a host application. This policy covers its rendering core, not every application that uses it. The host application owns DICOM parsing, access permissions, user accounts, and network integrations.</p>
+</section>
+<section id="section-2">
+<h2>Data processed on the device</h2>
+<p>MTK receives decoded voxel buffers, dimensions, spatial information, transfer functions, and related rendering inputs from its caller. It creates CPU and GPU resources on the device to render those inputs.</p>
+<p>The audited rendering core has no built-in service that uploads volumes to the developer. This does not describe the network behavior of a host application or its other dependencies.</p>
+</section>
+<section id="section-3">
+<h2>Local logs and settings</h2>
+<p>The toolkit writes diagnostic messages to the console and local log files. Additional high-frequency performance logging can be enabled by the host. Log messages and labels supplied by an integration may reveal details about its data or workflow.</p>
+<p>Metal availability results can be saved in application preferences when the caller supplies a preferences store. The toolkit does not provide a separate user account or credential store.</p>
+</section>
+<section id="section-4">
+<h2>Snapshots and sharing</h2>
+<p>Explicit snapshot export writes rendered PNG files to a caller-selected destination. An image can contain sensitive anatomy or information added by the host. Rendering or exporting an image does not anonymize its content.</p>
+</section>
+<section id="section-5">
+<h2>Retention and host responsibilities</h2>
+<p>The host controls the lifetime of volume buffers and caches, saved snapshots, application preferences, and local logs. It also controls backup or synchronization of those files. Use the host application and filesystem controls to remove persistent outputs; the rendering package does not offer an end-user deletion screen.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about MTK — Metal Toolkit at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/mtk/support/">MTK — Metal Toolkit support</a><br>
+<a href="/apps/mtk/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

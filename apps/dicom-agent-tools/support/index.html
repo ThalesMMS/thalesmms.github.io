@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup guidance and troubleshooting for DICOM tools for AI agents.">
+  <title>DICOM tools for AI agents support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/dicom-agent-tools/">DICOM tools for AI agents</a>
+<a href="/apps/dicom-agent-tools/support/" aria-current="page">Support</a>
+<a href="/apps/dicom-agent-tools/privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">DICOM tools for AI agents / Support</p>
+<h1>DICOM tools for AI agents support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Choose the component</h2>
+<p>Use dicom-skill for shell workflows, dicom-plugin for its integrated tools, or dicom-viewer-mcp-app for the standalone viewer. The separate MCP viewer requires Node.js, a build, and a compatible MCP host; follow its public repository instructions. Component capabilities differ.</p>
+</section>
+<section id="section-2">
+<h2>Configure a PACS</h2>
+<p>Supply authorized endpoint, AE title and port information. In the integrated plugin, DICOM_MCP_CONFIG selects the shared node configuration. Verify connectivity before retrieving or sending data.</p>
+</section>
+<section id="section-3">
+<h2>Open images</h2>
+<p>The separate viewer reads a local dicom folder and supports uncompressed images. The integrated plugin additionally supports preparation workflows and local HTML output for hosts without inline MCP Apps.</p>
+</section>
+<section id="section-4">
+<h2>Troubleshoot transfers</h2>
+<p>Check endpoint reachability, AE permissions, transfer syntax and destination receiver configuration. Temporary Orthanc workflows require Docker and create local storage.</p>
+</section>
+<section id="section-5">
+<h2>Review outputs</h2>
+<p>Check anonymized files and rendered previews before sending or sharing. These tools do not establish diagnostic suitability or certify de-identification.</p>
+</section>
+<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/dicom-skill">dicom-skill on GitHub</a>
+<a href="https://github.com/ThalesMMS/dicom-viewer-mcp-app">dicom-viewer-mcp-app on GitHub</a></div></section>
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about DICOM tools for AI agents at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/dicom-agent-tools/support/">DICOM tools for AI agents support</a><br>
+<a href="/apps/dicom-agent-tools/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

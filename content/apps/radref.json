@@ -1,0 +1,90 @@
+{
+  "slug": "radref",
+  "name": "RadRef",
+  "category": "imaging",
+  "platform": "iOS, Android and web",
+  "summary": "Consult radiology reference tools and locally calculated classifications.",
+  "intro": "RadRef brings pulmonary nodule, renal cyst, liver, fracture and trauma reference workflows into one interface. It is an educational reference and does not replace image review, clinical judgment or original publications.",
+  "features": [
+    {
+      "title": "Five reference areas",
+      "body": "Navigate pulmonary nodules, cystic renal lesions, liver, fractures and trauma."
+    },
+    {
+      "title": "Structured inputs",
+      "body": "Explore deterministic calculators and classifications with applicability checks."
+    },
+    {
+      "title": "Reports and references",
+      "body": "Copy or share supported report text and open original reference links."
+    },
+    {
+      "title": "English and Portuguese",
+      "body": "Switch language and save favorite tools locally."
+    }
+  ],
+  "support": [
+    {
+      "title": "Choose the right tool",
+      "paragraphs": [
+        "Select the relevant module and read its applicability notes before entering measurements or classifications."
+      ]
+    },
+    {
+      "title": "Check the result",
+      "paragraphs": [
+        "Confirm units, population and imaging context. Consult the cited publication and local practice before using a result in care."
+      ]
+    },
+    {
+      "title": "Language and favorites",
+      "paragraphs": [
+        "Use the PT/EN selector and favorite controls. These preferences are stored on the current device or browser."
+      ]
+    },
+    {
+      "title": "Sharing and reference links",
+      "paragraphs": [
+        "Sharing sends the selected text to the operating system share sheet. Reference links need a browser and network access."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Clinical inputs",
+      "paragraphs": [
+        "Calculations run locally. The inspected application does not implement a patient registry, clinical database or user account system; avoid adding identifying information to text you share."
+      ]
+    },
+    {
+      "title": "Stored preferences",
+      "paragraphs": [
+        "Language selection and favorite tool identifiers are stored locally. Clinical form inputs are handled in the current interface rather than saved as patient records."
+      ]
+    },
+    {
+      "title": "Sharing",
+      "paragraphs": [
+        "Copy and share actions place generated report text on the clipboard or pass it to the application you choose. That destination controls its own handling of the text."
+      ]
+    },
+    {
+      "title": "External references",
+      "paragraphs": [
+        "Opening a publication or professional-society link contacts its website. Calculations themselves do not call a backend or AI provider."
+      ]
+    },
+    {
+      "title": "Analytics and deletion",
+      "paragraphs": [
+        "No integrated analytics or crash-reporting service was found in the inspected application source. Clear application or browser site data to reset stored preferences; remove copied or shared material separately."
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "label": "Source on GitHub",
+      "url": "https://github.com/ThalesMMS/RadRef"
+    }
+  ]
+}

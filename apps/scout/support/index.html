@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup guidance and troubleshooting for Scout.">
+  <title>Scout support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/scout/">Scout</a>
+<a href="/apps/scout/support/" aria-current="page">Support</a>
+<a href="/apps/scout/privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">Scout / Support</p>
+<h1>Scout support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Prepare your workspace</h2>
+<p>Select a report workspace for saved documents and configure corpus sources separately. The workspace, phrase index and structured-report definitions serve different purposes.</p>
+<p>Save a new report to a file or configure its workspace before relying on autosave. Watch the save status for errors.</p>
+</section>
+<section id="section-2">
+<h2>Set up completion</h2>
+<p>Import your shortcuts and corpus, then build the local phrase index. Configure embeddings separately when you want semantic retrieval.</p>
+<p>AI completion can run after an idle pause following a word boundary when enabled and no local suggestion is active. Disable its toggle if you only want local suggestions.</p>
+</section>
+<section id="section-3">
+<h2>Choose an AI provider</h2>
+<p>Use a configured OpenAI-compatible service or the Codex account flow. Check readiness and tool support before using an agent workflow.</p>
+<p>The language-model provider does not replace the embeddings endpoint. Missing or failing embeddings need separate attention.</p>
+</section>
+<section id="section-4">
+<h2>Troubleshoot dictation</h2>
+<p>For local dictation, configure a valid Whisper streaming executable and model and grant microphone access. The installer downloads required software and model files.</p>
+<p>For remote dictation, check the speech endpoint and microphone permission. Refinement uses the selected language model even when speech recognition itself is local; turn refinement off if you want to avoid that text transfer.</p>
+</section>
+<section id="section-5">
+<h2>Review generated text</h2>
+<p>Review every AI completion, dictated passage and structured-report proposal before using it. Scout is a clinical prototype and does not validate clinical findings or establish diagnostic correctness.</p>
+</section>
+
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about Scout at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/scout/support/">Scout support</a><br>
+<a href="/apps/scout/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

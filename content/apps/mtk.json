@@ -1,0 +1,89 @@
+{
+  "slug": "mtk",
+  "name": "MTK — Metal Toolkit",
+  "category": "development",
+  "platform": "Swift package · Metal",
+  "summary": "Render medical volumes, multiplanar views, and projections using Metal.",
+  "intro": "MTK is a rendering core for developers building Apple imaging applications. It accepts decoded volumes and produces GPU textures that your app can display or explicitly export.",
+  "features": [
+    {
+      "title": "Render on the GPU",
+      "body": "Build volume rendering, multiplanar reconstruction, and projection views from shared Metal volume resources."
+    },
+    {
+      "title": "Shape the display",
+      "body": "Control transfer functions, window settings, and volume layers for the visualization your application needs."
+    },
+    {
+      "title": "Bring your own application",
+      "body": "The core package provides rendering components and synthetic fixtures. Your application supplies DICOM decoding, interface controls, and its data policies."
+    }
+  ],
+  "support": [
+    {
+      "title": "Integrate the rendering core",
+      "paragraphs": [
+        "Add the public MTK repository with Swift Package Manager and select MTKCore. MTKFixtures is available for synthetic test volumes. The audited package declares Swift tools 6.0 and iOS, macOS, and visionOS 26.0 minimums.",
+        "MTK does not include a ready-made viewer or DICOM parser. Supply a decoded volume with valid dimensions, spacing, orientation, and pixel type. See the public repository for integration documentation."
+      ]
+    },
+    {
+      "title": "Check Metal support",
+      "paragraphs": [
+        "Use a device and runtime with the required Metal capabilities. If availability checks fail, inspect the reported capability before attempting rendering. Keep the device and OS information in a support report."
+      ]
+    },
+    {
+      "title": "A volume looks wrong",
+      "paragraphs": [
+        "Check signed versus unsigned pixels, dimensions, voxel spacing, orientation, rescale handling, and the selected transfer function. Reproduce with a synthetic fixture to separate data-loading problems from rendering."
+      ]
+    },
+    {
+      "title": "Inspect rendering or export failures",
+      "paragraphs": [
+        "Include the MTK version, device, OS, pixel format, and a minimal reproduction using synthetic data. Review local rendering logs before sharing them. Snapshot export writes to a destination chosen by your application and requires a supported texture format."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Scope of the toolkit",
+      "paragraphs": [
+        "MTK is a library embedded in a host application. This policy covers its rendering core, not every application that uses it. The host application owns DICOM parsing, access permissions, user accounts, and network integrations."
+      ]
+    },
+    {
+      "title": "Data processed on the device",
+      "paragraphs": [
+        "MTK receives decoded voxel buffers, dimensions, spatial information, transfer functions, and related rendering inputs from its caller. It creates CPU and GPU resources on the device to render those inputs.",
+        "The audited rendering core has no built-in service that uploads volumes to the developer. This does not describe the network behavior of a host application or its other dependencies."
+      ]
+    },
+    {
+      "title": "Local logs and settings",
+      "paragraphs": [
+        "The toolkit writes diagnostic messages to the console and local log files. Additional high-frequency performance logging can be enabled by the host. Log messages and labels supplied by an integration may reveal details about its data or workflow.",
+        "Metal availability results can be saved in application preferences when the caller supplies a preferences store. The toolkit does not provide a separate user account or credential store."
+      ]
+    },
+    {
+      "title": "Snapshots and sharing",
+      "paragraphs": [
+        "Explicit snapshot export writes rendered PNG files to a caller-selected destination. An image can contain sensitive anatomy or information added by the host. Rendering or exporting an image does not anonymize its content."
+      ]
+    },
+    {
+      "title": "Retention and host responsibilities",
+      "paragraphs": [
+        "The host controls the lifetime of volume buffers and caches, saved snapshots, application preferences, and local logs. It also controls backup or synchronization of those files. Use the host application and filesystem controls to remove persistent outputs; the rendering package does not offer an end-user deletion screen."
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "label": "Source on GitHub",
+      "url": "https://github.com/ThalesMMS/MTK"
+    }
+  ]
+}

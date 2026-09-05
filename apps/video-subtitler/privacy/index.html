@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for Video Subtitler.">
+  <title>Video Subtitler privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/video-subtitler/">Video Subtitler</a>
+<a href="/apps/video-subtitler/support/">Support</a>
+<a href="/apps/video-subtitler/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">Video Subtitler / Privacy</p>
+<h1>Video Subtitler privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How Video Subtitler handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Local project storage</h2>
+<p>The app stores imported media, project metadata, subtitles, translations, chat, indexes, recovery copies and generated exports on the device. Temporary working files may exist during import, transcription and export.</p>
+<p>Non-secret preferences are kept separately from projects. Deleting a project does not reset preferences or remove model downloads.</p>
+</section>
+<section id="section-2">
+<h2>Local processing and downloads</h2>
+<p>The default generation provider is Local Qwen and the default retrieval method is local TF-IDF. Whisper transcription, supported local language models, dubbing and export process content on the device when the required assets and hardware are available.</p>
+<p>Whisper, Qwen and OmniVoice assets can be downloaded from model hosting services such as Hugging Face. Apple-managed models or voices may require system downloads. These preparation requests contact external services even when your media processing is local.</p>
+</section>
+<section id="section-3">
+<h2>Optional remote text operations</h2>
+<p>Selecting a remote generation provider sends operation-specific text directly to the chosen endpoint. Translation can include subtitle cues, target language and instructions; chat can include the question, recent completed turns and selected transcript excerpts; summaries can include transcript groups and intermediate summaries.</p>
+<p>Remote embeddings are a separate option that sends searchable transcript text during index creation and query text during retrieval. These text operations do not upload the raw source video or audio.</p>
+</section>
+<section id="section-4">
+<h2>Credentials and connections</h2>
+<p>The optional remote API key is stored in Apple Keychain separately from the project. HTTPS requests can include it as a bearer credential. Public HTTP endpoints are blocked, and local HTTP requires separate data and credential permissions.</p>
+<p>The remote HTTP client uses an ephemeral session without its own URL cache or cookie store. This does not control logging or retention at the destination.</p>
+</section>
+<section id="section-5">
+<h2>Deletion, caches and backup</h2>
+<p>Delete project removes that project’s local directory. Model caches, preferences and Keychain credentials have separate lifecycles. A Keychain item may survive app removal, and saving an empty API key does not prove the Keychain record itself was deleted.</p>
+<p>The operating system controls device backup and restoration. A model cache is not a project backup, and deleting local data does not remove exports, backups or copies held by a remote endpoint.</p>
+</section>
+<section id="section-6">
+<h2>Diagnostics and external services</h2>
+<p>The audited app does not configure advertising, third-party analytics or a developer-operated project-upload backend. Local job and error diagnostics support troubleshooting.</p>
+<p>A chosen AI endpoint and model-download service can receive connection information and the requests you send to it. Their operators control their own logging, retention and deletion; no uniform retention period is promised here.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about Video Subtitler at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/video-subtitler/support/">Video Subtitler support</a><br>
+<a href="/apps/video-subtitler/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup guidance and troubleshooting for Isis DICOM Viewer.">
+  <title>Isis DICOM Viewer support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/isis-dicom-viewer/">Isis DICOM Viewer</a>
+<a href="/apps/isis-dicom-viewer/support/" aria-current="page">Support</a>
+<a href="/apps/isis-dicom-viewer/privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">Isis DICOM Viewer / Support</p>
+<h1>Isis DICOM Viewer support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Start with an import</h2>
+<p>Choose a DICOM file or supported archive through the app’s import flow. Check the activity result if a study is incomplete or cannot be decoded.</p>
+</section>
+<section id="section-2">
+<h2>Connect an archive</h2>
+<p>Confirm the host, port, AE titles or DICOMweb base address with the archive administrator. Check authentication and TLS settings, then test the connection before retrieving studies.</p>
+<p>Receiving studies also requires the listener configuration and network access. On Android, the clear-text listener waits for acknowledgement of its access warning. Configure scheduled query/retrieve rules only for archives you intend the app to contact automatically.</p>
+</section>
+<section id="section-3">
+<h2>Check the viewing mode</h2>
+<p>MPR and 3D depend on suitable image geometry, the included rendering backend and device resources. A missing mode or failed reconstruction does not establish that the source study is invalid.</p>
+<p>These tools do not establish clinical certification or automatic diagnostic correctness. Review measurements and exported results for your intended use.</p>
+</section>
+<section id="section-4">
+<h2>Manage storage and sharing</h2>
+<p>Deleting a local study and clearing derived data serve different purposes. Cache cleanup does not remove an archive’s original study.</p>
+<p>Review patient information, image annotations and burned-in text before exporting or sharing. A hidden overlay is not proof that a DICOM file or image is anonymized.</p>
+</section>
+
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about Isis DICOM Viewer at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/isis-dicom-viewer/support/">Isis DICOM Viewer support</a><br>
+<a href="/apps/isis-dicom-viewer/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

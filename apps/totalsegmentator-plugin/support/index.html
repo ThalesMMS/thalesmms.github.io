@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup guidance and troubleshooting for TotalSegmentator OsiriX/Horos Plugin.">
+  <title>TotalSegmentator OsiriX/Horos Plugin support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/totalsegmentator-plugin/">TotalSegmentator OsiriX/Horos Plugin</a>
+<a href="/apps/totalsegmentator-plugin/support/" aria-current="page">Support</a>
+<a href="/apps/totalsegmentator-plugin/privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">TotalSegmentator OsiriX/Horos Plugin / Support</p>
+<h1>TotalSegmentator OsiriX/Horos Plugin support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Prepare the host</h2>
+<p>Install the plugin for a supported OsiriX or Horos environment and follow the repository’s build and installation instructions. Host compatibility and ROI behavior require validation in the actual viewer.</p>
+</section>
+<section id="section-2">
+<h2>Check dependencies</h2>
+<p>Use environment checks to verify Python, TotalSegmentator and dcm2niix. Managed setup installs pinned Python dependencies and may download a conversion binary.</p>
+</section>
+<section id="section-3">
+<h2>Run a segmentation</h2>
+<p>Select an appropriate series, choose a supported task and output directory, and review device and license requirements. Model weights may need downloading before the first run.</p>
+</section>
+<section id="section-4">
+<h2>Review results and failures</h2>
+<p>Inspect the progress log and output/provenance records when a run fails. Verify imported segmentation alignment and completeness against the source images; successful processing is not clinical validation.</p>
+</section>
+<section id="section-5">
+<h2>Review usage reporting</h2>
+<p>For the inspected Python library, usage reporting is controlled by send_usage_stats in config.json, normally in the .totalsegmentator directory under the user home. Set it to false to disable usage-report requests, and verify the directory and behavior for the runtime selected by the plugin. No native telemetry toggle was identified.</p>
+</section>
+<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/TotalSegmentator-OsiriX-Horos-Plugin">TotalSegmentator-OsiriX-Horos-Plugin on GitHub</a></div></section>
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about TotalSegmentator OsiriX/Horos Plugin at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/totalsegmentator-plugin/support/">TotalSegmentator OsiriX/Horos Plugin support</a><br>
+<a href="/apps/totalsegmentator-plugin/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

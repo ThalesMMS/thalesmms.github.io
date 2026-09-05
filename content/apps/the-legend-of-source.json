@@ -1,0 +1,103 @@
+{
+  "slug": "the-legend-of-source",
+  "name": "The Legend of Source - Branches of Time",
+  "category": "development",
+  "platform": "macOS and Windows",
+  "summary": "Explore Git history through timelines, development stories and evidence-linked questions.",
+  "intro": "Turn an existing Git working tree into a navigable development history. Select the depth and date range of analysis, then connect commits and optional hosted project activity to stories and answers.",
+  "features": [
+    {
+      "title": "History exploration",
+      "body": "Browse commits, refs, changed paths and a synchronized commit graph."
+    },
+    {
+      "title": "Analysis depth",
+      "body": "Choose structure, semantic diffs or deep code according to the evidence needed."
+    },
+    {
+      "title": "Stories and chat",
+      "body": "Generate development narratives and ask repository questions with citations."
+    },
+    {
+      "title": "Hosted context and export",
+      "body": "Optionally include merged pull requests and closed issues, and export stories as Markdown."
+    }
+  ],
+  "support": [
+    {
+      "title": "Add a repository",
+      "paragraphs": [
+        "Choose a local Git working tree with Add repository, then select an analysis profile and date range."
+      ]
+    },
+    {
+      "title": "Configure AI",
+      "paragraphs": [
+        "Set the chat and embedding endpoints, models and credentials in Settings. Test connections and verify embedding dimensions when indexing fails."
+      ]
+    },
+    {
+      "title": "Hosted project activity",
+      "paragraphs": [
+        "Enable PRs & issues to fetch supported GitHub or GitLab activity. Configure a token when required by repository access or rate limits."
+      ]
+    },
+    {
+      "title": "Review stories",
+      "paragraphs": [
+        "Use citations to check the underlying commits and evidence. A factual fallback story can be produced when an AI request fails."
+      ]
+    },
+    {
+      "title": "Browser preview",
+      "paragraphs": [
+        "The browser preview uses demonstration data. Real Git analysis, persistence and AI requests require the desktop application."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Repository access",
+      "paragraphs": [
+        "Analysis reads Git history and optional text patches or blobs according to the selected profile. Derived application data is written to the per-user application-data directory rather than the analyzed repository."
+      ]
+    },
+    {
+      "title": "Local records",
+      "paragraphs": [
+        "The application stores repository identities and paths, commit metadata, indexed text, embeddings, stories and conversations in SQLite. Author identities and source content can be part of that data."
+      ]
+    },
+    {
+      "title": "AI endpoints",
+      "paragraphs": [
+        "Story generation and chat send selected repository evidence and questions to the configured chat service. Indexing sends document text to the configured embedding service. Default endpoints are loopback addresses, but settings and environment values can select remote services."
+      ]
+    },
+    {
+      "title": "Hosting integrations",
+      "paragraphs": [
+        "When enabled, hosted activity retrieval contacts GitHub or GitLab. A configured token is used where available; GitHub can fall back to the locally authenticated gh CLI or anonymous public access."
+      ]
+    },
+    {
+      "title": "Credentials",
+      "paragraphs": [
+        "Saved settings, including AI credentials and hosting tokens, are serialized into the local SQLite database. This is not an encrypted credential vault; protect application data and its backups accordingly."
+      ]
+    },
+    {
+      "title": "Removal and export",
+      "paragraphs": [
+        "Removing a repository from the library removes its derived database records without deleting the Git working tree. Exported Markdown, application backups and data already sent to external services require separate handling."
+      ]
+    },
+    {
+      "title": "Diagnostics",
+      "paragraphs": [
+        "The inspected source does not integrate an analytics or crash-reporting service. Connection errors and local diagnostics can still contain operational details, so review support material before sharing it."
+      ]
+    }
+  ],
+  "repositories": []
+}

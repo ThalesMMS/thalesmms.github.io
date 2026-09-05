@@ -1,16 +1,45 @@
-# Local site validation
+# Site validation
 
-Validated September 5, 2026 before publication.
+Validated September 5, 2026 for the directory expansion.
 
-- All five HTML pages parsed with balanced tags, one h1, English language, viewport metadata, unique IDs, image alt attributes, and resolvable internal links and fragments.
-- Local HTTP server returned 200 for all five routes, shared CSS, and the icon.
-- In-app browser rendered the home and marketing pages at desktop width. All five pages fit a 320px viewport without horizontal overflow and loaded their images.
-- Keyboard Tab reached the visible Skip to content link with a solid focus outline. Semantic navigation, headings, main, and footer were inspected. This was a basic accessibility review, not a full screen-reader audit.
-- Main text/link color pairs exceeded 4.5:1 contrast. The lowest tested pair was muted body text on the page background at 6.13:1.
-- No script, form, or iframe elements. All styles and images are local. Page content and navigation require no JavaScript.
-- Credential-pattern scan of repository text found no private-key blocks, GitHub tokens, OpenAI-style keys, or AWS access key IDs. Authored content was reviewed and contains no actual credentials or patient records.
-- The icon matches the Safari extension's icons/icon512.png byte for byte.
-- Product statements were checked against the Safari extension README, manifest, background request code, shared context limits, and trusted IndexedDB storage implementation.
-- Git diff whitespace validation passed.
+## Coverage
 
-GitHub Pages settings and App Store Connect were not changed. Public HTTPS route availability remains to be checked after the owner configures Pages. A plain Python server serves /404.html directly; GitHub Pages supplies the custom fallback behavior for unknown routes.
+- 15 new project sections, each with presentation, support, and privacy pages.
+- 50 HTML pages total, including the three existing AutoComp pages, root, and 404.
+- Source review covered the requested projects, both Apple and Android Isis implementations, and each component of the DICOM agent suite. Product source checkouts were read-only.
+- Separate factual and site-structure reviews found no actionable defects. AutoComp's product copy was preserved from its earlier review.
+
+## Automated checks
+
+`python3 tools/check_site.py` passed for all 50 pages and 660 links. It checks:
+
+- Required routes, balanced tags, unique IDs, one title, h1 and main landmark per page.
+- English language, viewport metadata, labelled navigation, heading order, image attributes, and skip-link targets.
+- Internal files and fragments, project-specific active navigation, and support/privacy contact links.
+- Local runtime assets, no script/form/iframe elements or inline event handlers.
+- A public-source URL allowlist, empty repository lists for closed projects, no local filesystem paths in public copy, and credential patterns.
+
+Regenerating the site produced identical HTML hashes. All three AutoComp main content bodies match the previous committed version exactly. `git diff --check` passed.
+
+## Browser checks
+
+- All 50 pages were loaded at 320, 768, and 1280 CSS pixels: 150 layout checks, no horizontal overflow.
+- Images loaded; each page had one h1 and one main landmark. The tablet/desktop checks found no page scripts.
+- Activating Skip to content with the keyboard moved focus to main.
+- Visual review covered the directory, category cards, and a long project name on a narrow privacy page.
+- Shared text colors retain contrast ratios above 4.5:1; the lowest reviewed text pair is muted text on the page background at 6.13:1.
+
+## Content and privacy boundaries
+
+- Code-grounded copy distinguishes local data, external providers, settings/credentials, exports, and deletion limits.
+- Libraries describe their own behavior and the responsibilities of host applications.
+- TotalSegmentator copy includes Python usage reporting and the selected-runtime caveat.
+- No private source links, source excerpts, user media, patient records, or DICOM sample assets were added. The existing AutoComp icon is retained.
+- The private dicom-plugin repository link is omitted with the owner's confirmation; the suite still describes all three components.
+- Support uses Thales Matheus M Santos and thalesmmsradio@gmail.com throughout.
+
+## Limits
+
+These checks verify static pages and source-derived descriptions. They are not clinical validation, an exhaustive security audit, screen-reader certification, or runtime validation of every application and external service. Third-party retention is not controlled by this site.
+
+No GitHub Pages settings or App Store Connect settings were changed. Local /404.html can be checked directly; custom handling of an unknown path is provided by GitHub Pages when deployed.

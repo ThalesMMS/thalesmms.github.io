@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data handling, storage, and service integrations for Scout.">
+  <title>Scout privacy policy | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/scout/">Scout</a>
+<a href="/apps/scout/support/">Support</a>
+<a href="/apps/scout/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">Scout / Privacy</p>
+<h1>Scout privacy policy</h1>
+<p class="label">Effective September 5, 2026</p>
+<p class="lead">How Scout handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Documents and local indexes</h2>
+<p>Saved reports remain in the selected file workspace. Corpus chunks and embeddings are persisted in a local SQLite index, while structured-report definitions and settings are stored separately. Indexing can create another local copy of source text.</p>
+<p>Deleting an original corpus file or a saved report does not automatically prove that its indexed content, exports or backups have been removed. Manage each stored copy separately.</p>
+</section>
+<section id="section-2">
+<h2>Optional language-model traffic</h2>
+<p>The default language-model and embedding endpoints are empty. Once configured, AI completion, chat, structured-report assistance and dictation refinement can transmit document passages, instructions, conversation context and retrieved corpus excerpts to the selected provider.</p>
+<p>Enabled automatic completion can make a request after a typing pause. Refinement is enabled by default in settings, but requires a usable language-model provider. Review these controls before entering sensitive text.</p>
+</section>
+<section id="section-3">
+<h2>Embeddings and retrieval</h2>
+<p>A configured embeddings service receives text chunks during indexing and query text during semantic search. It may run locally or on another computer. Calling a service local does not establish how that service stores requests or whether it contacts other providers.</p>
+</section>
+<section id="section-4">
+<h2>Microphone and downloads</h2>
+<p>Local Whisper processes microphone audio through the configured local executable. Its installer contacts GitHub and Hugging Face to obtain software and model files.</p>
+<p>Remote dictation streams microphone audio to the configured WebSocket service and includes the configured API key in its session request. Use a trusted encrypted endpoint. Optional refinement sends transcript text to the language-model provider separately.</p>
+</section>
+<section id="section-5">
+<h2>Credentials and account access</h2>
+<p>API keys are currently saved as plaintext in the local settings file. Protect that file and any backups and do not include it in support attachments.</p>
+<p>The optional Codex flow opens an OpenAI sign-in page and stores or uses an authentication JSON file. It contacts OpenAI for authentication and model requests. Signing out removes Codex authentication fields from the selected file and can affect another application sharing that file.</p>
+</section>
+<section id="section-6">
+<h2>Diagnostics and deletion boundaries</h2>
+<p>The audited application code does not configure a third-party advertising, analytics or crash-reporting service. Local errors and status information can still be present in application output.</p>
+<p>Removing local files, indexes or credentials cannot delete information already sent to an AI or speech provider. Provider retention and deletion depend on the selected service, and exported files or system backups must be managed separately.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about Scout at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/scout/support/">Scout support</a><br>
+<a href="/apps/scout/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

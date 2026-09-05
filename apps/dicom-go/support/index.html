@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup guidance and troubleshooting for dicom-go.">
+  <title>dicom-go support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/dicom-go/">dicom-go</a>
+<a href="/apps/dicom-go/support/" aria-current="page">Support</a>
+<a href="/apps/dicom-go/privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">dicom-go / Support</p>
+<h1>dicom-go support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Install and choose a tool</h2>
+<p>Use the public repository and the Go version required by its go.mod file, currently Go 1.22 for the root module. Optional nested codec modules can have additional runtime or build requirements.</p>
+<p>Start with dcmdump for local inspection. Read each command&#x27;s help before using a sender or receiver, because those tools operate on DICOM services and files.</p>
+</section>
+<section id="section-2">
+<h2>Configure a connection</h2>
+<p>Check AE titles, the destination address and port, negotiated transfer syntaxes, and the target service permissions. Select transport security deliberately. The basic command-line examples are not a complete secured PACS deployment.</p>
+</section>
+<section id="section-3">
+<h2>Receive files deliberately</h2>
+<p>storescp writes received Part 10 files to its output directory. Its default listener is 127.0.0.1:11112 and its default output directory is the working directory. Set an explicit destination and review access controls before using a different listening address.</p>
+</section>
+<section id="section-4">
+<h2>A codec or parser fails</h2>
+<p>Include the transfer syntax UID, selected module and codec, Go version, command, and sanitized error. Optional JPEG-LS, JPEG 2000, HTJ2K, or JPEG XL paths require the relevant registered adapter. A readable dataset does not imply every pixel format can be rendered.</p>
+</section>
+<section id="section-5">
+<h2>Prepare a reproducible issue</h2>
+<p>Use a synthetic or reviewed de-identified fixture. DICOM dumps and query output can contain patient information, and packet captures can contain complete datasets. Remove such content and credentials before attaching diagnostics.</p>
+</section>
+<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/dicom-go">Source on GitHub</a></div></section>
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about dicom-go at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/dicom-go/support/">dicom-go support</a><br>
+<a href="/apps/dicom-go/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>

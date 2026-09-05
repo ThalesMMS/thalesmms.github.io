@@ -1,0 +1,104 @@
+{
+  "slug": "dicom-go",
+  "name": "dicom-go",
+  "category": "development",
+  "platform": "Go library · Command-line tools",
+  "summary": "Read, write, inspect, and exchange DICOM datasets with Go.",
+  "intro": "dicom-go combines reusable DICOM packages with command-line tools for file inspection and network workflows. Build applications that process metadata and pixels, convert DICOM JSON, or exchange studies with configured services.",
+  "features": [
+    {
+      "title": "Work with files and pixels",
+      "body": "Read and write DICOM datasets, extract pixel data, and convert between datasets and DICOM JSON."
+    },
+    {
+      "title": "Connect imaging systems",
+      "body": "Use the supported DIMSE, DICOMweb, and JPIP interfaces in a host-controlled networking workflow."
+    },
+    {
+      "title": "Build focused tools",
+      "body": "Combine command-line inspection, storage, rendering, and de-identification helpers. Codec and rendering support depends on the chosen modules and data format."
+    }
+  ],
+  "support": [
+    {
+      "title": "Install and choose a tool",
+      "paragraphs": [
+        "Use the public repository and the Go version required by its go.mod file, currently Go 1.22 for the root module. Optional nested codec modules can have additional runtime or build requirements.",
+        "Start with dcmdump for local inspection. Read each command's help before using a sender or receiver, because those tools operate on DICOM services and files."
+      ]
+    },
+    {
+      "title": "Configure a connection",
+      "paragraphs": [
+        "Check AE titles, the destination address and port, negotiated transfer syntaxes, and the target service permissions. Select transport security deliberately. The basic command-line examples are not a complete secured PACS deployment."
+      ]
+    },
+    {
+      "title": "Receive files deliberately",
+      "paragraphs": [
+        "storescp writes received Part 10 files to its output directory. Its default listener is 127.0.0.1:11112 and its default output directory is the working directory. Set an explicit destination and review access controls before using a different listening address."
+      ]
+    },
+    {
+      "title": "A codec or parser fails",
+      "paragraphs": [
+        "Include the transfer syntax UID, selected module and codec, Go version, command, and sanitized error. Optional JPEG-LS, JPEG 2000, HTJ2K, or JPEG XL paths require the relevant registered adapter. A readable dataset does not imply every pixel format can be rendered."
+      ]
+    },
+    {
+      "title": "Prepare a reproducible issue",
+      "paragraphs": [
+        "Use a synthetic or reviewed de-identified fixture. DICOM dumps and query output can contain patient information, and packet captures can contain complete datasets. Remove such content and credentials before attaching diagnostics."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Library and tool scope",
+      "paragraphs": [
+        "This policy covers dicom-go and its bundled tools. Applications and servers built with it decide which datasets to accept, where to store them, who can access them, and which services to contact.",
+        "The library processes the DICOM metadata, images, files, and query parameters supplied to it. Local parsing does not need to send a dataset to the package developer."
+      ]
+    },
+    {
+      "title": "Network requests and receivers",
+      "paragraphs": [
+        "Calling DIMSE, DICOMweb, or JPIP features can send identifiers, queries, images, and authentication data to the configured destination, or receive datasets from a remote system. JPIP retrieval uses explicit host and scheme rules with origin-bound credentials.",
+        "Transport encryption is a deployment choice, not a guarantee for every command. The remote server can retain requests and transferred data under its own policies."
+      ]
+    },
+    {
+      "title": "Persistent output and caches",
+      "paragraphs": [
+        "File writers, exports, and storage receivers create local files. CLI dumps and DICOM JSON can disclose patient names, identifiers, or other metadata. JPIP retrieval also uses an in-memory response cache.",
+        "The operator controls storage locations and retention. Remove saved outputs and logs separately from the original data, and consider any filesystem backups or synchronization."
+      ]
+    },
+    {
+      "title": "Audit and diagnostic integrations",
+      "paragraphs": [
+        "The networking packages expose audit and telemetry callbacks for a host to consume. The structured telemetry event format excludes dataset values and raw packet payloads; endpoint details are omitted by default but can be enabled by caller policy. Separate audit records may include AE titles and addresses.",
+        "These callbacks do not constitute a built-in developer analytics upload. A host can write or forward records using its own sinks, and explicitly enabled raw traffic capture needs separate handling because packets can contain clinical data."
+      ]
+    },
+    {
+      "title": "Credentials and de-identification",
+      "paragraphs": [
+        "Applications supply and manage credentials and token sources. The library is not an end-user secret vault.",
+        "De-identification is an explicit operation with supported profiles and options. It is not automatic for ordinary reads, sends, or exports. Review identifying metadata, private tags, and burned-in pixel content before sharing; a rewrite alone is not a guarantee of anonymity."
+      ]
+    },
+    {
+      "title": "Your controls",
+      "paragraphs": [
+        "Stop listeners and network tasks to stop future transfers. Remove retained input copies, received files, exports, and operator-managed logs when no longer needed. Removal on your machine does not remove copies at a remote server or in a recipient's files."
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "label": "Source on GitHub",
+      "url": "https://github.com/ThalesMMS/dicom-go"
+    }
+  ]
+}

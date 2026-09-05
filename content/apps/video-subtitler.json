@@ -1,0 +1,106 @@
+{
+  "slug": "video-subtitler",
+  "name": "Video Subtitler",
+  "category": "everyday",
+  "platform": "iPhone and iPad",
+  "summary": "Turn local videos into editable subtitles, translations and exported media.",
+  "intro": "Video Subtitler keeps video, transcript and export work together in a project. It supports on-device speech recognition and language tools, with an optional remote provider for selected text operations.",
+  "features": [
+    {
+      "title": "Editable subtitles",
+      "body": "Import local media, transcribe speech and review subtitle text and timing."
+    },
+    {
+      "title": "Translation and context",
+      "body": "Translate subtitle cues, summarize transcripts and ask questions with relevant transcript excerpts."
+    },
+    {
+      "title": "Dubbing",
+      "body": "Generate speech using supported iOS voices or a downloaded OmniVoice model, with manual speaker assignment."
+    },
+    {
+      "title": "Export options",
+      "body": "Export SRT subtitles or supported video formats with burned-in subtitles, sidecar files or a selectable subtitle track in MOV."
+    }
+  ],
+  "repositories": [],
+  "support": [
+    {
+      "title": "Create a project",
+      "paragraphs": [
+        "Import a local video and wait for the import to finish before transcription. If the app reports missing media, use its relink workflow to select the source again."
+      ]
+    },
+    {
+      "title": "Prepare local models",
+      "paragraphs": [
+        "Choose a speech-recognition model and language provider in Settings. The first use can require a large download and enough free storage for models and working files.",
+        "Local Qwen and OmniVoice require compatible physical-device hardware. Apple Intelligence options also depend on system availability. A model cache can be removed and downloaded again without serving as a backup of your projects."
+      ]
+    },
+    {
+      "title": "Configure a remote provider",
+      "paragraphs": [
+        "Enter the endpoint, model and optional API key in Settings. Use HTTPS; local HTTP requires explicit consent for the connection and separate permission to send credentials.",
+        "Remote embeddings are configured independently from the generation provider. Check both choices if a search or language operation fails."
+      ]
+    },
+    {
+      "title": "Review and export",
+      "paragraphs": [
+        "Review timing, translations and generated speech before exporting. Choose SRT for a subtitle file or a video export option for the desired playback behavior.",
+        "Keep enough free storage for the source media, working files and export. Use export history to manage artifacts, and keep external copies of work you want to preserve."
+      ]
+    },
+    {
+      "title": "Remove a project",
+      "paragraphs": [
+        "Delete project removes its local project files, including associated transcript, chat, indexes and exports kept inside that project. It does not recall copies already shared elsewhere or clear the separately stored API credential."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Local project storage",
+      "paragraphs": [
+        "The app stores imported media, project metadata, subtitles, translations, chat, indexes, recovery copies and generated exports on the device. Temporary working files may exist during import, transcription and export.",
+        "Non-secret preferences are kept separately from projects. Deleting a project does not reset preferences or remove model downloads."
+      ]
+    },
+    {
+      "title": "Local processing and downloads",
+      "paragraphs": [
+        "The default generation provider is Local Qwen and the default retrieval method is local TF-IDF. Whisper transcription, supported local language models, dubbing and export process content on the device when the required assets and hardware are available.",
+        "Whisper, Qwen and OmniVoice assets can be downloaded from model hosting services such as Hugging Face. Apple-managed models or voices may require system downloads. These preparation requests contact external services even when your media processing is local."
+      ]
+    },
+    {
+      "title": "Optional remote text operations",
+      "paragraphs": [
+        "Selecting a remote generation provider sends operation-specific text directly to the chosen endpoint. Translation can include subtitle cues, target language and instructions; chat can include the question, recent completed turns and selected transcript excerpts; summaries can include transcript groups and intermediate summaries.",
+        "Remote embeddings are a separate option that sends searchable transcript text during index creation and query text during retrieval. These text operations do not upload the raw source video or audio."
+      ]
+    },
+    {
+      "title": "Credentials and connections",
+      "paragraphs": [
+        "The optional remote API key is stored in Apple Keychain separately from the project. HTTPS requests can include it as a bearer credential. Public HTTP endpoints are blocked, and local HTTP requires separate data and credential permissions.",
+        "The remote HTTP client uses an ephemeral session without its own URL cache or cookie store. This does not control logging or retention at the destination."
+      ]
+    },
+    {
+      "title": "Deletion, caches and backup",
+      "paragraphs": [
+        "Delete project removes that project’s local directory. Model caches, preferences and Keychain credentials have separate lifecycles. A Keychain item may survive app removal, and saving an empty API key does not prove the Keychain record itself was deleted.",
+        "The operating system controls device backup and restoration. A model cache is not a project backup, and deleting local data does not remove exports, backups or copies held by a remote endpoint."
+      ]
+    },
+    {
+      "title": "Diagnostics and external services",
+      "paragraphs": [
+        "The audited app does not configure advertising, third-party analytics or a developer-operated project-upload backend. Local job and error diagnostics support troubleshooting.",
+        "A chosen AI endpoint and model-download service can receive connection information and the requests you send to it. Their operators control their own logging, retention and deletion; no uniform retention period is promised here."
+      ]
+    }
+  ]
+}

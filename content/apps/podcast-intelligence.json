@@ -1,0 +1,108 @@
+{
+  "slug": "podcast-intelligence",
+  "name": "Podcast Intelligence",
+  "category": "everyday",
+  "platform": "macOS and Windows; server deployment",
+  "summary": "Turn podcast episodes and media files into transcripts, summaries and searchable answers.",
+  "intro": "Import local media or resolve podcast links, then explore timestamped transcripts and summaries. Ask questions with citations that return you to the source audio.",
+  "features": [
+    {
+      "title": "Flexible import",
+      "body": "Import audio/video files, media URLs and podcasts through RSS or supported directory links."
+    },
+    {
+      "title": "Timestamped understanding",
+      "body": "Reuse published transcripts or configure transcription, summaries and speaker-aware processing."
+    },
+    {
+      "title": "Grounded questions",
+      "body": "Search episode content and follow answer citations to playback positions."
+    },
+    {
+      "title": "Export and integration",
+      "body": "Export JSON, Markdown, SRT or VTT and optionally connect compatible clients through MCP."
+    }
+  ],
+  "support": [
+    {
+      "title": "Set up processing",
+      "paragraphs": [
+        "Choose providers in desktop settings. The default demo profile supplies demonstration behavior; configure suitable transcription, embedding and language-model providers for real processing."
+      ]
+    },
+    {
+      "title": "Import problems",
+      "paragraphs": [
+        "Confirm that a URL resolves to accessible public media or RSS. Protected, unsupported, oversized or unsafe download destinations may be rejected."
+      ]
+    },
+    {
+      "title": "Provider problems",
+      "paragraphs": [
+        "Check the endpoint, API key, model and supported audio or embedding options. Save settings and restart the engine when requested."
+      ]
+    },
+    {
+      "title": "Transcripts and exports",
+      "paragraphs": [
+        "Review speaker labels and source timestamps before relying on generated text. Select an export format and save location."
+      ]
+    },
+    {
+      "title": "Desktop and server storage",
+      "paragraphs": [
+        "Desktop mode uses local SQLite and file storage. A separately deployed server uses its configured database and object store, so storage and access depend on that deployment."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Media and derived data",
+      "paragraphs": [
+        "Desktop processing stores imported media, playback files, transcripts, summaries, vectors and conversations in application data. Server deployments store these using their configured infrastructure."
+      ]
+    },
+    {
+      "title": "Remote imports",
+      "paragraphs": [
+        "Podcast resolution and media downloads contact directory, feed, transcript and media hosts. Those hosts receive the network requests needed for the import."
+      ]
+    },
+    {
+      "title": "AI providers",
+      "paragraphs": [
+        "Configured transcription services can receive audio. Embedding and language-model services receive relevant transcript text, questions and context. Endpoints can be local or remote; local desktop packaging does not make remote AI processing local."
+      ]
+    },
+    {
+      "title": "Credentials",
+      "paragraphs": [
+        "Desktop provider settings, including supplied credentials, are saved in a local settings file with platform permission handling. They are not described as encrypted storage. Codex CLI mode uses the CLI authentication configured on the machine."
+      ]
+    },
+    {
+      "title": "Connected clients",
+      "paragraphs": [
+        "Optional MCP access exposes supported episode tools to connected clients. Content returned to a client is then subject to that client and any AI services it uses."
+      ]
+    },
+    {
+      "title": "Exports and removal",
+      "paragraphs": [
+        "Exported transcripts and summaries remain in the selected destination. To remove the desktop library, quit the application and remove its application data after preserving anything needed; exported copies and remotely processed data require separate handling."
+      ]
+    },
+    {
+      "title": "Diagnostics",
+      "paragraphs": [
+        "The inspected application has operational logs but no integrated analytics or crash-reporting service was found. Review logs and exported content before sharing them for support."
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "label": "Source on GitHub",
+      "url": "https://github.com/ThalesMMS/Podcast-Intelligence"
+    }
+  ]
+}

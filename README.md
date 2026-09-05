@@ -1,21 +1,60 @@
 # ThalesMMS public app site
 
-Static HTML and CSS for https://thalesmms.github.io/. No build step, JavaScript, or external dependencies.
+Static HTML and CSS for https://thalesmms.github.io/. The published site has no JavaScript, forms, analytics, external fonts, or runtime dependencies.
 
-## Local preview
+The directory includes 16 project sections. Every project has a presentation, support, and privacy page. Root and custom 404 pages bring the total to 50 HTML pages.
 
-Run `python3 -m http.server 8080 --bind 127.0.0.1` from the repository root, then visit http://127.0.0.1:8080/.
+## Preview and maintain
+
+From the repository root:
+
+```sh
+python3 -m http.server 8080 --bind 127.0.0.1
+```
+
+Open http://127.0.0.1:8080/. Stop the server with Ctrl+C.
+
+New project copy is maintained in `content/apps/*.json`. After editing it, regenerate and validate:
+
+```sh
+python3 tools/build_site.py
+python3 tools/check_site.py
+git diff --check
+```
+
+These commands use only the Python standard library. Generated HTML is committed, so GitHub Pages needs no build command. AutoComp's existing page bodies are kept in their HTML files; the generator updates only their shared navigation and footer.
+
+Shared styles are in `assets/site.css`. The AutoComp icon is the existing Safari extension asset. Other project markers are typographic initials, not product logos. No application screenshots or DICOM samples are published here.
 
 ## Routes
 
-- `/` app directory
-- `/apps/autocomp/` marketing
-- `/apps/autocomp/support/` support
-- `/apps/autocomp/privacy/` privacy
-- `/404.html` fallback served by GitHub Pages for unknown paths
+Each base below also has `support/` and `privacy/` subpages.
 
-Shared styles and the existing AutoComp icon are in `assets/`. The icon was copied from the Safari extension's `icons/icon512.png`. Product claims were checked against that extension's source and documentation on September 5, 2026.
+| Project | Base route |
+| --- | --- |
+| AutoComp | `/apps/autocomp/` |
+| Turing Lab | `/apps/turing-lab/` |
+| Isis DICOM Viewer | `/apps/isis-dicom-viewer/` |
+| dicom-slides | `/apps/dicom-slides/` |
+| DICOM-Swift | `/apps/dicom-swift/` |
+| MTK | `/apps/mtk/` |
+| DICOM tools for AI agents | `/apps/dicom-agent-tools/` |
+| TotalSegmentator OsiriX/Horos Plugin | `/apps/totalsegmentator-plugin/` |
+| RadRef | `/apps/radref/` |
+| dicom-go | `/apps/dicom-go/` |
+| Podcast Intelligence | `/apps/podcast-intelligence/` |
+| CodeAtlas | `/apps/codeatlas/` |
+| The Legend of Source - Branches of Time | `/apps/the-legend-of-source/` |
+| Scout | `/apps/scout/` |
+| MacPGP | `/apps/macpgp/` |
+| Video Subtitler | `/apps/video-subtitler/` |
+
+Support and privacy copy describes the inspected implementation, including platform differences and optional provider integrations. It does not assert store availability, clinical certification, or control over third-party retention. Re-audit the affected code before updating a policy for changed data handling.
+
+Only approved public repositories are linked. The DICOM agent suite describes its three components but links only dicom-skill and dicom-viewer-mcp-app, as requested by the owner.
 
 ## Publication
 
-Publish the root of `main` through GitHub Pages. `.nojekyll` keeps the site as plain static files. Pushing these files does not configure Pages. The owner must configure Pages separately and verify all public HTTPS routes before using them in App Store Connect.
+The publishing source is the root of `main`. `.nojekyll` keeps delivery as plain static files. Pushing does not configure GitHub Pages. Pages settings and App Store Connect are outside this site's maintenance workflow.
+
+See `docs/site-validation.md` for the local checks and their limits.

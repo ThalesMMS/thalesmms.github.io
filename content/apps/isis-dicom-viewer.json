@@ -1,0 +1,99 @@
+{
+  "slug": "isis-dicom-viewer",
+  "name": "Isis DICOM Viewer",
+  "category": "imaging",
+  "platform": "Apple platforms and Android",
+  "summary": "Browse DICOM studies, inspect images and connect to configured imaging archives.",
+  "intro": "Isis brings a local study catalog, image navigation and measurement tools to Apple devices and Android. Volumetric viewing and archive connections depend on the platform, device and installed build.",
+  "features": [
+    {
+      "title": "A study library",
+      "body": "Import DICOM files and supported archives into a local catalog organized by study and series."
+    },
+    {
+      "title": "Image exploration",
+      "body": "Adjust window and level, navigate frames and inspect metadata, with measurement, MPR and volume tools where supported."
+    },
+    {
+      "title": "Archive connections",
+      "body": "Configure DIMSE or DICOMweb nodes to query, retrieve and send studies."
+    },
+    {
+      "title": "Platform-specific viewing",
+      "body": "Apple builds include companion presentation workflows. Android has its own native rendering and storage implementation, so capabilities are not identical."
+    }
+  ],
+  "repositories": [],
+  "support": [
+    {
+      "title": "Start with an import",
+      "paragraphs": [
+        "Choose a DICOM file or supported archive through the app’s import flow. Check the activity result if a study is incomplete or cannot be decoded."
+      ]
+    },
+    {
+      "title": "Connect an archive",
+      "paragraphs": [
+        "Confirm the host, port, AE titles or DICOMweb base address with the archive administrator. Check authentication and TLS settings, then test the connection before retrieving studies.",
+        "Receiving studies also requires the listener configuration and network access. On Android, the clear-text listener waits for acknowledgement of its access warning. Configure scheduled query/retrieve rules only for archives you intend the app to contact automatically."
+      ]
+    },
+    {
+      "title": "Check the viewing mode",
+      "paragraphs": [
+        "MPR and 3D depend on suitable image geometry, the included rendering backend and device resources. A missing mode or failed reconstruction does not establish that the source study is invalid.",
+        "These tools do not establish clinical certification or automatic diagnostic correctness. Review measurements and exported results for your intended use."
+      ]
+    },
+    {
+      "title": "Manage storage and sharing",
+      "paragraphs": [
+        "Deleting a local study and clearing derived data serve different purposes. Cache cleanup does not remove an archive’s original study.",
+        "Review patient information, image annotations and burned-in text before exporting or sharing. A hidden overlay is not proof that a DICOM file or image is anonymized."
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "title": "Local study data",
+      "paragraphs": [
+        "Imported and retrieved DICOM objects, patient metadata, study indexes and derived viewing data are stored locally. The library can contain sensitive information in both metadata and image pixels."
+      ]
+    },
+    {
+      "title": "Archive and listener traffic",
+      "paragraphs": [
+        "DIMSE and DICOMweb operations communicate with the nodes you configure. Requests, transfers and enabled automatic query/retrieve rules can send patient search criteria, identifiers or DICOM objects to those systems. Authentication may also contact the configured identity service.",
+        "Listeners accept incoming studies when activated, and service discovery can advertise a receiving endpoint. Apple defaults disable the listener and Bonjour publication. Android’s clear-text listener requires acknowledgement before it starts; review its listener and discovery preferences."
+      ]
+    },
+    {
+      "title": "Credentials and transport",
+      "paragraphs": [
+        "Apple builds keep archive credentials and authentication tokens in Keychain stores. Android encrypts stored archive passwords using an Android Keystore key. These protections do not mean every study file or network connection is encrypted.",
+        "Choose TLS or HTTPS where supported and verify the archive’s configuration. An unencrypted connection can expose transferred content on its network."
+      ]
+    },
+    {
+      "title": "Diagnostics",
+      "paragraphs": [
+        "The app implements local diagnostic logging. Optional error and usage diagnostics default off in both implementations; Apple also registers for local MetricKit diagnostic payloads. The audited application code does not configure an external analytics or crash-upload backend.",
+        "Diagnostic exports leave the app when you choose to share them. Review the bundle before sending it to someone else."
+      ]
+    },
+    {
+      "title": "Exports and companion devices",
+      "paragraphs": [
+        "Exports, share sheets, archive sends and Apple companion presentation transfers create copies outside the local study library. The chosen recipient, application, device or archive controls those copies.",
+        "Removing a local study cannot recall an exported file, a companion-device copy or a study stored on an archive."
+      ]
+    },
+    {
+      "title": "Deletion and backups",
+      "paragraphs": [
+        "Use study deletion to remove local catalog content, and storage controls to clear supported derived data. Keep any needed independent backup before deleting studies.",
+        "Android disables operating-system app backup in its manifest. Apple provides catalog backup workflows that exclude Keychain secrets; device backup settings and separately exported files have their own lifecycles. Local deletion does not delete those copies."
+      ]
+    }
+  ]
+}

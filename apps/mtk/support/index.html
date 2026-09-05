@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup guidance and troubleshooting for MTK — Metal Toolkit.">
+  <title>MTK — Metal Toolkit support | ThalesMMS</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/site-icon.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
+    <nav aria-label="Main navigation">
+<a href="/">All projects</a>
+<a href="/apps/mtk/">MTK — Metal Toolkit</a>
+<a href="/apps/mtk/support/" aria-current="page">Support</a>
+<a href="/apps/mtk/privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="wrap prose">
+<p class="eyebrow">MTK — Metal Toolkit / Support</p>
+<h1>MTK — Metal Toolkit support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Integrate the rendering core</h2>
+<p>Add the public MTK repository with Swift Package Manager and select MTKCore. MTKFixtures is available for synthetic test volumes. The audited package declares Swift tools 6.0 and iOS, macOS, and visionOS 26.0 minimums.</p>
+<p>MTK does not include a ready-made viewer or DICOM parser. Supply a decoded volume with valid dimensions, spacing, orientation, and pixel type. See the public repository for integration documentation.</p>
+</section>
+<section id="section-2">
+<h2>Check Metal support</h2>
+<p>Use a device and runtime with the required Metal capabilities. If availability checks fail, inspect the reported capability before attempting rendering. Keep the device and OS information in a support report.</p>
+</section>
+<section id="section-3">
+<h2>A volume looks wrong</h2>
+<p>Check signed versus unsigned pixels, dimensions, voxel spacing, orientation, rescale handling, and the selected transfer function. Reproduce with a synthetic fixture to separate data-loading problems from rendering.</p>
+</section>
+<section id="section-4">
+<h2>Inspect rendering or export failures</h2>
+<p>Include the MTK version, device, OS, pixel format, and a minimal reproduction using synthetic data. Review local rendering logs before sharing them. Snapshot export writes to a destination chosen by your application and requires a supported texture format.</p>
+</section>
+<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/MTK">Source on GitHub</a></div></section>
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about MTK — Metal Toolkit at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
+    <div><a href="/apps/mtk/support/">MTK — Metal Toolkit support</a><br>
+<a href="/apps/mtk/privacy/">Privacy policy</a></div>
+  </div>
+</footer>
+</body>
+</html>
