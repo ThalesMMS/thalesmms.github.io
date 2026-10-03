@@ -1,0 +1,155 @@
+{
+  "slug": "isis-dicom-viewer-macos",
+  "name": "Isis DICOM Viewer for macOS",
+  "category": "imaging",
+  "platform": "Apple Silicon Mac · Mac App Store edition",
+  "summary": "View and organize DICOM studies locally, with MPR, 3D reconstruction and connections to configured PACS servers.",
+  "intro": "This is the independently maintained, Horos-derived macOS application. These support and privacy pages describe its sandboxed Mac App Store edition for Apple Silicon Macs running macOS 26 or later. Not for diagnostic use.",
+  "features": [
+    {
+      "title": "Local study management",
+      "body": "Import files and folders, inspect DICOM metadata, organize studies and export selected images or DICOM objects."
+    },
+    {
+      "title": "Image viewing",
+      "body": "Adjust window level and width, create measurements and use MPR, curved MPR and 3D reconstruction with suitable image series."
+    },
+    {
+      "title": "PACS connections",
+      "body": "Query, retrieve and send studies using compatible DICOM and DICOMweb services configured by the user."
+    },
+    {
+      "title": "Mac App Store edition",
+      "body": "App Sandbox controls access to selected folders. Updates use the App Store, and external plugins are disabled."
+    }
+  ],
+  "repositories": [
+    {
+      "url": "https://github.com/ThalesMMS/Isis-DICOM-Viewer-macOS",
+      "label": "Source code and project documentation"
+    }
+  ],
+  "support": [
+    {
+      "title": "Import and view a study",
+      "paragraphs": [
+        "Use Import in the database toolbar to choose a DICOM file or folder, then open a series from the database. No developer account is required to view local files.",
+        "MPR and 3D reconstruction require suitable image geometry. These tools are not for diagnostic use."
+      ]
+    },
+    {
+      "title": "Connect to a PACS",
+      "paragraphs": [
+        "Obtain the host, port, AE titles or DICOMweb address from your archive administrator. Configure authentication and secure transport as required by that server.",
+        "Receiving and sharing services and automatic transfer rules can communicate with other systems after you enable them. Check their destination and access settings before use."
+      ]
+    },
+    {
+      "title": "Folders and distribution editions",
+      "paragraphs": [
+        "The Mac App Store edition stores its default database in application storage. Use the macOS file picker to grant access to an external database or import and export folders.",
+        "Updates are delivered through the App Store. External plugins and the GitHub updater are disabled in this edition. The GitHub distribution has different permissions and extension options."
+      ]
+    },
+    {
+      "title": "Report a problem",
+      "paragraphs": [
+        "Provide the app version, macOS version and steps to reproduce the problem. Use anonymized examples and review screenshots or logs for patient identifiers before sharing them."
+      ]
+    }
+  ],
+  "privacy_date": "October 3, 2026",
+  "privacy": [
+    {
+      "title": "Scope and developer",
+      "paragraphs": [
+        "This policy applies to the Mac App Store edition of Isis DICOM Viewer for macOS, the Horos-derived application maintained by Thales Matheus M Santos. Other applications and distribution editions have separate privacy terms.",
+        "The application is an image viewing tool. It is not for diagnostic use."
+      ]
+    },
+    {
+      "title": "Data received by the developer",
+      "paragraphs": [
+        "The app does not send your DICOM files, patient information, credentials or viewing activity to the developer. It does not use a developer-hosted study server, advertising, tracking or an external analytics backend. No developer account is required to view local files.",
+        "The app does not configure an automatic crash-report upload destination. Support messages you choose to send are described separately below."
+      ]
+    },
+    {
+      "title": "Local files and study data",
+      "paragraphs": [
+        "The app processes DICOM images, patient metadata, study indexes, measurements, annotations and derived viewing data on your Mac. These files can contain sensitive information in both their metadata and image pixels.",
+        "The default database is stored in application storage protected by App Sandbox. Files and external database folders selected through the macOS file picker can be read or written for the requested operation. Folder access may be remembered for later use.",
+        "Finder previews and thumbnails process selected DICOM files locally. Your operating system, backup software or a storage service you choose may maintain additional copies."
+      ]
+    },
+    {
+      "title": "Network connections and sharing",
+      "paragraphs": [
+        "DICOM and DICOMweb queries, retrievals and sends communicate directly with the archive endpoints you configure. Those systems receive the search criteria, identifiers, authentication information or DICOM objects needed for each operation. Imports from a URL contact the address you provide.",
+        "Automatic query, retrieve or routing rules can initiate transfers after you enable them. Receiving and sharing services can make study data available to devices allowed by your configuration. These endpoints are selected by you and are not developer-operated collection services.",
+        "Exports, email or sharing actions create copies for the destinations and recipients you choose. The receiving system or person controls those copies. Check patient identifiers and burned-in image text before sharing.",
+        "You can cancel transfers, disable automatic rules and receiving or sharing services, or quit the app to stop its active services. Remove connections and credentials you no longer want to use."
+      ]
+    },
+    {
+      "title": "Credentials and security",
+      "paragraphs": [
+        "DICOMweb authentication credentials are stored in the macOS Keychain and used for the configured endpoint. Connection preferences and study data remain in the storage you use for the app.",
+        "TLS and HTTPS are available for compatible servers. Protection depends on the connection and server settings. App Sandbox and Keychain storage do not mean that every study file or network transfer is encrypted."
+      ]
+    },
+    {
+      "title": "Diagnostics",
+      "paragraphs": [
+        "Diagnostic logs and crash information can be generated locally. They can include file paths, system details or information about the operation that failed. The app does not automatically upload these records to the developer.",
+        "If you choose to send a log or diagnostic file with a support request, review its contents first. macOS and the App Store may handle diagnostics under Apple's own settings and privacy practices."
+      ]
+    },
+    {
+      "title": "Retention and deletion",
+      "paragraphs": [
+        "Local studies and associated data remain in their configured storage until you delete them or a configured cleanup rule removes them. Use the database controls to manage local studies and review the selected deletion options.",
+        "Deleting a local study does not recall a transfer, delete an archive's copy, or remove separately exported files and backups. Manage those copies with the receiving system or storage provider. Removing the app also does not guarantee removal of external folders, exports or Keychain credentials."
+      ]
+    },
+    {
+      "title": "Optional support correspondence",
+      "paragraphs": [
+        "If you contact the developer by email, the developer receives your email address and the information or attachments you choose to provide. These are used to respond to the request and investigate the reported problem, not for advertising, profiling or sale.",
+        "Support correspondence is retained while needed to handle the request and related follow-up. You can request access, correction or deletion by emailing the address below. Do not include patient data, passwords, tokens or private documents."
+      ]
+    }
+  ],
+  "data_collection": {
+    "summary": "Data Not Collected by the Mac App Store edition of Isis DICOM Viewer for macOS.",
+    "sections": [
+      {
+        "title": "Does this app collect data for the developer?",
+        "paragraphs": [
+          "No. The Mac App Store edition does not transmit DICOM files, patient information, credentials, usage activity or local diagnostics to the developer or to an integrated analytics or advertising provider.",
+          "This declaration applies specifically to this macOS edition. It does not describe other apps or distribution editions that use the Isis name."
+        ]
+      },
+      {
+        "title": "Does the app track users?",
+        "paragraphs": [
+          "No. The app does not use advertising identifiers, cross-app tracking, advertising SDKs or data brokers. The developer does not sell data processed by this app."
+        ]
+      },
+      {
+        "title": "What happens to DICOM and network data?",
+        "paragraphs": [
+          "DICOM files, metadata and derived images are processed in local storage. Processing data on your Mac is different from collecting it for the developer.",
+          "PACS connections, enabled automatic rules, URL imports and exports communicate with systems or recipients you choose. These destinations can receive patient data and connection information. Their retention and access rules apply to the copies they receive."
+        ]
+      },
+      {
+        "title": "What about support, hosting and Apple services?",
+        "paragraphs": [
+          "Emailing support voluntarily shares your email address and the information you send. The developer uses it to handle the request. Visiting this GitHub Pages website and using Apple's distribution or operating-system services are governed by those services' own practices.",
+          "External plugins and the GitHub updater are disabled in the Mac App Store edition. This declaration does not imply that the app's network features are offline or that every transfer is encrypted."
+        ]
+      }
+    ]
+  }
+}

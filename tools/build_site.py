@@ -14,11 +14,11 @@ CATEGORIES = [
     ('learning', 'Learning & simulation', 'Explore computation through interactive models.'),
     ('everyday', 'Writing, audio & utilities', 'Work with text, audio, video, and encrypted files.'),
 ]
-ORDER = ['isis-dicom-viewer', 'dicom-slides', 'scout', 'radref', 'dicom-agent-tools',
+ORDER = ['isis-dicom-viewer', 'isis-dicom-viewer-macos', 'dicom-slides', 'scout', 'radref', 'dicom-agent-tools',
          'totalsegmentator-plugin', 'dicom-swift', 'mtk', 'dicom-go', 'codeatlas',
          'the-legend-of-source', 'turing-lab', 'autocomp', 'podcast-intelligence',
          'macpgp', 'video-subtitler']
-MARKS = {'isis-dicom-viewer': 'Is', 'dicom-slides': 'Ds', 'scout': 'Sc', 'radref': 'Rr',
+MARKS = {'isis-dicom-viewer': 'Is', 'isis-dicom-viewer-macos': 'Is', 'dicom-slides': 'Ds', 'scout': 'Sc', 'radref': 'Rr',
          'dicom-agent-tools': 'Da', 'totalsegmentator-plugin': 'Ts', 'dicom-swift': 'Ds',
          'mtk': 'Mtk', 'dicom-go': 'Dg', 'codeatlas': 'Ca', 'the-legend-of-source': 'Ls',
          'turing-lab': 'Tl', 'podcast-intelligence': 'Pi', 'macpgp': 'Pgp', 'video-subtitler': 'Vs'}
@@ -43,6 +43,9 @@ def document(path, title, description, body, project=None, prose=False):
         nav = [('/', 'All projects'), (route, project['name']),
                (route + 'support/', 'Support'), (route + 'privacy/', 'Privacy')]
         footer_links = link(route+'support/', project['name']+' support') + '<br>\n' + link(route+'privacy/', 'Privacy policy')
+        if project.get('data_collection'):
+            nav.append((route+'data-collection/', 'Data collection'))
+            footer_links += '<br>\n' + link(route+'data-collection/', 'Data collection declaration')
     else:
         nav = [('/', 'Home'), ('/#projects', 'Projects'), ('/#about', 'About'), ('/#contact', 'Contact')]
         footer_links = link('/#projects', 'All projects') + '<br>\n' + link('mailto:'+EMAIL, 'Contact')
@@ -159,12 +162,15 @@ def support_page(project):
 def privacy_page(project):
     route = base(project)
     sections = '\n'.join(section_html(s, i) for i, s in enumerate(project['privacy'], 1))
+    date = project.get('privacy_date', DATE)
+    declaration = (f'<p>{link(route+"data-collection/", "Read the data collection declaration")}</p>\n'
+                   if project.get('data_collection') else '')
     body = f'''{artwork(project) if project.get('icon') else ''}
 <p class="eyebrow">{e(project['name'])} / Privacy</p>
 <h1>{e(project['name'])} privacy policy</h1>
-<p class="label">Effective {DATE}</p>
+<p class="label">Effective {e(date)}</p>
 <p class="lead">How {e(project['name'])} handles data, including the services and integrations you choose to use.</p>
-{sections}
+{declaration}{sections}
 <section>
 <h2>This support website</h2>
 <p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
@@ -175,6 +181,25 @@ def privacy_page(project):
 <p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
 </section>'''
     return document(route+'privacy/', project['name']+' privacy policy | ThalesMMS', 'Data handling, storage, and service integrations for '+project['name']+'.', body, project, True)
+
+
+def data_collection_page(project):
+    route = base(project)
+    declaration = project['data_collection']
+    sections = '\n'.join(section_html(s, i) for i, s in enumerate(declaration['sections'], 1))
+    body = f'''<p class="eyebrow">{e(project['name'])} / Data collection</p>
+<h1>Data collection declaration</h1>
+<p class="label">Effective {e(project['privacy_date'])}</p>
+<p class="lead">{e(declaration['summary'])}</p>
+{sections}
+<section>
+<h2>Privacy policy</h2>
+<p>{link(route+'privacy/', 'Read the privacy policy for the Mac App Store edition')} for storage, network transfers, support, retention and deletion.</p>
+<p>{link('https://developer.apple.com/app-store/app-privacy-details/', "Apple's explanation of App Privacy disclosures")} describes how data collection is classified for App Store privacy labels.</p>
+</section>
+{contact(project)}'''
+    return document(route+'data-collection/', project['name']+' data collection | ThalesMMS',
+                    'Data collection and tracking declaration for the Mac App Store edition of Isis DICOM Viewer.', body, project, True)
 
 
 def home(projects):
@@ -202,7 +227,7 @@ def home(projects):
 <p class="lead">A collection of apps, libraries, and tools. Find out what each project does, how to get help, and how it handles your data.</p>
 </div>
 <div id="projects" class="directory-start">
-<p class="label">16 projects · Presentation, support &amp; privacy</p>
+<p class="label">{len(projects)} projects · Presentation, support &amp; privacy</p>
 <nav class="category-nav" aria-label="Project categories">{jumps}</nav>
 </div>
 {''.join(categories)}
@@ -232,6 +257,8 @@ def main():
         write(route, project_page(p))
         write(route+'support/', support_page(p))
         write(route+'privacy/', privacy_page(p))
+        if p.get('data_collection'):
+            write(route+'data-collection/', data_collection_page(p))
     # AutoComp is retained verbatim; only shared page chrome is refreshed.
     autocomp = dict(slug='autocomp',name='AutoComp',category='everyday',platform='Safari extension · macOS',summary='Inline AI autocomplete for Google Docs, connected to the HTTPS endpoint you choose.')
     for suffix in ['', 'support/', 'privacy/']:
@@ -250,7 +277,8 @@ def main():
 <h1>This page isn't here.</h1>
 <p class="lead">Find the project you need in the directory, including its support and privacy pages.</p>
 <div class="actions"><a class="button" href="/">Back to all projects</a><a href="mailto:thalesmmsradio@gmail.com">Contact</a></div>'''))
-    print(f'Rendered {len(projects)} project sections and {3*len(projects)+2} HTML pages.')
+    pages = 3*len(projects)+2+sum(bool(p.get('data_collection')) for p in projects)
+    print(f'Rendered {len(projects)} project sections and {pages} HTML pages.')
 
 
 if __name__ == '__main__':

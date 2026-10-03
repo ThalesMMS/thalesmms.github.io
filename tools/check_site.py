@@ -8,13 +8,14 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SLUGS = {'autocomp', 'turing-lab', 'isis-dicom-viewer', 'dicom-slides', 'dicom-swift',
+SLUGS = {'autocomp', 'turing-lab', 'isis-dicom-viewer', 'isis-dicom-viewer-macos', 'dicom-slides', 'dicom-swift',
          'mtk', 'dicom-agent-tools', 'totalsegmentator-plugin', 'radref', 'dicom-go',
          'podcast-intelligence', 'codeatlas', 'the-legend-of-source', 'scout', 'macpgp',
          'video-subtitler'}
 PUBLIC_REPOS = {'Turing-Lab', 'dicom-slides', 'DICOM-Swift', 'MTK', 'dicom-skill',
                 'dicom-viewer-mcp-app', 'TotalSegmentator-OsiriX-Horos-Plugin', 'RadRef',
-                'dicom-go', 'Podcast-Intelligence', 'MacPGP-app'}
+                'dicom-go', 'Podcast-Intelligence', 'MacPGP-app', 'Isis-DICOM-Viewer-macOS'}
+PRIVACY_REFERENCES = {'https://developer.apple.com/app-store/app-privacy-details/'}
 CLOSED_SLUGS = {'isis-dicom-viewer','codeatlas','the-legend-of-source','scout','video-subtitler'}
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 SECRET_PATTERNS = [r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
@@ -67,6 +68,7 @@ class Page(HTMLParser):
 def main():
     expected = {ROOT/'index.html',ROOT/'404.html'} | {
         ROOT/'apps'/slug/suffix/'index.html' for slug in SLUGS for suffix in ['', 'support','privacy']}
+    expected.add(ROOT/'apps/isis-dicom-viewer-macos/data-collection/index.html')
     actual = {ROOT/'index.html',ROOT/'404.html'} | set((ROOT/'apps').rglob('*.html'))
     assert actual == expected, ('route mismatch',actual ^ expected)
     assert (ROOT/'.nojekyll').exists()
@@ -90,6 +92,8 @@ def main():
                 continue
             if u.scheme:
                 assert tag=='a' and attr=='href', (p.path,'external asset')
+                if url in PRIVACY_REFERENCES:
+                    continue
                 assert u.scheme=='https' and u.netloc=='github.com', (p.path,'external link',url)
                 parts=u.path.strip('/').split('/')
                 assert len(parts)==2 and parts[0]=='ThalesMMS' and parts[1] in PUBLIC_REPOS, (p.path,'non-public source link',url)
@@ -101,7 +105,7 @@ def main():
             assert target.is_file(), (p.path,'broken link',url)
             if u.fragment:
                 assert target in pages and unquote(u.fragment) in pages[target].ids, (p.path,'broken fragment',url)
-        if path.parent.name in {'support','privacy'}:
+        if path.parent.name in {'support','privacy','data-collection'}:
             assert any(url=='mailto:thalesmmsradio@gmail.com' for _,_,url in p.links), (p.path,'missing contact')
     for file in (ROOT/'content/apps').glob('*.json'):
         data=json.loads(file.read_text())
@@ -112,7 +116,7 @@ def main():
         text=path.read_text()
         assert '/Users/' not in text and 'file://' not in text, (path,'local path leak')
         assert not any(re.search(p,text) for p in SECRET_PATTERNS), (path,'credential-like content')
-    print(f'PASS: {len(pages)} HTML pages, {checked_links} links, 16 complete project routes;')
+    print(f'PASS: {len(pages)} HTML pages, {checked_links} links, {len(SLUGS)} complete project routes;')
     print('headings, landmarks, contact links, local assets, source-link allowlist, and credential-pattern checks.')
 
 
