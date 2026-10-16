@@ -1,6 +1,6 @@
 {
   "slug": "isis-dicom-viewer-macos",
-  "name": "Isis DICOM Viewer for macOS",
+  "name": "IsiX DICOM Viewer for macOS",
   "category": "imaging",
   "platform": "Apple Silicon Mac · Mac App Store edition",
   "summary": "View and organize DICOM studies locally, with MPR, 3D reconstruction and connections to configured PACS servers.",
@@ -63,7 +63,7 @@
     {
       "title": "Scope and developer",
       "paragraphs": [
-        "This policy applies to the Mac App Store edition of Isis DICOM Viewer for macOS, the Horos-derived application maintained by Thales Matheus M Santos. Other applications and distribution editions have separate privacy terms.",
+        "This policy applies to the Mac App Store edition of IsiX DICOM Viewer for macOS, the Horos-derived application maintained by Thales Matheus M Santos. Other applications and distribution editions have separate privacy terms.",
         "The application is an image viewing tool. It is not for diagnostic use."
       ]
     },
@@ -121,13 +121,13 @@
     }
   ],
   "data_collection": {
-    "summary": "Data Not Collected by the Mac App Store edition of Isis DICOM Viewer for macOS.",
+    "summary": "Data Not Collected by the Mac App Store edition of IsiX DICOM Viewer for macOS.",
     "sections": [
       {
         "title": "Does this app collect data for the developer?",
         "paragraphs": [
           "No. The Mac App Store edition does not transmit DICOM files, patient information, credentials, usage activity or local diagnostics to the developer or to an integrated analytics or advertising provider.",
-          "This declaration applies specifically to this macOS edition. It does not describe other apps or distribution editions that use the Isis name."
+          "This declaration applies specifically to this macOS edition. It does not describe other apps or distribution editions that use the IsiX name."
         ]
       },
       {

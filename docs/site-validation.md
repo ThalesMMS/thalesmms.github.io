@@ -6,7 +6,7 @@ Validated September 5, 2026 for the directory expansion.
 
 - 15 new project sections, each with presentation, support, and privacy pages.
 - 50 HTML pages total, including the three existing AutoComp pages, root, and 404.
-- Source review covered the requested projects, both Apple and Android Isis implementations, and each component of the DICOM agent suite. Product source checkouts were read-only.
+- Source review covered the requested projects, both Apple and Android IsiX implementations, and each component of the DICOM agent suite. Product source checkouts were read-only.
 - Separate factual and site-structure reviews found no actionable defects. AutoComp's product copy was preserved from its earlier review.
 
 ## Automated checks

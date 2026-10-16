@@ -1,10 +1,10 @@
 {
   "slug": "isis-dicom-viewer",
-  "name": "Isis DICOM Viewer",
+  "name": "IsiX DICOM Viewer",
   "category": "imaging",
   "platform": "Apple platforms and Android",
   "summary": "Browse DICOM studies, inspect images and connect to configured imaging archives.",
-  "intro": "Isis brings a local study catalog, image navigation and measurement tools to Apple devices and Android. Volumetric viewing and archive connections depend on the platform, device and installed build.",
+  "intro": "IsiX brings a local study catalog, image navigation and measurement tools to Apple devices and Android. Volumetric viewing and archive connections depend on the platform, device and installed build.",
   "features": [
     {
       "title": "A study library",

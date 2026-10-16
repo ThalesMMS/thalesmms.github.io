@@ -199,7 +199,7 @@ def data_collection_page(project):
 </section>
 {contact(project)}'''
     return document(route+'data-collection/', project['name']+' data collection | ThalesMMS',
-                    'Data collection and tracking declaration for the Mac App Store edition of Isis DICOM Viewer.', body, project, True)
+                    'Data collection and tracking declaration for the Mac App Store edition of IsiX DICOM Viewer.', body, project, True)
 
 
 def home(projects):
