@@ -2,9 +2,9 @@
   "slug": "isis-dicom-viewer-macos",
   "name": "IsiX DICOM Viewer for macOS",
   "category": "imaging",
-  "platform": "Apple Silicon Mac · Mac App Store edition",
+  "platform": "macOS · GitHub and Mac App Store editions",
   "summary": "View and organize DICOM studies locally, with MPR, 3D reconstruction and connections to configured PACS servers.",
-  "intro": "This is the independently maintained, Horos-derived macOS application. These support and privacy pages describe its sandboxed Mac App Store edition for Apple Silicon Macs running macOS 26 or later. Not for diagnostic use.",
+  "intro": "This independently maintained, Horos-derived macOS application has separate GitHub and sandboxed Mac App Store builds. The current build configuration targets macOS 15 or later, with separate Apple Silicon and Intel packages. These privacy and data collection pages apply specifically to the Mac App Store edition. Not for diagnostic use.",
   "features": [
     {
       "title": "Local study management",
@@ -25,11 +25,18 @@
   ],
   "repositories": [
     {
-      "url": "https://github.com/ThalesMMS/Isis-DICOM-Viewer-macOS",
+      "url": "https://github.com/ThalesMMS/IsiX-DICOM-Viewer-macOS",
       "label": "Source code and project documentation"
     }
   ],
   "support": [
+    {
+      "title": "Choose the correct Mac build",
+      "paragraphs": [
+        "Use the package for your Mac architecture and check its release requirements. The inspected configuration declares macOS 15 as its minimum; an installed older release or beta can differ.",
+        "Stable GitHub builds, beta builds and Mac App Store builds have different update and plugin behavior. The privacy and data collection declarations on this site remain scoped to the Mac App Store edition."
+      ]
+    },
     {
       "title": "Import and view a study",
       "paragraphs": [
@@ -58,7 +65,7 @@
       ]
     }
   ],
-  "privacy_date": "October 3, 2026",
+  "privacy_date": "November 2, 2026",
   "privacy": [
     {
       "title": "Scope and developer",
@@ -151,5 +158,15 @@
         ]
       }
     ]
-  }
+  },
+  "editions": [
+    {
+      "title": "Distribution and plugin compatibility",
+      "paragraphs": [
+        "The stable 5.3.x GitHub line keeps its existing plugin interfaces. The 6.0 beta line uses IsiXPluginKit and needs plugins built for that interface. Check the installed version before choosing a plugin.",
+        "Mac App Store builds use App Sandbox, App Store updates and no external plugins. GitHub builds have different permissions, external plugin support and a GitHub updater. Separate Intel packaging does not establish testing on Intel hardware."
+      ]
+    }
+  ],
+  "reviewed_date": "November 2, 2026"
 }

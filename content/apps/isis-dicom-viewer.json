@@ -2,9 +2,9 @@
   "slug": "isis-dicom-viewer",
   "name": "IsiX DICOM Viewer",
   "category": "imaging",
-  "platform": "Apple platforms and Android",
+  "platform": "iPhone, iPad, visionOS, Apple companions and Android",
   "summary": "Browse DICOM studies, inspect images and connect to configured imaging archives.",
-  "intro": "IsiX brings a local study catalog, image navigation and measurement tools to Apple devices and Android. Volumetric viewing and archive connections depend on the platform, device and installed build.",
+  "intro": "IsiX brings a local study catalog, image navigation and measurement tools to iPhone, iPad, visionOS and Android, with Apple companion presentation workflows. Rendering, archive connections and local AI tools depend on the platform, device and installed build. The distributed macOS application is a separate Horos-derived project.",
   "features": [
     {
       "title": "A study library",
@@ -20,7 +20,7 @@
     },
     {
       "title": "Platform-specific viewing",
-      "body": "Apple builds include companion presentation workflows. Android has its own native rendering and storage implementation, so capabilities are not identical."
+      "body": "Apple builds include companion presentations and supported on-device segmentation and CT assistance. Android has its own rendering and storage stack; these features are not identical across platforms."
     }
   ],
   "repositories": [],
@@ -51,6 +51,12 @@
         "Deleting a local study and clearing derived data serve different purposes. Cache cleanup does not remove an archive’s original study.",
         "Review patient information, image annotations and burned-in text before exporting or sharing. A hidden overlay is not proof that a DICOM file or image is anonymized."
       ]
+    },
+    {
+      "title": "Local AI tools on supported Apple devices",
+      "paragraphs": [
+        "Supported builds include native TotalSegmentator processing and CT assistance with device and memory checks. Some model assets are bundled; others require download or import. Review generated masks and text against the source images. These tools do not establish diagnostic correctness."
+      ]
     }
   ],
   "privacy": [
@@ -65,6 +71,13 @@
       "paragraphs": [
         "DIMSE and DICOMweb operations communicate with the nodes you configure. Requests, transfers and enabled automatic query/retrieve rules can send patient search criteria, identifiers or DICOM objects to those systems. Authentication may also contact the configured identity service.",
         "Listeners accept incoming studies when activated, and service discovery can advertise a receiving endpoint. Apple defaults disable the listener and Bonjour publication. Android’s clear-text listener requires acknowledgement before it starts; review its listener and discovery preferences."
+      ]
+    },
+    {
+      "title": "Optional local AI models",
+      "paragraphs": [
+        "Supported Apple builds run segmentation and CT assistance on the device. Some model assets are included; downloading additional approved models contacts their hosting service and stores assets locally. Download requests disclose connection information to the host even when image inference remains local.",
+        "Segmentation masks and generated text can be saved with the study or exported. Manage these outputs and downloaded models separately from original images."
       ]
     },
     {
@@ -100,5 +113,16 @@
     "src": "/assets/apps/isis-dicom-viewer.png",
     "width": 1024,
     "height": 1024
-  }
+  },
+  "editions": [
+    {
+      "title": "Platforms and separate implementations",
+      "paragraphs": [
+        "The Swift application contains iOS/iPadOS, visionOS, watchOS and tvOS targets. Watch and TV presentation workflows differ from the main viewer. Android uses a separate Kotlin/native imaging stack.",
+        "The macOS application has its own section in this directory. A separate Windows C++/Qt implementation also exists; this page and its privacy policy describe the Apple mobile/companion and Android implementations, not the Windows application."
+      ]
+    }
+  ],
+  "privacy_date": "November 2, 2026",
+  "reviewed_date": "November 2, 2026"
 }

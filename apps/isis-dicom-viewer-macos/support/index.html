@@ -28,25 +28,35 @@
 <h1>IsiX DICOM Viewer for macOS support</h1>
 <p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
 <section id="section-1">
+<h2>Choose the correct Mac build</h2>
+<p>Use the package for your Mac architecture and check its release requirements. The inspected configuration declares macOS 15 as its minimum; an installed older release or beta can differ.</p>
+<p>Stable GitHub builds, beta builds and Mac App Store builds have different update and plugin behavior. The privacy and data collection declarations on this site remain scoped to the Mac App Store edition.</p>
+</section>
+<section id="section-2">
 <h2>Import and view a study</h2>
 <p>Use Import in the database toolbar to choose a DICOM file or folder, then open a series from the database. No developer account is required to view local files.</p>
 <p>MPR and 3D reconstruction require suitable image geometry. These tools are not for diagnostic use.</p>
 </section>
-<section id="section-2">
+<section id="section-3">
 <h2>Connect to a PACS</h2>
 <p>Obtain the host, port, AE titles or DICOMweb address from your archive administrator. Configure authentication and secure transport as required by that server.</p>
 <p>Receiving and sharing services and automatic transfer rules can communicate with other systems after you enable them. Check their destination and access settings before use.</p>
 </section>
-<section id="section-3">
+<section id="section-4">
 <h2>Folders and distribution editions</h2>
 <p>The Mac App Store edition stores its default database in application storage. Use the macOS file picker to grant access to an external database or import and export folders.</p>
 <p>Updates are delivered through the App Store. External plugins and the GitHub updater are disabled in this edition. The GitHub distribution has different permissions and extension options.</p>
 </section>
-<section id="section-4">
+<section id="section-5">
 <h2>Report a problem</h2>
 <p>Provide the app version, macOS version and steps to reproduce the problem. Use anonymized examples and review screenshots or logs for patient identifiers before sharing them.</p>
 </section>
-<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/Isis-DICOM-Viewer-macOS">Source code and project documentation</a></div></section>
+<section id="edition-1">
+<h2>Distribution and plugin compatibility</h2>
+<p>The stable 5.3.x GitHub line keeps its existing plugin interfaces. The 6.0 beta line uses IsiXPluginKit and needs plugins built for that interface. Check the installed version before choosing a plugin.</p>
+<p>Mac App Store builds use App Sandbox, App Store updates and no external plugins. GitHub builds have different permissions, external plugin support and a GitHub updater. Separate Intel packaging does not establish testing on Intel hardware.</p>
+</section>
+<section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/IsiX-DICOM-Viewer-macOS">Source code and project documentation</a></div></section>
 <section class="note">
 <h2>Contact support</h2>
 <p>Contact Thales Matheus M Santos about IsiX DICOM Viewer for macOS at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>

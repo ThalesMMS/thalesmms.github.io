@@ -25,7 +25,7 @@
 <img class="project-icon" src="/assets/apps/scout.png" width="512" height="512" alt="">
 <p class="eyebrow">Scout / Privacy</p>
 <h1>Scout privacy policy</h1>
-<p class="label">Effective September 5, 2026</p>
+<p class="label">Effective November 2, 2026</p>
 <p class="lead">How Scout handles data, including the services and integrations you choose to use.</p>
 <section id="section-1">
 <h2>Documents and local indexes</h2>
@@ -48,8 +48,8 @@
 </section>
 <section id="section-5">
 <h2>Credentials and account access</h2>
-<p>API keys are currently saved as plaintext in the local settings file. Protect that file and any backups and do not include it in support attachments.</p>
-<p>The optional Codex flow opens an OpenAI sign-in page and stores or uses an authentication JSON file. It contacts OpenAI for authentication and model requests. Signing out removes Codex authentication fields from the selected file and can affect another application sharing that file.</p>
+<p>Scout-managed API keys for generation, embeddings and remote dictation use the operating system credential vault. Settings retain a marker after a verified vault write. If the vault is unavailable, a legacy or seeded plaintext copy can remain with a visible warning. Environment seed files and backups must be protected separately.</p>
+<p>The optional Codex provider uses a separate authentication JSON file and contacts OpenAI for sign-in and model requests. Tokens are not copied into ordinary settings. Scout refuses to log out an external shared authentication file; use the owning application or select a Scout-owned file.</p>
 </section>
 <section id="section-6">
 <h2>Diagnostics and deletion boundaries</h2>

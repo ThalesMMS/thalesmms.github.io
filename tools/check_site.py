@@ -14,9 +14,9 @@ SLUGS = {'autocomp', 'turing-lab', 'isis-dicom-viewer', 'isis-dicom-viewer-macos
          'video-subtitler'}
 PUBLIC_REPOS = {'Turing-Lab', 'dicom-slides', 'DICOM-Swift', 'MTK', 'dicom-skill',
                 'dicom-viewer-mcp-app', 'TotalSegmentator-OsiriX-Horos-Plugin', 'RadRef',
-                'dicom-go', 'Podcast-Intelligence', 'MacPGP-app', 'Isis-DICOM-Viewer-macOS'}
+                'dicom-go', 'Podcast-Intelligence', 'MacPGP-app', 'IsiX-DICOM-Viewer-macOS'}
 PRIVACY_REFERENCES = {'https://developer.apple.com/app-store/app-privacy-details/'}
-CLOSED_SLUGS = {'isis-dicom-viewer','codeatlas','the-legend-of-source','scout','video-subtitler'}
+CLOSED_SLUGS = {'autocomp','isis-dicom-viewer','codeatlas','the-legend-of-source','scout','video-subtitler'}
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 SECRET_PATTERNS = [r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
                    r'gh[pousr]_[A-Za-z0-9]{20,}', r'github_pat_[A-Za-z0-9_]{20,}',
@@ -107,11 +107,18 @@ def main():
                 assert target in pages and unquote(u.fragment) in pages[target].ids, (p.path,'broken fragment',url)
         if path.parent.name in {'support','privacy','data-collection'}:
             assert any(url=='mailto:thalesmmsradio@gmail.com' for _,_,url in p.links), (p.path,'missing contact')
-    for file in (ROOT/'content/apps').glob('*.json'):
+    content_files = list((ROOT/'content/apps').glob('*.json'))
+    assert {file.stem for file in content_files} == SLUGS, 'Every project needs a content source'
+    for file in content_files:
         data=json.loads(file.read_text())
         assert data['slug'] in SLUGS and data['slug']==file.stem
         if data['slug'] in CLOSED_SLUGS: assert data['repositories']==[], file
         assert data['features'] and data['support'] and data['privacy'],file
+        if data.get('reviewed_date'):
+            assert 'Description reviewed '+data['reviewed_date'] in pages[ROOT/'apps'/data['slug']/'index.html'].text, (file,'missing review date')
+        for edition in data.get('editions', []):
+            for suffix in ['', 'support']:
+                assert edition['title'] in pages[ROOT/'apps'/data['slug']/suffix/'index.html'].text, (file,'missing edition guidance')
     for path in [*actual,*(ROOT/'content/apps').glob('*.json'),ROOT/'assets/site.css']:
         text=path.read_text()
         assert '/Users/' not in text and 'file://' not in text, (path,'local path leak')

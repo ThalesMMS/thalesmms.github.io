@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Set up AutoComp for Safari, troubleshoot connections and suggestions, and contact Thales Matheus M Santos.">
-  <title>AutoComp support | ThalesMMS</title>
+  <meta name="description" content="Setup guidance and troubleshooting for AutoComp for Safari.">
+  <title>AutoComp for Safari support | ThalesMMS</title>
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="icon" type="image/png" href="/assets/autocomp-icon.png">
 </head>
@@ -15,25 +15,55 @@
     <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
     <nav aria-label="Main navigation">
 <a href="/">All projects</a>
-<a href="/apps/autocomp/">AutoComp</a>
+<a href="/apps/autocomp/">AutoComp for Safari</a>
 <a href="/apps/autocomp/support/" aria-current="page">Support</a>
 <a href="/apps/autocomp/privacy/">Privacy</a>
     </nav>
   </div>
 </header>
 <main id="main" tabindex="-1" class="wrap prose">
-<p class="eyebrow">AutoComp / Support</p><h1>Get AutoComp ready to write.</h1><p class="lead">Setup guidance for Safari on Mac, plus help when suggestions do not appear.</p>
-<section><h2>Set up your connection</h2><ol><li>After installing AutoComp, enable it in <strong>Safari &gt; Settings &gt; Extensions</strong>. Allow access to <strong>docs.google.com</strong>.</li><li>Click AutoComp in the Safari toolbar to open its options.</li><li>Enter your <strong>Base URL</strong>, <strong>Model</strong>, and <strong>API key</strong>. Use the HTTPS API base, such as <code>https://your-provider.example/v1</code>, without appending <code>/chat/completions</code>.</li><li>Choose <strong>Save and test connection</strong> and allow access to your endpoint's domain when Safari asks.</li><li>Reload an editable Google Docs document and start typing. Try a document containing only non-sensitive test text first.</li></ol><p>You supply the endpoint and any required provider account or credit. The extension does not import settings from Chrome.</p></section>
-<section><h2>Use a suggestion</h2><ul><li><kbd>Tab</kbd> accepts the next word.</li><li><kbd>Shift</kbd> + <kbd>Tab</kbd> or the backtick key accepts the full suggestion.</li><li><kbd>Esc</kbd> dismisses the suggestion.</li></ul></section>
-<section><h2>No suggestions appear</h2><p>Confirm that the document is editable and AutoComp is enabled in the Safari profile you are using. Check permissions for Google Docs and your endpoint, then reload the document. Disable any duplicate AutoComp installation and test the connection again.</p><p>A successful connection test checks the model-list endpoint. Your server must also support chat completions. Changes to Google Docs can affect how suggestions appear or are inserted.</p></section>
-<section><h2>The connection test fails</h2><p>Check the HTTPS base URL, valid TLS certificate, model identifier, API key, and Safari permission for the endpoint. AutoComp uses <code>/models</code> to test the connection and <code>/chat/completions</code> for suggestions. Plain HTTP endpoints are not supported.</p></section>
-<section><h2>Settings are missing</h2><p>Check the Safari profile and installation you are using. Different installations do not share settings. Removing extension data or changing the installation identity can require setup again. Settings are not synced through iCloud.</p></section>
-<section class="note"><h2>Contact support</h2><p>Thales Matheus M Santos<br><a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a></p><p>Include your macOS, Safari, and AutoComp versions, the steps to reproduce the problem, and the error message. Remove API keys, document text, patient information, and other sensitive details from messages and screenshots.</p></section>
+
+<p class="eyebrow">AutoComp for Safari / Support</p>
+<h1>AutoComp for Safari support</h1>
+<p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
+<section id="section-1">
+<h2>Enable the Safari extension</h2>
+<p>Open the containing macOS app, enable AutoComp in Safari Extensions, allow access to Google Docs and reload an editable document. The Google Docs integration depends on editor internals and may change.</p>
+</section>
+<section id="section-2">
+<h2>Choose local or remote processing</h2>
+<p>Use extension options to select the provider for each task. Local browser inference requires the packaged runtime, a compatible browser/device and an installed model. Downloading a model does not activate it automatically.</p>
+<p>For remote generation, enter the API base address, model and credentials, grant the requested host permission and test the connection. Review, assistant, embeddings and dictation can use different settings; a successful model-list test does not validate every operation.</p>
+</section>
+<section id="section-3">
+<h2>Build a phrase or search library</h2>
+<p>Select TXT files or a library folder in options. The phrase index and semantic search index are separate. Semantic embeddings require their own endpoint and consent; lexical search can operate without embeddings.</p>
+<p>Persistent Safari folder access requires a compatible signed containing app and shared App Group. Builds without that integration can use manual folder selection. Folder backups remain separate from the extension index.</p>
+</section>
+<section id="section-4">
+<h2>Review proposals and dictation</h2>
+<p>Review proposed edits before applying them. Start microphone capture explicitly in the recorder tab and keep it open while dictating. The configured speech service can receive audio; optional AI punctuation can separately send transcript context to the selected language model.</p>
+</section>
+<section id="section-5">
+<h2>Identify the edition when requesting help</h2>
+<p>Include Safari and macOS versions, the AutoComp build, selected provider and a sanitized error. The native macOS app, mobile editors, Flutter workbench, Chrome and OnlyOffice builds have different setup steps. Do not send documents, library backups or API keys.</p>
+</section>
+<section id="edition-1">
+<h2>Other AutoComp implementations</h2>
+<p>Native macOS uses Accessibility to work in supported text fields. Native iPhone/iPad and Android apps use their own editors. A separate Flutter workbench targets Windows, macOS, iOS and Android; its web target is unsupported.</p>
+<p>Chrome and OnlyOffice implementations also exist. Their host integration and feature availability differ from Safari. These are separate implementations, not a promise of store availability, feature parity or shared privacy settings.</p>
+</section>
+
+<section class="note">
+<h2>Contact support</h2>
+<p>Contact Thales Matheus M Santos about AutoComp for Safari at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>Include the app or package version, your operating system, the steps to reproduce the problem, and a sanitized error message. Do not send patient information, private documents or source code, API keys, passwords, or private keys.</p>
+</section>
 </main>
 <footer>
   <div class="wrap">
     <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
-    <div><a href="/apps/autocomp/support/">AutoComp support</a><br>
+    <div><a href="/apps/autocomp/support/">AutoComp for Safari support</a><br>
 <a href="/apps/autocomp/privacy/">Privacy policy</a></div>
   </div>
 </footer>

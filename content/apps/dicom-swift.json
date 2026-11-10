@@ -3,8 +3,8 @@
   "name": "DICOM-Swift",
   "category": "development",
   "platform": "Swift package · Apple platforms",
-  "summary": "Parse DICOM metadata and pixels, prepare images, and build imaging workflows in Swift.",
-  "intro": "DICOM-Swift supplies a DICOM processing library and the dicomtool command-line utility. Use it to inspect files, assemble image series, and connect imaging applications to DICOM services.",
+  "summary": "Decode DICOM files and build imaging, DICOM networking and supported HL7/FHIR workflows in Swift.",
+  "intro": "DICOM-Swift supplies DICOM libraries, SwiftUI integration and command-line tools. Optional products add HL7 v2, CDA, FHIR R4 and clinical mappings; each product has its own supported scope.",
   "features": [
     {
       "title": "Read and decode",
@@ -17,14 +17,18 @@
     {
       "title": "Integrate DICOM services",
       "body": "Use DICOMweb and DIMSE helpers for supported query, retrieval, storage, and related workflows. The host application owns the user interface and connection policy."
+    },
+    {
+      "title": "Clinical messages and documents",
+      "body": "Optional packages parse and transform supported HL7 v2, CDA and FHIR content. Their validators cover documented subsets and do not certify complete standard conformance."
     }
   ],
   "support": [
     {
       "title": "Add the package",
       "paragraphs": [
-        "Add the public DICOM-Swift repository as a Swift Package dependency and select DicomCore. The audited package requires Swift 6.2 and declares iOS, macOS, and visionOS 26.0 minimums; check the manifest for the release you use.",
-        "The package is a library and CLI, not a standalone viewer. Start with the repository getting-started guide and synthetic or de-identified test files."
+        "Add the public DICOM-Swift repository as a Swift Package dependency and select the products you need. The inspected 3.1.0 manifest requires Swift 6.2 and declares iOS 26.0, visionOS 26.0 and macOS 15.0 minimums. Earlier releases can differ.",
+        "The package includes libraries, example UI and CLI tools; it is not the separate IsiX application. Start with the getting-started guide and synthetic or de-identified data."
       ]
     },
     {
@@ -51,14 +55,15 @@
       "title": "Scope and local processing",
       "paragraphs": [
         "This policy describes the DICOM-Swift package and bundled CLI. An application that embeds the package has its own storage, sharing, and service policies.",
-        "The parser reads the DICOM metadata and pixel data supplied by the caller. Those inputs may contain patient identifiers, clinical information, private tags, or identifying text burned into pixels. Local file decoding does not require an upload to the package developer."
+        "The parser reads the DICOM metadata and pixel data supplied by the caller. Those inputs may contain patient identifiers, clinical information, private tags, or identifying text burned into pixels. Local file decoding does not require an upload to the package developer. Optional HL7 and FHIR products also process clinical messages, documents and resource data supplied by the caller."
       ]
     },
     {
       "title": "Network features",
       "paragraphs": [
         "When the host invokes networking features, DICOMweb and DIMSE requests can send query criteria, datasets, images, and authentication information to the configured server. JPIP retrieval uses a caller-provided transport.",
-        "Server operators determine their own logging and retention. The library does not make every network connection encrypted automatically; deployment code must configure the appropriate transport, endpoint permissions, and credentials."
+        "Server operators determine their own logging and retention. The library does not make every network connection encrypted automatically; deployment code must configure the appropriate transport, endpoint permissions, and credentials.",
+        "Optional HL7, CDA and FHIR networking products can send clinical messages, documents, resources and authentication data to configured services. SMART authentication contacts the selected identity service; these integrations are invoked by the host application."
       ]
     },
     {
@@ -87,5 +92,15 @@
       "label": "Source on GitHub",
       "url": "https://github.com/ThalesMMS/DICOM-Swift"
     }
-  ]
+  ],
+  "editions": [
+    {
+      "title": "Standalone and embedded packages",
+      "paragraphs": [
+        "The public package and copies embedded in applications can be at different revisions. Check the package manifest and release notes for the exact version selected by your app. A host application can impose a higher OS minimum than the library."
+      ]
+    }
+  ],
+  "privacy_date": "November 2, 2026",
+  "reviewed_date": "November 2, 2026"
 }

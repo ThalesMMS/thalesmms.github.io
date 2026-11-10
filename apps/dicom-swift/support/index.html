@@ -28,8 +28,8 @@
 <p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
 <section id="section-1">
 <h2>Add the package</h2>
-<p>Add the public DICOM-Swift repository as a Swift Package dependency and select DicomCore. The audited package requires Swift 6.2 and declares iOS, macOS, and visionOS 26.0 minimums; check the manifest for the release you use.</p>
-<p>The package is a library and CLI, not a standalone viewer. Start with the repository getting-started guide and synthetic or de-identified test files.</p>
+<p>Add the public DICOM-Swift repository as a Swift Package dependency and select the products you need. The inspected 3.1.0 manifest requires Swift 6.2 and declares iOS 26.0, visionOS 26.0 and macOS 15.0 minimums. Earlier releases can differ.</p>
+<p>The package includes libraries, example UI and CLI tools; it is not the separate IsiX application. Start with the getting-started guide and synthetic or de-identified data.</p>
 </section>
 <section id="section-2">
 <h2>Inspect and export</h2>
@@ -42,6 +42,10 @@
 <section id="section-4">
 <h2>A network request fails</h2>
 <p>Verify the configured server URL or AE title, host, port, authentication, transport security, and supported operation. The calling application must supply the appropriate connection and authorization policy. Remove patient identifiers, server response bodies, and credentials before sharing diagnostics.</p>
+</section>
+<section id="edition-1">
+<h2>Standalone and embedded packages</h2>
+<p>The public package and copies embedded in applications can be at different revisions. Check the package manifest and release notes for the exact version selected by your app. A host application can impose a higher OS minimum than the library.</p>
 </section>
 <section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/DICOM-Swift">Source on GitHub</a></div></section>
 <section class="note">

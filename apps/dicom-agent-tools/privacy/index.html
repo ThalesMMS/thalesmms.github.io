@@ -25,7 +25,7 @@
 
 <p class="eyebrow">DICOM tools for AI agents / Privacy</p>
 <h1>DICOM tools for AI agents privacy policy</h1>
-<p class="label">Effective September 5, 2026</p>
+<p class="label">Effective November 2, 2026</p>
 <p class="lead">How DICOM tools for AI agents handles data, including the services and integrations you choose to use.</p>
 <section id="section-1">
 <h2>PACS and network operations</h2>
@@ -49,7 +49,8 @@
 </section>
 <section id="section-6">
 <h2>Configuration and exposure</h2>
-<p>Protect configuration files and credentials. Use the separate viewer’s stdio transport for local host integration: its HTTP mode binds all interfaces and enables CORS, without an application authentication flow in the inspected entry point. The integrated viewer uses a loopback HTTP bind.</p>
+<p>Protect configuration files and credentials. The standalone prototype HTTP entry point binds all interfaces and enables CORS without an application authentication flow; prefer its stdio mode for local host integration.</p>
+<p>The integrated viewer defaults to a loopback HTTP bind. Current builds require a token and explicit origin configuration for non-loopback exposure. These protections do not apply retroactively to older integrated builds or to the standalone prototype.</p>
 </section>
 <section id="section-7">
 <h2>Providers and telemetry</h2>

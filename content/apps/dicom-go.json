@@ -16,7 +16,7 @@
     },
     {
       "title": "Build focused tools",
-      "body": "Combine command-line inspection, storage, rendering, and de-identification helpers. Codec and rendering support depends on the chosen modules and data format."
+      "body": "Use inspection, storage, rendering and de-identification helpers, DICOM file-set workflows, supported Storage Commitment operations and geometry-validated NIfTI export. Codec support depends on the selected adapter."
     }
   ],
   "support": [
@@ -100,5 +100,14 @@
       "label": "Source on GitHub",
       "url": "https://github.com/ThalesMMS/dicom-go"
     }
-  ]
+  ],
+  "editions": [
+    {
+      "title": "Library and desktop consumer",
+      "paragraphs": [
+        "The standalone library, development checkout and copies embedded in other projects can have different revisions. TwinViewer is a separate desktop application that consumes the library; its archive, UI and deployment policy are not part of this library policy."
+      ]
+    }
+  ],
+  "reviewed_date": "November 2, 2026"
 }

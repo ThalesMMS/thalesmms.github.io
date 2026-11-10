@@ -91,8 +91,8 @@
     {
       "title": "Credentials and account access",
       "paragraphs": [
-        "API keys are currently saved as plaintext in the local settings file. Protect that file and any backups and do not include it in support attachments.",
-        "The optional Codex flow opens an OpenAI sign-in page and stores or uses an authentication JSON file. It contacts OpenAI for authentication and model requests. Signing out removes Codex authentication fields from the selected file and can affect another application sharing that file."
+        "Scout-managed API keys for generation, embeddings and remote dictation use the operating system credential vault. Settings retain a marker after a verified vault write. If the vault is unavailable, a legacy or seeded plaintext copy can remain with a visible warning. Environment seed files and backups must be protected separately.",
+        "The optional Codex provider uses a separate authentication JSON file and contacts OpenAI for sign-in and model requests. Tokens are not copied into ordinary settings. Scout refuses to log out an external shared authentication file; use the owning application or select a Scout-owned file."
       ]
     },
     {
@@ -107,5 +107,15 @@
     "src": "/assets/apps/scout.png",
     "width": 512,
     "height": 512
-  }
+  },
+  "editions": [
+    {
+      "title": "Desktop and document-editor integrations",
+      "paragraphs": [
+        "The Tauri desktop app is separate from the OnlyOffice plugin and the Word add-in. Their document access, settings and deployment requirements differ; this page and policy describe the desktop application."
+      ]
+    }
+  ],
+  "privacy_date": "November 2, 2026",
+  "reviewed_date": "November 2, 2026"
 }

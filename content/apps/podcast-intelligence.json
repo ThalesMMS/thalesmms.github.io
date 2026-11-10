@@ -109,5 +109,14 @@
     "src": "/assets/apps/podcast-intelligence.png",
     "width": 512,
     "height": 512
-  }
+  },
+  "editions": [
+    {
+      "title": "Desktop and server deployments",
+      "paragraphs": [
+        "The macOS and Windows desktop packages and server deployment share processing components but have different storage and service configuration. Public and development checkouts are separate snapshots; a local desktop backend can still use remote AI providers."
+      ]
+    }
+  ],
+  "reviewed_date": "November 2, 2026"
 }

@@ -21,6 +21,10 @@
     {
       "title": "Hosted context and export",
       "body": "Optionally include merged pull requests and closed issues, and export stories as Markdown."
+    },
+    {
+      "title": "Release notes and exports",
+      "body": "Generate evidence-linked changelogs between references and export stories as Markdown or self-contained HTML."
     }
   ],
   "support": [
@@ -53,6 +57,12 @@
       "paragraphs": [
         "The browser preview uses demonstration data. Real Git analysis, persistence and AI requests require the desktop application."
       ]
+    },
+    {
+      "title": "Choose the AI provider",
+      "paragraphs": [
+        "Use an OpenAI-compatible chat service or the optional Codex ChatGPT sign-in flow. Codex requires a compatible installed executable and an authorized account. Embeddings remain separately configured and are not supplied by selecting Codex."
+      ]
     }
   ],
   "privacy": [
@@ -71,7 +81,8 @@
     {
       "title": "AI endpoints",
       "paragraphs": [
-        "Story generation and chat send selected repository evidence and questions to the configured chat service. Indexing sends document text to the configured embedding service. Default endpoints are loopback addresses, but settings and environment values can select remote services."
+        "Story generation, release-note summaries and chat send selected repository evidence and questions to the chosen provider. The OpenAI-compatible mode uses the configured chat endpoint. The optional Codex mode runs a local Codex app-server process that sends requests through the signed-in ChatGPT account; model inference is remote.",
+        "Indexing sends document text to the separately configured embedding service. Default compatible endpoints are loopback addresses, but settings and environment values can select remote services."
       ]
     },
     {
@@ -83,7 +94,8 @@
     {
       "title": "Credentials",
       "paragraphs": [
-        "Saved settings, including AI credentials and hosting tokens, are serialized into the local SQLite database. This is not an encrypted credential vault; protect application data and its backups accordingly."
+        "Saved compatible-provider settings, including AI credentials and hosting tokens, are serialized into the local SQLite database. This is not an encrypted credential vault; protect application data and its backups.",
+        "The Codex option stores provider preferences separately and delegates credentials to an isolated Codex authentication directory within application data. Its sign-out flow does not delete the normal shared Codex CLI login."
       ]
     },
     {
@@ -104,5 +116,7 @@
     "src": "/assets/apps/the-legend-of-source.png",
     "width": 512,
     "height": 512
-  }
+  },
+  "privacy_date": "November 2, 2026",
+  "reviewed_date": "November 2, 2026"
 }

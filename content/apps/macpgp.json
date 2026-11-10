@@ -97,5 +97,14 @@
     "src": "/assets/apps/macpgp.png",
     "width": 512,
     "height": 512
-  }
+  },
+  "editions": [
+    {
+      "title": "Public snapshot and newer builds",
+      "paragraphs": [
+        "The linked public source snapshot and newer development builds differ. Newer code adds encrypted keyring backup envelopes and revised passphrase and output-file handling; check your installed version before relying on a workflow. An encrypted backup does not mean every local keyring or exported file is encrypted."
+      ]
+    }
+  ],
+  "reviewed_date": "November 2, 2026"
 }

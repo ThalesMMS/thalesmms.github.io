@@ -25,7 +25,7 @@
 <img class="project-icon" src="/assets/apps/codeatlas.png" width="1163" height="1163" alt="">
 <p class="eyebrow">CodeAtlas / Privacy</p>
 <h1>CodeAtlas privacy policy</h1>
-<p class="label">Effective September 5, 2026</p>
+<p class="label">Effective November 2, 2026</p>
 <p class="lead">How CodeAtlas handles data, including the services and integrations you choose to use.</p>
 <section id="section-1">
 <h2>Local repository data</h2>
@@ -34,10 +34,12 @@
 <section id="section-2">
 <h2>AI requests</h2>
 <p>Generated explanations and documentation send prompts and relevant source evidence to the configured chat endpoint. A remote provider receives that content; provider connection tests also make requests.</p>
+<p>In builds with the optional Codex provider, selected source evidence and prompts are passed to the locally invoked CLI and sent through its ChatGPT session. API endpoint settings are not used for generation in this mode.</p>
 </section>
 <section id="section-3">
 <h2>Settings and credentials</h2>
 <p>Settings are stored for the current operating-system user. Credentials entered through Settings use the system credential vault; credentials supplied through environment files remain governed by how those files are stored.</p>
+<p>In Codex mode, the CLI owns and refreshes its credentials. CodeAtlas does not copy those tokens into its settings; selecting or signing out a shared Codex home can affect other clients using that home.</p>
 </section>
 <section id="section-4">
 <h2>Local interface</h2>

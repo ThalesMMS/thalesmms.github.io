@@ -28,6 +28,7 @@
 <h1>MTK — Metal Toolkit</h1>
 <p class="lead">Render medical volumes, multiplanar views, and projections using Metal.</p>
 <p>MTK is a rendering core for developers building Apple imaging applications. It accepts decoded volumes and produces GPU textures that your app can display or explicitly export.</p>
+<p class="label">Description reviewed November 2, 2026</p>
 <div class="actions">
 <a href="/apps/mtk/support/" class="button">Setup &amp; support</a>
 <a href="/apps/mtk/privacy/">Read the privacy policy</a>
@@ -45,6 +46,11 @@
 <h2>Bring your own application</h2>
 <p>The core package provides rendering components and synthetic fixtures. Your application supplies DICOM decoding, interface controls, and its data policies.</p>
 </section></div>
+<section id="edition-1">
+<h2>Core package and integration builds</h2>
+<p>The public package exposes the rendering core and fixtures. Development and application-embedded copies can also include MTKUI and additional interaction tools; their products are not identical.</p>
+<p>The inspected public package uses Swift tools 6.0 and declares iOS, visionOS and macOS 26.0 minimums. Host applications and Metal features can impose additional requirements.</p>
+</section>
 <section class="source-section"><h2>Explore the source</h2><div class="source-links"><a href="https://github.com/ThalesMMS/MTK">Source on GitHub</a></div></section>
 </main>
 <footer>

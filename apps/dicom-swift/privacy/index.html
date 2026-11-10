@@ -25,17 +25,18 @@
 
 <p class="eyebrow">DICOM-Swift / Privacy</p>
 <h1>DICOM-Swift privacy policy</h1>
-<p class="label">Effective September 5, 2026</p>
+<p class="label">Effective November 2, 2026</p>
 <p class="lead">How DICOM-Swift handles data, including the services and integrations you choose to use.</p>
 <section id="section-1">
 <h2>Scope and local processing</h2>
 <p>This policy describes the DICOM-Swift package and bundled CLI. An application that embeds the package has its own storage, sharing, and service policies.</p>
-<p>The parser reads the DICOM metadata and pixel data supplied by the caller. Those inputs may contain patient identifiers, clinical information, private tags, or identifying text burned into pixels. Local file decoding does not require an upload to the package developer.</p>
+<p>The parser reads the DICOM metadata and pixel data supplied by the caller. Those inputs may contain patient identifiers, clinical information, private tags, or identifying text burned into pixels. Local file decoding does not require an upload to the package developer. Optional HL7 and FHIR products also process clinical messages, documents and resource data supplied by the caller.</p>
 </section>
 <section id="section-2">
 <h2>Network features</h2>
 <p>When the host invokes networking features, DICOMweb and DIMSE requests can send query criteria, datasets, images, and authentication information to the configured server. JPIP retrieval uses a caller-provided transport.</p>
 <p>Server operators determine their own logging and retention. The library does not make every network connection encrypted automatically; deployment code must configure the appropriate transport, endpoint permissions, and credentials.</p>
+<p>Optional HL7, CDA and FHIR networking products can send clinical messages, documents, resources and authentication data to configured services. SMART authentication contacts the selected identity service; these integrations are invoked by the host application.</p>
 </section>
 <section id="section-3">
 <h2>Files and exports</h2>

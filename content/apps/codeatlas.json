@@ -33,7 +33,7 @@
     {
       "title": "Configure explanations",
       "paragraphs": [
-        "Set an OpenAI-compatible endpoint and model in Settings. Generated explanations require a working provider; check connection errors and credentials if configuration is incomplete."
+        "Set an OpenAI-compatible endpoint and model in Settings. Builds with the Codex option can instead use an installed Codex CLI signed in with ChatGPT. Check the provider readiness result before generating explanations; a local CLI process still uses remote model inference."
       ]
     },
     {
@@ -59,13 +59,15 @@
     {
       "title": "AI requests",
       "paragraphs": [
-        "Generated explanations and documentation send prompts and relevant source evidence to the configured chat endpoint. A remote provider receives that content; provider connection tests also make requests."
+        "Generated explanations and documentation send prompts and relevant source evidence to the configured chat endpoint. A remote provider receives that content; provider connection tests also make requests.",
+        "In builds with the optional Codex provider, selected source evidence and prompts are passed to the locally invoked CLI and sent through its ChatGPT session. API endpoint settings are not used for generation in this mode."
       ]
     },
     {
       "title": "Settings and credentials",
       "paragraphs": [
-        "Settings are stored for the current operating-system user. Credentials entered through Settings use the system credential vault; credentials supplied through environment files remain governed by how those files are stored."
+        "Settings are stored for the current operating-system user. Credentials entered through Settings use the system credential vault; credentials supplied through environment files remain governed by how those files are stored.",
+        "In Codex mode, the CLI owns and refreshes its credentials. CodeAtlas does not copy those tokens into its settings; selecting or signing out a shared Codex home can affect other clients using that home."
       ]
     },
     {
@@ -86,5 +88,15 @@
     "src": "/assets/apps/codeatlas.png",
     "width": 1163,
     "height": 1163
-  }
+  },
+  "editions": [
+    {
+      "title": "Build differences",
+      "paragraphs": [
+        "Desktop and browser/server modes share the repository index. Newer development builds also offer Codex CLI with ChatGPT authentication as an alternative generation provider. Older builds can offer only the OpenAI-compatible provider; check Settings in your installed version."
+      ]
+    }
+  ],
+  "privacy_date": "November 2, 2026",
+  "reviewed_date": "November 2, 2026"
 }

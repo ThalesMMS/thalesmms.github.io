@@ -91,5 +91,14 @@
     "src": "/assets/apps/turing-lab.png",
     "width": 512,
     "height": 512
-  }
+  },
+  "editions": [
+    {
+      "title": "Platform targets",
+      "paragraphs": [
+        "The Flutter project targets Android, iOS/iPadOS, web, Windows, macOS and Linux. Public and development checkouts are separate snapshots. Core formal-system workflows are implemented; device validation, packaging and store distribution remain separate release checks."
+      ]
+    }
+  ],
+  "reviewed_date": "November 2, 2026"
 }

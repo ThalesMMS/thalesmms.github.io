@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How AutoComp for Safari stores settings and sends text context to your chosen HTTPS endpoint.">
-  <title>AutoComp privacy policy | ThalesMMS</title>
+  <meta name="description" content="Data handling, storage, and service integrations for AutoComp for Safari.">
+  <title>AutoComp for Safari privacy policy | ThalesMMS</title>
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="icon" type="image/png" href="/assets/autocomp-icon.png">
 </head>
@@ -15,26 +15,67 @@
     <a class="brand" href="/">ThalesMMS<span aria-hidden="true"> /</span></a>
     <nav aria-label="Main navigation">
 <a href="/">All projects</a>
-<a href="/apps/autocomp/">AutoComp</a>
+<a href="/apps/autocomp/">AutoComp for Safari</a>
 <a href="/apps/autocomp/support/">Support</a>
 <a href="/apps/autocomp/privacy/" aria-current="page">Privacy</a>
     </nav>
   </div>
 </header>
 <main id="main" tabindex="-1" class="wrap prose">
-<p class="eyebrow">AutoComp / Privacy</p><h1>Privacy policy</h1><p class="label">Effective September 5, 2026</p><p class="lead">This policy describes AutoComp for Safari and the endpoint you choose to connect to it.</p>
-<section><h2>What AutoComp processes</h2><p>AutoComp reads text context before your cursor in Google Docs to request inline suggestions. The current context window is bounded to 2,500 characters and 150 words. It sends that context, completion instructions, and your selected model to your configured OpenAI-compatible HTTPS endpoint.</p><p>The configured API key accompanies requests to that endpoint for authentication. The connection test also contacts the endpoint to request its model list. Like any network service you contact, the endpoint can receive your IP address and request metadata.</p></section>
-<section><h2>Settings stored on your Mac</h2><p>The API base URL, model, API key, and appearance preferences are stored locally in the extension's IndexedDB storage. AutoComp does not sync these settings through iCloud. Its content scripts do not receive the saved API key, and the containing Mac app does not receive it.</p><p>This storage is not Apple's Keychain and AutoComp adds no encryption of its own to it. It should not be treated as a vault against access to your local browser profile.</p></section>
-<section><h2>Your chosen endpoint</h2><p>AutoComp does not route suggestions through a developer-hosted server. Text context and authentication requests go to the endpoint you configure. The endpoint provider's own policies govern its logging, retention, use for model training, and deletion practices. The AutoComp developer does not control those practices.</p><p>Review the provider's terms before using it with sensitive documents. Only send information you are authorized to share with that provider.</p></section>
-<section><h2>Developer services and support</h2><p>AutoComp has no developer-hosted account service or analytics service. It does not send document content or API keys to the developer as part of generating suggestions.</p><p>If you email support, the developer receives your email address and the information you choose to include so they can respond. Do not send API keys or sensitive document content.</p></section>
-<section><h2>Your choices</h2><p>You can change the endpoint and credentials in AutoComp's options. Disable the extension or revoke its site permissions in Safari to stop it operating on documents. Use Safari's extension and data-management controls to remove the extension or its stored data. Revoke an API key with its provider if you need to invalidate it.</p><p>Removing local data does not delete requests already received by your endpoint. Contact that provider about its retained data.</p></section>
-<section><h2>This website</h2><p>This static site has no analytics scripts, forms, or third-party tracking scripts. It is hosted on GitHub Pages; the hosting provider handles web requests under its own privacy practices.</p></section>
-<section><h2>Questions and changes</h2><p>This policy may be updated when AutoComp's behavior changes. The effective date above identifies this version.</p><p>Contact Thales Matheus M Santos at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a> with privacy questions.</p></section>
+
+<p class="eyebrow">AutoComp for Safari / Privacy</p>
+<h1>AutoComp for Safari privacy policy</h1>
+<p class="label">Effective November 2, 2026</p>
+<p class="lead">How AutoComp for Safari handles data, including the services and integrations you choose to use.</p>
+<section id="section-1">
+<h2>Scope and document access</h2>
+<p>This policy describes the Safari extension, including current builds with local models, review, assistant, dictation and search. Earlier Safari builds may offer only remote autocomplete. It does not describe the native macOS, mobile, Flutter, Chrome or OnlyOffice implementations.</p>
+<p>The extension reads relevant Google Docs text, selections and cursor context for the action you request. Assistant and review operations can process more text than a short autocomplete request. Abbreviations can operate in other supported web text fields.</p>
+</section>
+<section id="section-2">
+<h2>Local processing and model downloads</h2>
+<p>TXT phrase indexing and lookup run locally. Optional browser language models run inside the extension when supported. Installing model assets contacts the selected model host and creates a local model cache; local inference does not make installation offline.</p>
+<p>A local phrase hit does not call the generation provider. Later AI requests may include previously inserted text as document context. A phrase index is not an anonymization tool.</p>
+</section>
+<section id="section-3">
+<h2>Remote generation, search and audio</h2>
+<p>Remote autocomplete, assistant and review requests send the relevant document text, instructions and selected model to the configured generation endpoint. Connection tests also contact the selected service.</p>
+<p>Optional semantic embeddings send selected report passages and search text to their separately authorized endpoint. A remote dictation service receives microphone audio through the configured streaming or batch route. Optional AI punctuation uses the selected assistant model and transcript context separately.</p>
+<p>Credentials accompany authenticated requests. Use HTTPS for remote services; supported loopback integrations have separate connection rules. The destination controls logging, retention, training use and deletion.</p>
+</section>
+<section id="section-4">
+<h2>Settings, indexes and credentials</h2>
+<p>Safari credentials and task settings are stored in extension-origin IndexedDB, not Apple Keychain. This store adds no encryption of its own and does not sync settings through iCloud. Content scripts do not receive the saved credential store.</p>
+<p>Phrase and semantic indexes, model caches, abbreviations and other local extension data have separate lifecycles. Semantic indexes retain source passages; phrase normalization does not guarantee removal of names or identifying text. Protect exported configuration backups because they can contain API keys.</p>
+</section>
+<section id="section-5">
+<h2>Folder access and external copies</h2>
+<p>Optional persistent folder access uses the containing app and remembered folder authorization. Source TXT files and library backups remain outside extension storage. Clearing an index does not delete those external copies.</p>
+<p>Document changes applied to Google Docs become part of the document managed by Google and its sharing settings. Copied text, exported files and data already sent to a provider remain subject to their destination.</p>
+</section>
+<section id="section-6">
+<h2>Your controls and diagnostics</h2>
+<p>Disable unwanted tasks, remove endpoint permissions, stop dictation and revoke microphone access to stop the corresponding activity. Remove local indexes and models through their controls and manage Safari extension data separately. Revoke API keys at their provider when needed.</p>
+<p>The inspected extension does not configure a developer-operated document-upload or analytics service. Review diagnostic output and any backups before sharing them with support. Removing local data does not delete requests retained by a remote service.</p>
+</section>
+<section>
+<h2>This support website</h2>
+<p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
+</section>
+<section class="note">
+<h2>Privacy questions and support</h2>
+<p>Contact Thales Matheus M Santos about AutoComp for Safari at <a href="mailto:thalesmmsradio@gmail.com">thalesmmsradio@gmail.com</a>.</p>
+<p>If you email us, we receive your email address and the information you choose to send to respond to your request. Please omit patient information, private documents, and credentials.</p>
+</section>
+<section>
+<h2>Policy updates</h2>
+<p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
+</section>
 </main>
 <footer>
   <div class="wrap">
     <p>Thales Matheus M Santos<br>Apps, libraries, and tools.</p>
-    <div><a href="/apps/autocomp/support/">AutoComp support</a><br>
+    <div><a href="/apps/autocomp/support/">AutoComp for Safari support</a><br>
 <a href="/apps/autocomp/privacy/">Privacy policy</a></div>
   </div>
 </footer>

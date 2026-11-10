@@ -28,6 +28,7 @@
 <h1>TotalSegmentator OsiriX/Horos Plugin</h1>
 <p class="lead">Run TotalSegmentator segmentation from an OsiriX or Horos imaging workflow.</p>
 <p>Export an image series to a local segmentation workflow and import supported results back into the viewer. Configure the task, device and output location using the plugin&#x27;s native controls.</p>
+<p class="label">Description reviewed November 2, 2026</p>
 <div class="actions">
 <a href="/apps/totalsegmentator-plugin/support/" class="button">Setup &amp; support</a>
 <a href="/apps/totalsegmentator-plugin/privacy/">Read the privacy policy</a>
@@ -49,6 +50,11 @@
 <h2>Run artifacts</h2>
 <p>Keep segmentation outputs and provenance records for review.</p>
 </section></div>
+<section id="edition-1">
+<h2>Separate plugin implementations</h2>
+<p>The linked Swift OsiriX/Horos plugin currently pins TotalSegmentator 2.18.0 for managed setup. A separate reconstructed native plugin has an IsiX compatibility build; it is not the same implementation and has separate host and runtime limits.</p>
+<p>IsiX also has native on-device segmentation in supported Apple application builds. That workflow does not use this Python plugin. Stable macOS plugin interfaces and the 6.0 IsiXPluginKit beta interface must be checked separately.</p>
+</section>
 <section class="source-section"><h2>Explore the source</h2><div class="source-links"><a href="https://github.com/ThalesMMS/TotalSegmentator-OsiriX-Horos-Plugin">TotalSegmentator-OsiriX-Horos-Plugin on GitHub</a></div></section>
 </main>
 <footer>

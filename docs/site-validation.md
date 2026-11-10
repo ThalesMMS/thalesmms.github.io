@@ -1,51 +1,38 @@
 # Site validation
 
-Validated September 5, 2026 for the directory expansion.
+Reviewed November 2, 2026. The site has 17 project sections and 54 HTML pages, including root, 404 and the macOS App Store data collection declaration.
 
-## Coverage
+## Project review
 
-- 15 new project sections, each with presentation, support, and privacy pages.
-- 50 HTML pages total, including the three existing AutoComp pages, root, and 404.
-- Source review covered the requested projects, both Apple and Android IsiX implementations, and each component of the DICOM agent suite. Product source checkouts were read-only.
-- Separate factual and site-structure reviews found no actionable defects. AutoComp's product copy was preserved from its earlier review.
+The local inventory covers all five reachable site revisions that change project pages, with 17 project identities, 58 source entries and 42 Git working trees. Source entries include separate applications, development checkouts and embedded packages; they are not 58 released products. Product repositories were read-only.
+
+Detailed source mappings, revisions, local changes, file hashes and findings are in the ignored `.site-work/project-inventory.json` and `.site-work/project-audit.md`. Repeat the inventory using the command in the README. The [project review](project-review.md) summarizes the public-facing changes.
+
+Descriptions now distinguish separate implementations and release lines. AutoComp uses a JSON source instead of retaining old HTML bodies. Description review dates and privacy effective dates are independent.
 
 ## Automated checks
 
-`python3 tools/check_site.py` passed for all 50 pages and 704 links. It checks:
+`python3 tools/check_site.py` passed for all 54 pages and 765 links. It checks:
 
 - Required routes, balanced tags, unique IDs, one title, h1 and main landmark per page.
-- English language, viewport metadata, labelled navigation, heading order, image attributes, and skip-link targets.
-- Internal files and fragments, project-specific active navigation, and support/privacy contact links.
-- Local runtime assets, no script/form/iframe elements or inline event handlers.
-- A public-source URL allowlist, empty repository lists for closed projects, no local filesystem paths in public copy, and credential patterns.
+- Language, viewport metadata, labelled navigation, heading order, image attributes and skip targets.
+- Internal files and fragments, active navigation and contact links.
+- Local assets and absence of scripts, forms, iframes and event handlers.
+- Public source-link allowlist, private-source link restrictions, local path leaks and credential patterns.
+- A JSON source for every project, rendered review dates and edition guidance on presentation and support pages.
 
-Regenerating the site produced identical HTML hashes. All three AutoComp main content bodies match the previous committed version exactly. `git diff --check` passed.
+Regenerating all 54 pages produced identical HTML hashes. `git diff --check` passed. The inventory found every mapped source directory and evidence file.
 
 ## Browser checks
 
-- All 50 pages were loaded at 320, 768, and 1280 CSS pixels: 150 layout checks, no horizontal overflow.
-- Images loaded; each page had one h1 and one main landmark. The tablet/desktop checks found no page scripts.
-- Activating Skip to content with the keyboard moved focus to main.
-- Visual review covered the directory, category cards, and a long project name on a narrow privacy page.
-- Shared text colors retain contrast ratios above 4.5:1; the lowest reviewed text pair is muted text on the page background at 6.13:1.
+The updated AutoComp presentation and privacy pages, macOS IsiX presentation and Scout privacy page were loaded at the browser's 1280-pixel viewport. All four had the expected headings and dates, no missing images and no horizontal overflow. The directory was also inspected in the browser.
 
-## Content and privacy boundaries
-
-- Code-grounded copy distinguishes local data, external providers, settings/credentials, exports, and deletion limits.
-- Libraries describe their own behavior and the responsibilities of host applications.
-- TotalSegmentator copy includes Python usage reporting and the selected-runtime caveat.
-- No private source links, source excerpts, user media, patient records, or DICOM sample assets were added. The existing AutoComp icon is retained.
-- The private dicom-plugin repository link is omitted with the owner's confirmation; the suite still describes all three components.
-- Support uses Thales Matheus M Santos and thalesmmsradio@gmail.com throughout.
+The earlier September review included narrow and tablet viewports. Those historical results are not a new responsive or accessibility qualification for this revision. Styles and assets did not change in this review.
 
 ## Limits
 
-These checks verify static pages and source-derived descriptions. They are not clinical validation, an exhaustive security audit, screen-reader certification, or runtime validation of every application and external service. Third-party retention is not controlled by this site.
+These checks verify static pages and source-derived descriptions. They do not establish app runtime behavior on every device, store availability, clinical suitability, an exhaustive security audit or third-party retention. Declared platform minimums do not prove execution on the oldest supported OS or Intel hardware.
 
-No GitHub Pages settings or App Store Connect settings were changed. Local /404.html can be checked directly; custom handling of an unknown path is provided by GitHub Pages when deployed.
+Only the renamed public macOS repository URL was checked remotely in this review. Other projects were compared with local sources and the earlier source audit. The macOS privacy and data collection declaration remain limited to the Mac App Store edition. Separate application implementations do not inherit those declarations.
 
-## Product icon correction
-
-Eleven original product icons were added to the directory, presentation, support, privacy, and favicon rendering. Source PNGs were copied unchanged and visually inspected. Together with AutoComp, 12 project sections now use product artwork. DICOM-Swift, MTK, the DICOM agent suite, and dicom-go retain initials because no own product icon was found in their current checkouts. The dicom-go example app contains the standard Fyne framework icon.
-
-The icon correction passed static validation for 50 pages and 704 links. All 11 added source PNGs match byte for byte; their declared dimensions match the files. All 49 catalog/project pages were loaded at 320 CSS pixels with no missing images or horizontal overflow.
+No product source, private source links, patient data or application screenshots were published. No GitHub Pages or App Store Connect settings were changed, and this local update was not pushed or deployed.

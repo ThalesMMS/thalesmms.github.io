@@ -39,7 +39,8 @@
     {
       "title": "Check dependencies",
       "paragraphs": [
-        "Use environment checks to verify Python, TotalSegmentator and dcm2niix. Managed setup installs pinned Python dependencies and may download a conversion binary."
+        "Use environment checks to verify Python, TotalSegmentator and dcm2niix. Managed setup installs pinned Python dependencies and may download a conversion binary.",
+        "Managed setup in the linked project pins TotalSegmentator 2.18.0 and checks hash-locked Python dependencies. An independently selected installed environment can have another version."
       ]
     },
     {
@@ -104,5 +105,15 @@
     "src": "/assets/apps/totalsegmentator-plugin.png",
     "width": 1024,
     "height": 1024
-  }
+  },
+  "editions": [
+    {
+      "title": "Separate plugin implementations",
+      "paragraphs": [
+        "The linked Swift OsiriX/Horos plugin currently pins TotalSegmentator 2.18.0 for managed setup. A separate reconstructed native plugin has an IsiX compatibility build; it is not the same implementation and has separate host and runtime limits.",
+        "IsiX also has native on-device segmentation in supported Apple application builds. That workflow does not use this Python plugin. Stable macOS plugin interfaces and the 6.0 IsiXPluginKit beta interface must be checked separately."
+      ]
+    }
+  ],
+  "reviewed_date": "November 2, 2026"
 }

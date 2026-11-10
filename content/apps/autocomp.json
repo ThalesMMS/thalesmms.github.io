@@ -1,0 +1,117 @@
+{
+  "slug": "autocomp",
+  "name": "AutoComp for Safari",
+  "category": "everyday",
+  "platform": "Safari extension · macOS",
+  "summary": "Complete and review Google Docs text with local phrase suggestions, optional on-device models or configured AI services.",
+  "intro": "The Safari extension combines autocomplete with a document assistant, review tools and optional dictation. Available engines and integrations depend on the installed build; other AutoComp applications have different editors, permissions and storage.",
+  "features": [
+    {
+      "title": "Suggestions and abbreviations",
+      "body": "Use a local TXT phrase library and editable abbreviations before requesting AI completions."
+    },
+    {
+      "title": "Choose a model",
+      "body": "Use an installed browser model when the build and device support it, or configure an AI endpoint. Model installation and activation are separate choices."
+    },
+    {
+      "title": "Review and edit",
+      "body": "Review text in five categories, ask questions and inspect proposed document edits before applying them."
+    },
+    {
+      "title": "Dictation and search",
+      "body": "Configure speech recognition and optional semantic search independently from the text-generation provider."
+    }
+  ],
+  "repositories": [],
+  "editions": [
+    {
+      "title": "Other AutoComp implementations",
+      "paragraphs": [
+        "Native macOS uses Accessibility to work in supported text fields. Native iPhone/iPad and Android apps use their own editors. A separate Flutter workbench targets Windows, macOS, iOS and Android; its web target is unsupported.",
+        "Chrome and OnlyOffice implementations also exist. Their host integration and feature availability differ from Safari. These are separate implementations, not a promise of store availability, feature parity or shared privacy settings."
+      ]
+    }
+  ],
+  "support": [
+    {
+      "title": "Enable the Safari extension",
+      "paragraphs": [
+        "Open the containing macOS app, enable AutoComp in Safari Extensions, allow access to Google Docs and reload an editable document. The Google Docs integration depends on editor internals and may change."
+      ]
+    },
+    {
+      "title": "Choose local or remote processing",
+      "paragraphs": [
+        "Use extension options to select the provider for each task. Local browser inference requires the packaged runtime, a compatible browser/device and an installed model. Downloading a model does not activate it automatically.",
+        "For remote generation, enter the API base address, model and credentials, grant the requested host permission and test the connection. Review, assistant, embeddings and dictation can use different settings; a successful model-list test does not validate every operation."
+      ]
+    },
+    {
+      "title": "Build a phrase or search library",
+      "paragraphs": [
+        "Select TXT files or a library folder in options. The phrase index and semantic search index are separate. Semantic embeddings require their own endpoint and consent; lexical search can operate without embeddings.",
+        "Persistent Safari folder access requires a compatible signed containing app and shared App Group. Builds without that integration can use manual folder selection. Folder backups remain separate from the extension index."
+      ]
+    },
+    {
+      "title": "Review proposals and dictation",
+      "paragraphs": [
+        "Review proposed edits before applying them. Start microphone capture explicitly in the recorder tab and keep it open while dictating. The configured speech service can receive audio; optional AI punctuation can separately send transcript context to the selected language model."
+      ]
+    },
+    {
+      "title": "Identify the edition when requesting help",
+      "paragraphs": [
+        "Include Safari and macOS versions, the AutoComp build, selected provider and a sanitized error. The native macOS app, mobile editors, Flutter workbench, Chrome and OnlyOffice builds have different setup steps. Do not send documents, library backups or API keys."
+      ]
+    }
+  ],
+  "privacy_date": "November 2, 2026",
+  "privacy": [
+    {
+      "title": "Scope and document access",
+      "paragraphs": [
+        "This policy describes the Safari extension, including current builds with local models, review, assistant, dictation and search. Earlier Safari builds may offer only remote autocomplete. It does not describe the native macOS, mobile, Flutter, Chrome or OnlyOffice implementations.",
+        "The extension reads relevant Google Docs text, selections and cursor context for the action you request. Assistant and review operations can process more text than a short autocomplete request. Abbreviations can operate in other supported web text fields."
+      ]
+    },
+    {
+      "title": "Local processing and model downloads",
+      "paragraphs": [
+        "TXT phrase indexing and lookup run locally. Optional browser language models run inside the extension when supported. Installing model assets contacts the selected model host and creates a local model cache; local inference does not make installation offline.",
+        "A local phrase hit does not call the generation provider. Later AI requests may include previously inserted text as document context. A phrase index is not an anonymization tool."
+      ]
+    },
+    {
+      "title": "Remote generation, search and audio",
+      "paragraphs": [
+        "Remote autocomplete, assistant and review requests send the relevant document text, instructions and selected model to the configured generation endpoint. Connection tests also contact the selected service.",
+        "Optional semantic embeddings send selected report passages and search text to their separately authorized endpoint. A remote dictation service receives microphone audio through the configured streaming or batch route. Optional AI punctuation uses the selected assistant model and transcript context separately.",
+        "Credentials accompany authenticated requests. Use HTTPS for remote services; supported loopback integrations have separate connection rules. The destination controls logging, retention, training use and deletion."
+      ]
+    },
+    {
+      "title": "Settings, indexes and credentials",
+      "paragraphs": [
+        "Safari credentials and task settings are stored in extension-origin IndexedDB, not Apple Keychain. This store adds no encryption of its own and does not sync settings through iCloud. Content scripts do not receive the saved credential store.",
+        "Phrase and semantic indexes, model caches, abbreviations and other local extension data have separate lifecycles. Semantic indexes retain source passages; phrase normalization does not guarantee removal of names or identifying text. Protect exported configuration backups because they can contain API keys."
+      ]
+    },
+    {
+      "title": "Folder access and external copies",
+      "paragraphs": [
+        "Optional persistent folder access uses the containing app and remembered folder authorization. Source TXT files and library backups remain outside extension storage. Clearing an index does not delete those external copies.",
+        "Document changes applied to Google Docs become part of the document managed by Google and its sharing settings. Copied text, exported files and data already sent to a provider remain subject to their destination."
+      ]
+    },
+    {
+      "title": "Your controls and diagnostics",
+      "paragraphs": [
+        "Disable unwanted tasks, remove endpoint permissions, stop dictation and revoke microphone access to stop the corresponding activity. Remove local indexes and models through their controls and manage Safari extension data separately. Revoke API keys at their provider when needed.",
+        "The inspected extension does not configure a developer-operated document-upload or analytics service. Review diagnostic output and any backups before sharing them with support. Removing local data does not delete requests retained by a remote service."
+      ]
+    }
+  ],
+  "reviewed_date": "November 2, 2026"
+}

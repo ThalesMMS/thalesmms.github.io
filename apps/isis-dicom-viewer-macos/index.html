@@ -25,10 +25,11 @@
 <main id="main" tabindex="-1" class="wrap">
 <div class="project-heading">
 <span class="project-mark" aria-hidden="true">Is</span>
-<p class="eyebrow">Apple Silicon Mac · Mac App Store edition</p>
+<p class="eyebrow">macOS · GitHub and Mac App Store editions</p>
 <h1>IsiX DICOM Viewer for macOS</h1>
 <p class="lead">View and organize DICOM studies locally, with MPR, 3D reconstruction and connections to configured PACS servers.</p>
-<p>This is the independently maintained, Horos-derived macOS application. These support and privacy pages describe its sandboxed Mac App Store edition for Apple Silicon Macs running macOS 26 or later. Not for diagnostic use.</p>
+<p>This independently maintained, Horos-derived macOS application has separate GitHub and sandboxed Mac App Store builds. The current build configuration targets macOS 15 or later, with separate Apple Silicon and Intel packages. These privacy and data collection pages apply specifically to the Mac App Store edition. Not for diagnostic use.</p>
+<p class="label">Description reviewed November 2, 2026</p>
 <div class="actions">
 <a href="/apps/isis-dicom-viewer-macos/support/" class="button">Setup &amp; support</a>
 <a href="/apps/isis-dicom-viewer-macos/privacy/">Read the privacy policy</a>
@@ -50,7 +51,12 @@
 <h2>Mac App Store edition</h2>
 <p>App Sandbox controls access to selected folders. Updates use the App Store, and external plugins are disabled.</p>
 </section></div>
-<section class="source-section"><h2>Explore the source</h2><div class="source-links"><a href="https://github.com/ThalesMMS/Isis-DICOM-Viewer-macOS">Source code and project documentation</a></div></section>
+<section id="edition-1">
+<h2>Distribution and plugin compatibility</h2>
+<p>The stable 5.3.x GitHub line keeps its existing plugin interfaces. The 6.0 beta line uses IsiXPluginKit and needs plugins built for that interface. Check the installed version before choosing a plugin.</p>
+<p>Mac App Store builds use App Sandbox, App Store updates and no external plugins. GitHub builds have different permissions, external plugin support and a GitHub updater. Separate Intel packaging does not establish testing on Intel hardware.</p>
+</section>
+<section class="source-section"><h2>Explore the source</h2><div class="source-links"><a href="https://github.com/ThalesMMS/IsiX-DICOM-Viewer-macOS">Source code and project documentation</a></div></section>
 </main>
 <footer>
   <div class="wrap">

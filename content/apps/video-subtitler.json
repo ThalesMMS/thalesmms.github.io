@@ -2,13 +2,13 @@
   "slug": "video-subtitler",
   "name": "Video Subtitler",
   "category": "everyday",
-  "platform": "iPhone and iPad",
+  "platform": "iPhone and iPad · iOS/iPadOS 18+",
   "summary": "Turn local videos into editable subtitles, translations and exported media.",
   "intro": "Video Subtitler keeps video, transcript and export work together in a project. It supports on-device speech recognition and language tools, with an optional remote provider for selected text operations.",
   "features": [
     {
       "title": "Editable subtitles",
-      "body": "Import local media, transcribe speech and review subtitle text and timing."
+      "body": "Import local media or SRT subtitles, transcribe speech and review subtitle text and timing."
     },
     {
       "title": "Translation and context",
@@ -91,7 +91,7 @@
     {
       "title": "Deletion, caches and backup",
       "paragraphs": [
-        "Delete project removes that project’s local directory. Model caches, preferences and Keychain credentials have separate lifecycles. A Keychain item may survive app removal, and saving an empty API key does not prove the Keychain record itself was deleted.",
+        "Delete project removes that project’s local directory. Current builds apply operating-system file protection to project and model storage. Model caches, preferences and Keychain credentials have separate lifecycles. The remote key uses a device-only Keychain accessibility class and may survive app removal.",
         "The operating system controls device backup and restoration. A model cache is not a project backup, and deleting local data does not remove exports, backups or copies held by a remote endpoint."
       ]
     },
@@ -107,5 +107,15 @@
     "src": "/assets/apps/video-subtitler.png",
     "width": 1024,
     "height": 1024
-  }
+  },
+  "editions": [
+    {
+      "title": "iOS application and desktop project",
+      "paragraphs": [
+        "Video Subtitler is the iPhone/iPad application described here. The related Video RAG Dubber Studio desktop project uses Electron/Python, different model runtimes and different storage. This privacy policy does not describe that desktop implementation."
+      ]
+    }
+  ],
+  "privacy_date": "November 2, 2026",
+  "reviewed_date": "November 2, 2026"
 }

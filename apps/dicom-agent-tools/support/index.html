@@ -28,7 +28,8 @@
 <p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
 <section id="section-1">
 <h2>Choose the component</h2>
-<p>Use dicom-skill for shell workflows, dicom-plugin for its integrated tools, or dicom-viewer-mcp-app for the standalone viewer. The separate MCP viewer requires Node.js, a build, and a compatible MCP host; follow its public repository instructions. Component capabilities differ.</p>
+<p>Use dicom-skill for standalone shell workflows, the integrated plugin for its combined tools, or dicom-viewer-mcp-app for the standalone prototype. Current integrated builds use Node.js and uv; Docker is required only for workflows using a temporary Orthanc receiver.</p>
+<p>In current chat-host builds, the composite viewer provides a user-driven Query/Retrieve interface. Coding-host builds can expose query/download tools to the agent and write a self-contained HTML preview. Follow the setup for your exact component and host.</p>
 </section>
 <section id="section-2">
 <h2>Configure a PACS</h2>
@@ -45,6 +46,10 @@
 <section id="section-5">
 <h2>Review outputs</h2>
 <p>Check anonymized files and rendered previews before sending or sharing. These tools do not establish diagnostic suitability or certify de-identification.</p>
+</section>
+<section id="edition-1">
+<h2>Integrated suite and standalone tools</h2>
+<p>The integrated plugin combines a query/download MCP server, shell tools for sends and local processing, and a composite viewer. Chat and coding hosts expose different tools and rendering routes. Older plugin builds and the standalone dicom-skill and viewer repositories do not have identical capabilities.</p>
 </section>
 <section><h2>Project documentation</h2><p>Find installation details and release-specific guidance in the public project documentation.</p><div class="source-links"><a href="https://github.com/ThalesMMS/dicom-skill">dicom-skill on GitHub</a>
 <a href="https://github.com/ThalesMMS/dicom-viewer-mcp-app">dicom-viewer-mcp-app on GitHub</a></div></section>

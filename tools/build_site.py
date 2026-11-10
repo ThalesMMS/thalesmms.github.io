@@ -3,7 +3,6 @@
 from html import escape
 from pathlib import Path
 import json
-import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = 'September 5, 2026'
@@ -114,6 +113,10 @@ def source_links(project):
     return '\n'.join(link(r['url'], r['label']) for r in project['repositories'])
 
 
+def edition_sections(project):
+    return '\n'.join(section_html(s, i, 'edition') for i, s in enumerate(project.get('editions', []), 1))
+
+
 def artwork(project):
     if project['slug'] == 'autocomp':
         return '<img class="project-icon" src="/assets/autocomp-icon.png" width="512" height="512" alt="">'
@@ -134,12 +137,14 @@ def project_page(project):
 <h1>{e(project['name'])}</h1>
 <p class="lead">{e(project['summary'])}</p>
 <p>{e(project['intro'])}</p>
+{f'<p class="label">Description reviewed {e(project["reviewed_date"])}</p>' if project.get('reviewed_date') else ''}
 <div class="actions">
 {link(route+'support/', 'Setup & support', css='button')}
 {link(route+'privacy/', 'Read the privacy policy')}
 </div>
 </div>
 <div class="grid features">{features}</div>
+{edition_sections(project)}
 {sources}'''
     return document(route, project['name']+' | ThalesMMS', project['summary'], body, project)
 
@@ -154,6 +159,7 @@ def support_page(project):
 <h1>{e(project['name'])} support</h1>
 <p class="lead">Setup, troubleshooting, and a direct contact for help.</p>
 {sections}
+{edition_sections(project)}
 {source_section}
 {contact(project, True)}'''
     return document(route+'support/', project['name']+' support | ThalesMMS', 'Setup guidance and troubleshooting for '+project['name']+'.', body, project, True)
@@ -259,19 +265,6 @@ def main():
         write(route+'privacy/', privacy_page(p))
         if p.get('data_collection'):
             write(route+'data-collection/', data_collection_page(p))
-    # AutoComp is retained verbatim; only shared page chrome is refreshed.
-    autocomp = dict(slug='autocomp',name='AutoComp',category='everyday',platform='Safari extension · macOS',summary='Inline AI autocomplete for Google Docs, connected to the HTTPS endpoint you choose.')
-    for suffix in ['', 'support/', 'privacy/']:
-        route = base(autocomp)+suffix
-        text = (ROOT/route.lstrip('/')/'index.html').read_text()
-        body = re.search(r'<main\b[^>]*>(.*?)</main>', text, re.S).group(1).strip()
-        title = re.search(r'<title>(.*?)</title>',text).group(1)
-        # Existing titles/descriptions are plain text and need entity decoding.
-        from html import unescape
-        description = re.search(r'<meta name="description" content="([^"]*)">', text).group(1)
-        write(route,document(route,unescape(title),unescape(description),body,autocomp,bool(suffix)))
-    projects.append(autocomp)
-    projects.sort(key=lambda p: ORDER.index(p['slug']))
     write('/',home(projects))
     write('/404.html',document('/404.html','Page not found | ThalesMMS','Return to the ThalesMMS project directory.', '''<p class="eyebrow">404 / Page not found</p>
 <h1>This page isn't here.</h1>
