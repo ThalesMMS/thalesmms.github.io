@@ -15,7 +15,7 @@ CATEGORIES = [
 ]
 ORDER = ['isis-dicom-viewer', 'isis-dicom-viewer-macos', 'dicom-slides', 'scout', 'radref', 'dicom-agent-tools',
          'totalsegmentator-plugin', 'dicom-swift', 'mtk', 'dicom-go', 'codeatlas',
-         'the-legend-of-source', 'turing-lab', 'autocomp', 'podcast-intelligence',
+         'the-legend-of-source', 'turing-lab', 'logisim-evolution-mobile', 'autocomp', 'podcast-intelligence',
          'macpgp', 'video-subtitler']
 MARKS = {'isis-dicom-viewer': 'Is', 'isis-dicom-viewer-macos': 'Is', 'dicom-slides': 'Ds', 'scout': 'Sc', 'radref': 'Rr',
          'dicom-agent-tools': 'Da', 'totalsegmentator-plugin': 'Ts', 'dicom-swift': 'Ds',
@@ -88,12 +88,12 @@ def document(path, title, description, body, project=None, prose=False):
 '''
 
 
-def section_html(section, index, prefix='section'):
+def section_html(section, index, prefix='section', heading=2):
     title = e(section['title'])
     content = '\n'.join(f'<p>{e(p)}</p>' for p in section.get('paragraphs', []))
     if section.get('steps'):
         content += '\n<ol>\n' + '\n'.join(f'<li>{e(step)}</li>' for step in section['steps']) + '\n</ol>'
-    return f'<section id="{prefix}-{index}">\n<h2>{title}</h2>\n{content}\n</section>'
+    return f'<section id="{prefix}-{index}">\n<h{heading}>{title}</h{heading}>\n{content}\n</section>'
 
 
 def contact(project, support=False):
@@ -102,11 +102,13 @@ def contact(project, support=False):
               'API keys, passwords, or private keys.') if support else (
               'If you email us, we receive your email address and the information you choose to send to respond '
               'to your request. Please omit patient information, private documents, and credentials.')
+    retention = project.get('privacy_contact_retention') if not support else None
+    retention_html = f'<p>{e(retention)}</p>\n' if retention else ''
     return f'''<section class="note">
 <h2>{'Contact support' if support else 'Privacy questions and support'}</h2>
 <p>Contact Thales Matheus M Santos about {e(project['name'])} at {link('mailto:'+EMAIL, EMAIL)}.</p>
 <p>{detail}</p>
-</section>'''
+{retention_html}</section>'''
 
 
 def source_links(project):
@@ -165,18 +167,34 @@ def support_page(project):
     return document(route+'support/', project['name']+' support | ThalesMMS', 'Setup guidance and troubleshooting for '+project['name']+'.', body, project, True)
 
 
+def portuguese_privacy(policy):
+    sections = '\n'.join(section_html(s, i, 'pt', heading=3) for i, s in enumerate(policy['sections'], 1))
+    return f'''<hr>
+<article lang="pt-BR" aria-labelledby="portugues">
+<h2 id="portugues">{e(policy['title'])}</h2>
+<p class="label">{e(policy['date_label'])}</p>
+<p class="lead">{e(policy['intro'])}</p>
+{sections}
+<p>Contato para privacidade, suporte ou exclusão: {link('mailto:'+EMAIL, EMAIL)}.</p>
+</article>'''
+
+
 def privacy_page(project):
     route = base(project)
     sections = '\n'.join(section_html(s, i) for i, s in enumerate(project['privacy'], 1))
     date = project.get('privacy_date', DATE)
     declaration = (f'<p>{link(route+"data-collection/", "Read the data collection declaration")}</p>\n'
                    if project.get('data_collection') else '')
+    intro = project.get('privacy_intro', f"How {project['name']} handles data, including the services and integrations you choose to use.")
+    portuguese = project.get('privacy_pt_br')
+    language_link = '<p><a href="#portugues" lang="pt-BR">Português (Brasil)</a></p>\n' if portuguese else ''
+    translation = '\n'+portuguese_privacy(portuguese) if portuguese else ''
     body = f'''{artwork(project) if project.get('icon') else ''}
 <p class="eyebrow">{e(project['name'])} / Privacy</p>
 <h1>{e(project['name'])} privacy policy</h1>
 <p class="label">Effective {e(date)}</p>
-<p class="lead">How {e(project['name'])} handles data, including the services and integrations you choose to use.</p>
-{declaration}{sections}
+<p class="lead">{e(intro)}</p>
+{language_link}{declaration}{sections}
 <section>
 <h2>This support website</h2>
 <p>This static website does not use analytics scripts, forms, or third-party tracking scripts. GitHub Pages handles requests to the website under its own hosting and privacy practices. Visiting a source repository or contacting another service is subject to that service's policies.</p>
@@ -185,7 +203,7 @@ def privacy_page(project):
 <section>
 <h2>Policy updates</h2>
 <p>This policy may change when the software's data handling changes. The effective date above identifies this version. Features and integrations can differ by release and platform.</p>
-</section>'''
+</section>{translation}'''
     return document(route+'privacy/', project['name']+' privacy policy | ThalesMMS', 'Data handling, storage, and service integrations for '+project['name']+'.', body, project, True)
 
 

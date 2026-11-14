@@ -2,7 +2,7 @@
 
 Static HTML and CSS for https://thalesmms.github.io/. The published site has no JavaScript, forms, analytics, external fonts, or runtime dependencies.
 
-The directory includes 17 project sections. Every project has a presentation, support, and privacy page. The macOS Mac App Store edition of IsiX also has a data collection declaration. Root and custom 404 pages bring the total to 54 HTML pages.
+The directory includes 18 project sections. Every project has a presentation, support, and privacy page. The macOS Mac App Store edition of IsiX also has a data collection declaration. Root and custom 404 pages bring the total to 57 HTML pages.
 
 ## Preview and maintain
 
@@ -36,6 +36,7 @@ Each base below also has `support/` and `privacy/` subpages.
 | --- | --- |
 | AutoComp for Safari | `/apps/autocomp/` |
 | Turing Lab | `/apps/turing-lab/` |
+| Logisim Evolution Mobile | `/apps/logisim-evolution-mobile/` |
 | IsiX DICOM Viewer | `/apps/isis-dicom-viewer/` |
 | IsiX DICOM Viewer for macOS, GitHub and Mac App Store editions | `/apps/isis-dicom-viewer-macos/` |
 | dicom-slides | `/apps/dicom-slides/` |

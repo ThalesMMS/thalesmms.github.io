@@ -11,10 +11,11 @@ ROOT = Path(__file__).resolve().parents[1]
 SLUGS = {'autocomp', 'turing-lab', 'isis-dicom-viewer', 'isis-dicom-viewer-macos', 'dicom-slides', 'dicom-swift',
          'mtk', 'dicom-agent-tools', 'totalsegmentator-plugin', 'radref', 'dicom-go',
          'podcast-intelligence', 'codeatlas', 'the-legend-of-source', 'scout', 'macpgp',
-         'video-subtitler'}
+         'video-subtitler', 'logisim-evolution-mobile'}
 PUBLIC_REPOS = {'Turing-Lab', 'dicom-slides', 'DICOM-Swift', 'MTK', 'dicom-skill',
                 'dicom-viewer-mcp-app', 'TotalSegmentator-OsiriX-Horos-Plugin', 'RadRef',
-                'dicom-go', 'Podcast-Intelligence', 'MacPGP-app', 'IsiX-DICOM-Viewer-macOS'}
+                'dicom-go', 'Podcast-Intelligence', 'MacPGP-app', 'IsiX-DICOM-Viewer-macOS',
+                'Logisim-Evolution-Mobile'}
 PRIVACY_REFERENCES = {'https://developer.apple.com/app-store/app-privacy-details/'}
 CLOSED_SLUGS = {'autocomp','isis-dicom-viewer','codeatlas','the-legend-of-source','scout','video-subtitler'}
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
